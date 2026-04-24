@@ -92,11 +92,24 @@ export default function ContactSection() {
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.5 }}
       >
-        <div className="max-w-[1400px] mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-4">
-          <span className="text-xs font-mono text-white/20 tracking-widest">
+        <div className="max-w-[1400px] mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
+          <span className="text-xs font-mono text-white/20 tracking-widest flex-1 text-center md:text-left">
             © 2026 CBEC Solutions. All rights reserved.
           </span>
-          <span className="text-xs font-mono text-white/20 tracking-widest">
+
+          <div className="flex items-center gap-8 md:gap-6 flex-1 justify-center">
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-white/40 hover:text-[#66FF80] tracking-widest transition-colors uppercase">
+              Facebook
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-white/40 hover:text-[#66FF80] tracking-widest transition-colors uppercase">
+              Instagram
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-white/40 hover:text-[#66FF80] tracking-widest transition-colors uppercase">
+              X
+            </a>
+          </div>
+
+          <span className="text-xs font-mono text-white/20 tracking-widest flex-1 text-center md:text-right">
             Vietnam → Global
           </span>
         </div>
