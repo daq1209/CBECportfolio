@@ -56,7 +56,7 @@ export default function ContactSection() {
           >
             {/* Email text */}
             <span
-              className="text-[5vw] md:text-[3vw] lg:text-[2.5vw] font-light tracking-tight text-white/70 transition-colors duration-500 hover:text-[#66FF80]"
+              className="text-[5.5vw] sm:text-[4vw] md:text-[3vw] lg:text-[2.5vw] font-light tracking-tight text-white/70 transition-colors duration-500 hover:text-[#66FF80] break-all sm:break-normal"
               style={{ fontFamily: "var(--font-display)" }}
             >
               cbecsolutions.vn@gmail.com

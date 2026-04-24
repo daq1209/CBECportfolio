@@ -72,7 +72,7 @@ export default function SquareEditorialHero() {
       {/* Main UI Layer (pointer-events-none overall, children can restore it) */}
       <motion.div 
         style={{ opacity: uiOpacity, y: uiY, scale: uiScale }}
-        className="relative z-10 w-full h-full p-6 md:p-12 lg:p-16 flex flex-col justify-between pointer-events-none pb-24 origin-top"
+        className="relative z-10 w-full h-full p-6 md:p-12 lg:p-16 flex flex-col justify-between pointer-events-none pb-12 md:pb-24 origin-top"
       >
         
         {/* Top Header Row */}

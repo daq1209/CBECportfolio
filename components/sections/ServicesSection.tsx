@@ -24,7 +24,7 @@ const services = [
     colorBorder: "border-[#333333]",
     colorText: "text-white",
     metrics: ["Amazon FBA", "Supplier Network", "Listing Optimization"],
-    topOffset: "top-[15vh]"
+    topOffset: "top-[13vh] md:top-[15vh]"
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const services = [
     colorBorder: "border-[#333333]",
     colorText: "text-white",
     metrics: ["Brand Identity", "Web Development", "SEO"],
-    topOffset: "top-[20vh]"
+    topOffset: "top-[16vh] md:top-[20vh]"
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const services = [
     colorBorder: "border-[#88ff9f]",
     colorText: "text-[#0a0a0a]",
     metrics: ["LLC Formation", "Investment Strategy", "Social Automation"],
-    topOffset: "top-[25vh]"
+    topOffset: "top-[19vh] md:top-[25vh]"
   }
 ];
 
@@ -125,10 +125,10 @@ function ServiceCard({ service, index }: { service: ServiceItem, index: number }
   const cardNumber = `0${service.number.replace(/^0/, '')}`;
 
   return (
-    <div ref={cardRef} className={`sticky ${service.topOffset} w-full h-[70vh] flex items-center justify-center`} style={{ zIndex: index + 10 }}>
+    <div ref={cardRef} className={`sticky ${service.topOffset} w-full h-auto min-h-[60vh] md:h-[70vh] flex items-center justify-center`} style={{ zIndex: index + 10 }}>
       <motion.div 
         style={{ opacity: cardOpacity, scale: cardScale }}
-        className={`w-full h-full max-h-[800px] ${service.colorBg} ${service.colorText} rounded-3xl md:rounded-[40px] border ${service.colorBorder} p-8 md:p-16 flex flex-col justify-between shadow-[0_-20px_50px_rgba(0,0,0,0.4)] overflow-hidden relative group`}
+        className={`w-full h-full max-h-[800px] ${service.colorBg} ${service.colorText} rounded-3xl md:rounded-[40px] border ${service.colorBorder} p-6 sm:p-8 md:p-16 flex flex-col justify-between shadow-[0_-20px_50px_rgba(0,0,0,0.4)] overflow-hidden relative group`}
       >
         
         {/* Abstract Glow for accent card */}
