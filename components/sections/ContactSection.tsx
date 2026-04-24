@@ -72,16 +72,39 @@ export default function ContactSection() {
           </a>
         </motion.div>
 
-        {/* Small prompt */}
-        <motion.p
-          className="mt-8 md:mt-12 text-sm font-mono text-white/25 tracking-widest uppercase"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+        {/* Extra Contact Info */}
+        <motion.div
+          className="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 0.4 }}
         >
-          Start a conversation →
-        </motion.p>
+          {/* Address */}
+          <div className="flex flex-col items-center">
+            <h4 className="text-[10px] font-mono text-white/30 tracking-[0.2em] uppercase mb-4">
+              Headquarters
+            </h4>
+            <p className="text-sm md:text-base font-light text-white/70 leading-relaxed max-w-[220px]">
+              17th Floor, 72A Le Thanh Ton,<br/>
+              Ben Nghe Ward, District 1,<br/>
+              HCMC
+            </p>
+          </div>
+
+          {/* Phone */}
+          <div className="flex flex-col items-center">
+            <h4 className="text-[10px] font-mono text-white/30 tracking-[0.2em] uppercase mb-4">
+              Direct Line
+            </h4>
+            <a 
+              href="tel:+84703819006" 
+              className="text-sm md:text-base font-light text-white/70 hover:text-[#66FF80] transition-colors duration-300"
+            >
+              (+84) 703 819 006
+            </a>
+          </div>
+        </motion.div>
       </div>
 
       {/* Footer strip */}
