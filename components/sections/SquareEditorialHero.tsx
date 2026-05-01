@@ -120,7 +120,7 @@ export default function SquareEditorialHero() {
                   fontWeight: 500
                 }}
               >
-                E-COMMERCE
+                CREATIVE
               </motion.h1>
             </div>
             <div className="overflow-hidden pb-2">
@@ -131,11 +131,11 @@ export default function SquareEditorialHero() {
                 animate="visible"
                 className="text-[14vw] lg:text-[6.5vw] leading-[0.9] tracking-[-0.02em] text-white/70 italic capitalize m-0 whitespace-nowrap"
                 style={{ 
-                  fontFamily: 'var(--font-display)', // Assuming we want to stick to brand fonts, but styling it to match "Studio" 
+                  fontFamily: 'var(--font-display)', 
                   fontWeight: 300
                 }}
               >
-                Solutions.
+                Agency.
               </motion.h1>
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function SquareEditorialHero() {
                   className="text-[2rem] md:text-[2.5rem] leading-[1.1] text-white font-bold tracking-[-0.02em] mb-4"
                   style={{ fontFamily: 'var(--font-display)', fontWeight: 700 }}
                 >
-                  Build What Sells.
+                  Design That Performs.
                 </motion.h3>
 
                 <motion.p
@@ -162,7 +162,7 @@ export default function SquareEditorialHero() {
                   className="text-base md:text-lg leading-[1.6] text-white/80 mb-10"
                   style={{ fontFamily: 'var(--font-body)', fontWeight: 300 }}
                 >
-                  We combine market intelligence, product strategy, and operational excellence to build eCommerce brands that don&apos;t just exist—they sell.
+                  We combine strategic branding, high-end web development, and social media ecosystems to build digital experiences that captivate and convert.
                 </motion.p>
 
                 <motion.div

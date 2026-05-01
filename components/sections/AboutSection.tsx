@@ -77,7 +77,7 @@ export default function AboutSection() {
               className="text-[10vw] md:text-[6vw] leading-[0.95] tracking-tighter uppercase font-bold text-[#66FF80]"
               style={{ fontFamily: 'var(--font-display)' }}
             >
-              Commerce.
+              Digital.
             </motion.h2>
           </div>
           <div className="overflow-hidden mt-4 md:mt-8 ml-0 md:ml-32">
@@ -86,7 +86,7 @@ export default function AboutSection() {
               className="text-[8vw] md:text-[4vw] leading-[0.95] tracking-tight text-white/60 italic"
               style={{ fontFamily: 'var(--font-display)', fontWeight: 300 }}
             >
-              Not just websites.
+              Experiences.
             </motion.h2>
           </div>
         </motion.div>
@@ -103,10 +103,10 @@ export default function AboutSection() {
             transition={{ duration: 1, ease: "easeOut" }}
           >
             <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed">
-              Based in Vietnam, built for global markets. We operate with an owner&apos;s mentality—your business outcomes are our scoreboard. Every decision we make is reverse-engineered from your bottom line.
+              Based in Vietnam, built for global markets. We are a creative studio that believes aesthetics must drive business outcomes. Every pixel we push and every brand identity we forge is designed to captivate and convert.
             </p>
             <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed">
-              From market intelligence to full-stack eCommerce operations, we deliver the insights, infrastructure, and execution speed that turn market opportunities into profitable brands.
+              From bespoke web development to complete social media ecosystems, we deliver the creative infrastructure your brand needs to stand out in a crowded digital landscape.
             </p>
           </motion.div>
 
@@ -122,10 +122,10 @@ export default function AboutSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#66FF80]/10 to-transparent z-0" />
             <div className="relative z-10">
               <div className="text-[15vw] md:text-[10vw] font-bold leading-none tracking-tighter text-white font-mono opacity-80 mix-blend-overlay">
-                25M+
+                100+
               </div>
               <div className="text-white/70 tracking-widest uppercase font-mono text-sm mt-4 pl-2 border-l border-[#66FF80]">
-                Revenue driven for our clients.
+                Digital experiences launched.
               </div>
             </div>
             

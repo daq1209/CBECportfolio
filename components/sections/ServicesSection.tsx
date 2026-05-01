@@ -7,45 +7,45 @@ const services = [
   {
     id: 1,
     number: "01",
-    title: "Market Intelligence & Strategy",
-    description: "We identify high-potential market opportunities across the US and Europe, then build data-driven go-to-market strategies that give your brand a competitive edge before you spend a single dollar on inventory.",
+    title: "Branding & Identity",
+    description: "We craft compelling visual identities that resonate with your target audience and establish a dominant market presence.",
     colorBg: "bg-[#111111]",
     colorBorder: "border-[#222222]",
     colorText: "text-white",
-    metrics: ["Market Research", "GTM Strategy", "Competitive Analysis"],
+    metrics: ["Visual Identity", "Brand Guidelines", "Creative Direction"],
     topOffset: "top-[10vh]"
   },
   {
     id: 2,
     number: "02",
-    title: "eCommerce Operations",
-    description: "From supplier sourcing to Amazon account management and listing optimization — we handle the full operational stack so you can focus on scaling, not firefighting.",
+    title: "Web Development & UI/UX",
+    description: "High-performance, award-winning websites designed for seamless user experiences and maximum conversion rates.",
     colorBg: "bg-[#1a1a1a]",
     colorBorder: "border-[#333333]",
     colorText: "text-white",
-    metrics: ["Amazon FBA", "Supplier Network", "Listing Optimization"],
+    metrics: ["Custom Websites", "Framer/React", "Conversion Optimization"],
     topOffset: "top-[13vh] md:top-[15vh]"
   },
   {
     id: 3,
     number: "03",
-    title: "Digital Ecosystem",
-    description: "Strategic branding, high-performance web development with integrated SEO, and modern social media automation — the complete digital infrastructure your brand needs to compete globally.",
+    title: "Social Media & Content",
+    description: "End-to-end content ecosystems that build engaged communities and drive organic growth across all digital touchpoints.",
     colorBg: "bg-[#1a1a1a]",
     colorBorder: "border-[#333333]",
     colorText: "text-white",
-    metrics: ["Brand Identity", "Web Development", "SEO"],
+    metrics: ["Content Creation", "Platform Strategy", "Campaign Management"],
     topOffset: "top-[16vh] md:top-[20vh]"
   },
   {
     id: 4,
     number: "04",
-    title: "Scaling & Investment",
-    description: "We help you structure for growth — from LLC formation and legal compliance to strategic investment advisory and automated social media systems that scale without scaling headcount.",
+    title: "Creative Strategy",
+    description: "Data-informed creative campaigns that bridge the gap between stunning aesthetics and measurable business growth.",
     colorBg: "bg-[#66FF80]",
     colorBorder: "border-[#88ff9f]",
     colorText: "text-[#0a0a0a]",
-    metrics: ["LLC Formation", "Investment Strategy", "Social Automation"],
+    metrics: ["Digital Campaigns", "Art Direction", "Growth Marketing"],
     topOffset: "top-[19vh] md:top-[25vh]"
   }
 ];

@@ -6,27 +6,27 @@ import { useRef } from "react";
 const principles = [
   {
     number: "01",
-    title: "Revenue First.",
+    title: "Impact First.",
     description:
-      "Every project, every decision, every optimization is judged by its impact on the bottom line. If it doesn't drive revenue, it doesn't ship.",
+      "Every design decision is judged by its impact on user experience and business goals. If it doesn't move the needle, it doesn't ship.",
   },
   {
     number: "02",
-    title: "Operator Mentality.",
+    title: "Craft & Precision.",
     description:
-      "We think like owners, not vendors. Your P&L is our scoreboard. Your margins are our obsession.",
+      "We obsess over the details. Micro-interactions, flawless typography, and pixel-perfect execution are our standard.",
   },
   {
     number: "03",
     title: "Radical Transparency.",
     description:
-      "No hiding behind jargon. We communicate performance, challenges, and opportunities with brutal honesty.",
+      "No hiding behind design jargon. We communicate our creative process, challenges, and decisions with brutal honesty.",
   },
   {
     number: "04",
-    title: "Speed of Execution.",
+    title: "Agile Creativity.",
     description:
-      "Markets move fast. We move faster. Velocity is not a buzzword here — it's a competitive advantage.",
+      "Digital moves fast. We move faster. We deliver high-end creative work without the traditional agency bloat.",
   },
   {
     number: "05",
@@ -36,9 +36,9 @@ const principles = [
   },
   {
     number: "06",
-    title: "Continuous Learning.",
+    title: "Future Proof.",
     description:
-      "eCommerce evolves daily. We stay ahead by learning relentlessly and adapting before the market forces us to.",
+      "The digital landscape evolves daily. We stay ahead of design trends and technological shifts so your brand never looks dated.",
   },
 ];
 
