@@ -2,80 +2,37 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+import { translations } from "@/lib/translations";
 
-const services = [
-  {
-    id: 1,
-    number: "01",
-    title: "Branding & Identity",
-    description: "We craft compelling visual identities that resonate with your target audience and establish a dominant market presence.",
-    colorBg: "bg-[#111111]",
-    colorBorder: "border-[#222222]",
-    colorText: "text-white",
-    metrics: ["Visual Identity", "Brand Guidelines", "Creative Direction"],
-    topOffset: "top-[8vh]"
-  },
-  {
-    id: 2,
-    number: "02",
-    title: "Web Development & UI/UX",
-    description: "High-performance, award-winning websites designed for seamless user experiences and maximum conversion rates.",
-    colorBg: "bg-[#1a1a1a]",
-    colorBorder: "border-[#333333]",
-    colorText: "text-white",
-    metrics: ["Custom Websites", "Framer/React", "Conversion Optimization"],
-    topOffset: "top-[8vh] md:top-[16vh]"
-  },
-  {
-    id: 3,
-    number: "03",
-    title: "Custom Software Solutions",
-    description: "Bespoke internal tools, CRM systems, and scalable SaaS platforms designed with a focus on UX to streamline your business operations and drive efficiency.",
-    colorBg: "bg-[#222222]",
-    colorBorder: "border-[#444444]",
-    colorText: "text-white",
-    metrics: ["SaaS Platforms", "Internal Tools", "System Architecture"],
-    topOffset: "top-[8vh] md:top-[24vh]"
-  },
-  {
-    id: 4,
-    number: "04",
-    title: "Social Media & Content",
-    description: "End-to-end content ecosystems that build engaged communities and drive organic growth across all digital touchpoints.",
-    colorBg: "bg-[#1a1a1a]",
-    colorBorder: "border-[#333333]",
-    colorText: "text-white",
-    metrics: ["Content Creation", "Platform Strategy", "Campaign Management"],
-    topOffset: "top-[8vh] md:top-[32vh]"
-  },
-  {
-    id: 5,
-    number: "05",
-    title: "Creative Strategy",
-    description: "Data-informed creative campaigns that bridge the gap between stunning aesthetics and measurable business growth.",
-    colorBg: "bg-[#66FF80]",
-    colorBorder: "border-[#88ff9f]",
-    colorText: "text-[#0a0a0a]",
-    metrics: ["Digital Campaigns", "Art Direction", "Growth Marketing"],
-    topOffset: "top-[8vh] md:top-[40vh]"
-  }
+const CARD_COLORS = [
+  { colorBg: "bg-[#111111]", colorBorder: "border-[#222222]", colorText: "text-white", isAccent: false },
+  { colorBg: "bg-[#1a1a1a]", colorBorder: "border-[#333333]", colorText: "text-white", isAccent: false },
+  { colorBg: "bg-[#222222]", colorBorder: "border-[#444444]", colorText: "text-white", isAccent: false },
+  { colorBg: "bg-[#1a1a1a]", colorBorder: "border-[#333333]", colorText: "text-white", isAccent: false },
+  { colorBg: "bg-[#66FF80]", colorBorder: "border-[#88ff9f]", colorText: "text-[#0a0a0a]", isAccent: true },
 ];
 
-const TOTAL_CARDS = services.length;
+const TOP_OFFSETS = [
+  "top-[8vh]",
+  "top-[8vh] md:top-[16vh]",
+  "top-[8vh] md:top-[24vh]",
+  "top-[8vh] md:top-[32vh]",
+  "top-[8vh] md:top-[40vh]",
+];
+
+const TOTAL_CARDS = 5;
 
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
+  const { language } = useLanguage();
+  const t = translations[language].services;
+
   return (
-    <section 
-      ref={sectionRef} 
-      className="relative w-full bg-[#0a0a0a] pb-32 md:pb-64 pt-20"
-    >
+    <section ref={sectionRef} className="relative w-full bg-[#0a0a0a] pb-32 md:pb-64 pt-20">
       <div className="max-w-[1400px] mx-auto px-6 md:px-16 w-full">
-        
-        {/* Section Header */}
         <div className="mb-20 md:mb-40 flex flex-col items-center text-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -83,10 +40,10 @@ export default function ServicesSection() {
           >
             <div className="w-2 h-2 rounded-full bg-[#66FF80]" />
             <span className="text-xs uppercase tracking-[0.2em] font-mono text-white/50">
-              Services & Process
+              {t.label}
             </span>
           </motion.div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -94,90 +51,87 @@ export default function ServicesSection() {
             className="text-[10vw] md:text-[6vw] font-bold leading-none tracking-tighter text-white uppercase"
             style={{ fontFamily: 'var(--font-display)' }}
           >
-            What we do
+            {t.heading}
           </motion.h2>
         </div>
 
-        {/* Sticky Cards Container */}
         <div className="relative w-full flex flex-col gap-10 md:gap-0 pb-[10vh]">
-          {services.map((service, index) => (
-            <ServiceCard key={service.id} service={service} index={index} />
+          {t.items.map((item, index) => (
+            <ServiceCard
+              key={item.number}
+              item={item}
+              index={index}
+              colors={CARD_COLORS[index]}
+              topOffset={TOP_OFFSETS[index]}
+            />
           ))}
         </div>
-
       </div>
     </section>
   );
 }
 
-interface ServiceItem {
-  id: number;
-  number: string;
-  title: string;
-  description: string;
-  colorBg: string;
-  colorBorder: string;
-  colorText: string;
-  metrics: string[];
+interface ServiceCardProps {
+  item: { number: string; title: string; description: string; metrics: readonly string[] };
+  index: number;
+  colors: { colorBg: string; colorBorder: string; colorText: string; isAccent: boolean };
   topOffset: string;
 }
 
-function ServiceCard({ service, index }: { service: ServiceItem, index: number }) {
+function ServiceCard({ item, index, colors, topOffset }: ServiceCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
-    offset: ["start end", "start start"]
+    offset: ["start end", "start start"],
   });
-
   const cardOpacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
   const cardScale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
-
-  const isAccent = index === TOTAL_CARDS - 1;
-  const cardNumber = `0${service.number.replace(/^0/, '')}`;
+  const { isAccent } = colors;
 
   return (
-    <div ref={cardRef} className={`sticky ${service.topOffset} w-full h-auto min-h-[60vh] md:h-[70vh] flex items-center justify-center`} style={{ zIndex: index + 10 }}>
-      <motion.div 
+    <div
+      ref={cardRef}
+      className={`sticky ${topOffset} w-full h-auto min-h-[60vh] md:h-[70vh] flex items-center justify-center`}
+      style={{ zIndex: index + 10 }}
+    >
+      <motion.div
         style={{ opacity: cardOpacity, scale: cardScale }}
-        className={`w-full h-full max-h-[800px] ${service.colorBg} ${service.colorText} rounded-3xl md:rounded-[40px] border ${service.colorBorder} p-6 sm:p-8 md:p-16 flex flex-col justify-between shadow-[0_-20px_50px_rgba(0,0,0,0.4)] overflow-hidden relative group`}
+        className={`w-full h-full max-h-[800px] ${colors.colorBg} ${colors.colorText} rounded-3xl md:rounded-[40px] border ${colors.colorBorder} p-6 sm:p-8 md:p-16 flex flex-col justify-between shadow-[0_-20px_50px_rgba(0,0,0,0.4)] overflow-hidden relative group`}
       >
-        
-        {/* Abstract Glow for accent card */}
         {isAccent && (
           <div className="absolute inset-0 bg-gradient-to-tr from-[#3de65a] to-[#9effaf] opacity-50 pointer-events-none" />
         )}
-        
-        {/* Top Header of Card */}
+
         <div className="flex justify-between items-start relative z-10 w-full mb-10">
           <div className="text-xl md:text-2xl font-mono tracking-widest opacity-50">
-            {service.number} / {String(TOTAL_CARDS).padStart(2, '0')}
+            {item.number} / {String(TOTAL_CARDS).padStart(2, "0")}
           </div>
           <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-current opacity-30 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
             </svg>
           </div>
         </div>
 
-        {/* Content of Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end relative z-10 w-full h-full">
           <div className="lg:col-span-7 flex flex-col justify-end h-full">
-            <h3 className="text-[8vw] md:text-[5vw] lg:text-[4vw] font-bold leading-[0.9] tracking-tighter uppercase mb-6 md:mb-12" style={{ fontFamily: 'var(--font-display)' }}>
-              {service.title}
+            <h3
+              className="text-[8vw] md:text-[5vw] lg:text-[4vw] font-bold leading-[0.9] tracking-tighter uppercase mb-6 md:mb-12"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {item.title}
             </h3>
           </div>
-          
           <div className="lg:col-span-5 flex flex-col justify-end h-full pb-2 md:pb-6">
-            <p className={`text-base md:text-lg lg:text-xl font-light leading-relaxed ${isAccent ? 'text-[#0a0a0a]/80' : 'text-white/70'} mb-10`}>
-              {service.description}
+            <p className={`text-base md:text-lg lg:text-xl font-light leading-relaxed ${isAccent ? "text-[#0a0a0a]/80" : "text-white/70"} mb-10`}>
+              {item.description}
             </p>
-            
             <div className="flex flex-wrap gap-3">
-              {service.metrics.map((metric: string, mIndex: number) => (
-                <div 
-                  key={mIndex} 
-                  className={`px-4 py-2 rounded-full text-xs md:text-sm font-mono tracking-widest uppercase border ${isAccent ? 'border-[#0a0a0a]/20 text-[#0a0a0a]' : 'border-white/20 text-white'}`}
+              {item.metrics.map((metric, mIndex) => (
+                <div
+                  key={mIndex}
+                  className={`px-4 py-2 rounded-full text-xs md:text-sm font-mono tracking-widest uppercase border ${isAccent ? "border-[#0a0a0a]/20 text-[#0a0a0a]" : "border-white/20 text-white"}`}
                 >
                   {metric}
                 </div>
@@ -185,7 +139,6 @@ function ServiceCard({ service, index }: { service: ServiceItem, index: number }
             </div>
           </div>
         </div>
-
       </motion.div>
     </div>
   );

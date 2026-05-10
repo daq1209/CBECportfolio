@@ -2,6 +2,9 @@
 
 import { Red_Hat_Display, Red_Hat_Text } from "next/font/google";
 import { ReactLenis } from "lenis/react";
+import { LanguageProvider } from "@/context/LanguageContext";
+import LanguageGate from "@/components/LanguageGate";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import "./globals.css";
 
 /* ── Brand Typefaces ── */
@@ -31,7 +34,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
-        <ReactLenis root>{children}</ReactLenis>
+        <LanguageProvider>
+          <LanguageGate />
+          <LanguageSwitcher />
+          <ReactLenis root>{children}</ReactLenis>
+        </LanguageProvider>
       </body>
     </html>
   );
