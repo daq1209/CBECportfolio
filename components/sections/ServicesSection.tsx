@@ -13,7 +13,7 @@ const services = [
     colorBorder: "border-[#222222]",
     colorText: "text-white",
     metrics: ["Visual Identity", "Brand Guidelines", "Creative Direction"],
-    topOffset: "top-[10vh]"
+    topOffset: "top-[8vh]"
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const services = [
     colorBorder: "border-[#333333]",
     colorText: "text-white",
     metrics: ["Custom Websites", "Framer/React", "Conversion Optimization"],
-    topOffset: "top-[13vh] md:top-[14vh]"
+    topOffset: "top-[8vh] md:top-[16vh]"
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const services = [
     colorBorder: "border-[#444444]",
     colorText: "text-white",
     metrics: ["SaaS Platforms", "Internal Tools", "System Architecture"],
-    topOffset: "top-[16vh] md:top-[18vh]"
+    topOffset: "top-[8vh] md:top-[24vh]"
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const services = [
     colorBorder: "border-[#333333]",
     colorText: "text-white",
     metrics: ["Content Creation", "Platform Strategy", "Campaign Management"],
-    topOffset: "top-[19vh] md:top-[22vh]"
+    topOffset: "top-[8vh] md:top-[32vh]"
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const services = [
     colorBorder: "border-[#88ff9f]",
     colorText: "text-[#0a0a0a]",
     metrics: ["Digital Campaigns", "Art Direction", "Growth Marketing"],
-    topOffset: "top-[22vh] md:top-[26vh]"
+    topOffset: "top-[8vh] md:top-[40vh]"
   }
 ];
 

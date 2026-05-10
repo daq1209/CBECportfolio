@@ -99,7 +99,7 @@ export default function SquareEditorialHero() {
                 variants={headlineReveal}
                 initial="hidden"
                 animate="visible"
-                className="text-[14vw] lg:text-[6.5vw] leading-[0.9] tracking-[-0.02em] uppercase m-0 whitespace-nowrap"
+                className="text-[14vw] lg:text-[6.5vw] leading-[0.9] tracking-[-0.02em] uppercase m-0"
                 style={{ 
                   fontFamily: 'var(--font-display)', // Use primary display font
                   fontWeight: 500 // Medium weight for headline as in screenshot
@@ -114,7 +114,7 @@ export default function SquareEditorialHero() {
                 variants={headlineReveal}
                 initial="hidden"
                 animate="visible"
-                className="text-[14vw] lg:text-[6.5vw] leading-[0.9] tracking-[-0.02em] uppercase m-0 whitespace-nowrap"
+                className="text-[14vw] lg:text-[6.5vw] leading-[0.9] tracking-[-0.02em] uppercase m-0"
                 style={{ 
                   fontFamily: 'var(--font-display)', // Use primary display font
                   fontWeight: 500
@@ -129,7 +129,7 @@ export default function SquareEditorialHero() {
                 variants={headlineReveal}
                 initial="hidden"
                 animate="visible"
-                className="text-[14vw] lg:text-[6.5vw] leading-[0.9] tracking-[-0.02em] text-white/70 italic capitalize m-0 whitespace-nowrap"
+                className="text-[14vw] lg:text-[6.5vw] leading-[0.9] tracking-[-0.02em] text-white/70 italic capitalize m-0"
                 style={{ 
                   fontFamily: 'var(--font-display)', 
                   fontWeight: 300

@@ -58,7 +58,7 @@ export default function ProjectsGallery() {
             Selected Works
           </span>
           <span className="text-[11px] font-mono tracking-[0.2em] text-black/50 uppercase">
-            {projects.length} Projects
+            In Production
           </span>
         </div>
 
@@ -72,7 +72,7 @@ export default function ProjectsGallery() {
             <span className="text-[#888]">Works.</span>
           </h2>
           <p className="mt-6 text-sm text-[#666] font-light max-w-[280px] leading-relaxed">
-            Platforms engineered for high-volume commerce & conversion.
+            Our latest projects are currently in production — real work, coming soon.
           </p>
         </div>
 
@@ -148,7 +148,7 @@ export default function ProjectsGallery() {
                 Selected Works
               </span>
               <span className="text-[11px] font-mono tracking-[0.2em] text-black/50 uppercase">
-                {projects.length} Projects
+                In Production
               </span>
             </motion.div>
 
@@ -166,7 +166,7 @@ export default function ProjectsGallery() {
                 <span className="text-[#888]">Works.</span>
               </h2>
               <p className="mt-4 text-sm text-[#666] font-light max-w-[280px] leading-relaxed">
-                Platforms engineered for high-volume commerce & conversion.
+                Our latest projects are currently in production — real work, coming soon.
               </p>
             </motion.div>
 
@@ -222,7 +222,7 @@ export default function ProjectsGallery() {
                         whileHover={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
                       >
-                        View Project
+                        Coming Soon
                       </motion.span>
                     </motion.div>
                   </div>
