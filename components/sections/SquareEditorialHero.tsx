@@ -162,7 +162,7 @@ export default function SquareEditorialHero() {
                   className="text-base md:text-lg leading-[1.6] text-white/80 mb-10"
                   style={{ fontFamily: 'var(--font-body)', fontWeight: 300 }}
                 >
-                  We combine strategic branding, high-end web development, and social media ecosystems to build digital experiences that captivate and convert.
+                  We combine strategic branding, high-end web development, and custom enterprise software to build digital experiences and operational systems that scale.
                 </motion.p>
 
                 <motion.div

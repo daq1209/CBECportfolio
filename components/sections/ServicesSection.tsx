@@ -24,29 +24,40 @@ const services = [
     colorBorder: "border-[#333333]",
     colorText: "text-white",
     metrics: ["Custom Websites", "Framer/React", "Conversion Optimization"],
-    topOffset: "top-[13vh] md:top-[15vh]"
+    topOffset: "top-[13vh] md:top-[14vh]"
   },
   {
     id: 3,
     number: "03",
+    title: "Custom Software Solutions",
+    description: "Bespoke internal tools, CRM systems, and scalable SaaS platforms designed with a focus on UX to streamline your business operations and drive efficiency.",
+    colorBg: "bg-[#222222]",
+    colorBorder: "border-[#444444]",
+    colorText: "text-white",
+    metrics: ["SaaS Platforms", "Internal Tools", "System Architecture"],
+    topOffset: "top-[16vh] md:top-[18vh]"
+  },
+  {
+    id: 4,
+    number: "04",
     title: "Social Media & Content",
     description: "End-to-end content ecosystems that build engaged communities and drive organic growth across all digital touchpoints.",
     colorBg: "bg-[#1a1a1a]",
     colorBorder: "border-[#333333]",
     colorText: "text-white",
     metrics: ["Content Creation", "Platform Strategy", "Campaign Management"],
-    topOffset: "top-[16vh] md:top-[20vh]"
+    topOffset: "top-[19vh] md:top-[22vh]"
   },
   {
-    id: 4,
-    number: "04",
+    id: 5,
+    number: "05",
     title: "Creative Strategy",
     description: "Data-informed creative campaigns that bridge the gap between stunning aesthetics and measurable business growth.",
     colorBg: "bg-[#66FF80]",
     colorBorder: "border-[#88ff9f]",
     colorText: "text-[#0a0a0a]",
     metrics: ["Digital Campaigns", "Art Direction", "Growth Marketing"],
-    topOffset: "top-[19vh] md:top-[25vh]"
+    topOffset: "top-[22vh] md:top-[26vh]"
   }
 ];
 

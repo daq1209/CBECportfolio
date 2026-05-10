@@ -7,31 +7,24 @@ import Image from "next/image";
 const projects = [
   {
     id: 1,
-    title: "Oilivia",
-    category: "Skin Care · eCommerce",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=2670&auto=format&fit=crop",
-    year: "2024",
+    title: "In Production",
+    category: "Branding · Web Dev",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop",
+    year: "Coming Soon",
   },
   {
     id: 2,
-    title: "The House of Kinos",
-    category: "Luxury · Fashion",
-    image: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2670&auto=format&fit=crop",
-    year: "2023",
+    title: "In Production",
+    category: "SaaS · Enterprise",
+    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2669&auto=format&fit=crop",
+    year: "Coming Soon",
   },
   {
     id: 3,
-    title: "Aura Dynamics",
-    category: "Tech · Wearables",
-    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2670&auto=format&fit=crop",
-    year: "2025",
-  },
-  {
-    id: 4,
-    title: "Scentia",
-    category: "Fragrance · Boutique",
-    image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?q=80&w=2670&auto=format&fit=crop",
-    year: "2024",
+    title: "In Production",
+    category: "Creative · Campaign",
+    image: "https://images.unsplash.com/photo-1449247709967-d4461a6a6103?q=80&w=2671&auto=format&fit=crop",
+    year: "Coming Soon",
   },
 ];
 

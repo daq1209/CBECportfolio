@@ -106,7 +106,7 @@ export default function AboutSection() {
               Based in Vietnam, built for global markets. We are a creative studio that believes aesthetics must drive business outcomes. Every pixel we push and every brand identity we forge is designed to captivate and convert.
             </p>
             <p className="text-lg md:text-xl font-light text-white/80 leading-relaxed">
-              From bespoke web development to complete social media ecosystems, we deliver the creative infrastructure your brand needs to stand out in a crowded digital landscape.
+              From bespoke web development and powerful enterprise software to complete social media ecosystems, we deliver the creative and technical infrastructure your brand needs to stand out in a crowded digital landscape.
             </p>
           </motion.div>
 
