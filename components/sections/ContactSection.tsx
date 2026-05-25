@@ -18,7 +18,7 @@ export default function ContactSection() {
         <div className="max-w-[1400px] mx-auto w-full h-px bg-white/10" />
       </div>
 
-      <div className="flex flex-col items-center justify-center min-h-[80vh] px-6 md:px-16">
+      <div className="flex flex-col items-center justify-center min-h-[80vh] px-6 md:px-16 pb-28 md:pb-36">
         <motion.div
           className="text-center mb-12 md:mb-20"
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
