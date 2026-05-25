@@ -4,7 +4,7 @@ import { Red_Hat_Display, Red_Hat_Text, Be_Vietnam_Pro } from "next/font/google"
 import { ReactLenis } from "lenis/react";
 import { LanguageProvider } from "@/context/LanguageContext";
 import LanguageGate from "@/components/LanguageGate";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
+// import LanguageSwitcher from "@/components/LanguageSwitcher";
 import FontWrapper from "@/components/FontWrapper";
 import "./globals.css";
 
@@ -53,7 +53,7 @@ export default function RootLayout({
         <LanguageProvider>
           <FontWrapper>
             <LanguageGate />
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */}
             <ReactLenis root>{children}</ReactLenis>
           </FontWrapper>
         </LanguageProvider>

@@ -25,18 +25,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     setTimeout(() => {
       setMounted(true);
-      const saved = localStorage.getItem("cbec-lang") as Language | null;
-      if (saved === "en" || saved === "vi") {
-        setLanguageState(saved);
-      } else {
-        setLanguageState("en");
-      }
+      // Temporarily force English only
+      setLanguageState("en");
     }, 0);
   }, []);
 
-  const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
-    localStorage.setItem("cbec-lang", lang);
+  const setLanguage = () => {
+    // Temporarily force English only
+    setLanguageState("en");
   };
 
   const setHasChosen = (val: boolean) => {
