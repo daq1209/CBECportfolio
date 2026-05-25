@@ -9,18 +9,30 @@ import { translations } from "@/lib/translations";
 const projects = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2670&auto=format&fit=crop",
+    title: "Richmond Smiles",
+    image: "/projects/richmondsmiles.jpg",
     category: "gallery.cat1",
+    link: "https://www.richmondsmiles.com.au/",
+    isReal: true,
+    isLogo: false,
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=2669&auto=format&fit=crop",
-    category: "gallery.cat2",
+    title: "Lee Concept",
+    image: "/projects/383084327_122117840984033541_1787976392589229528_n.jpg",
+    category: "gallery.cat5",
+    link: "https://leeconcept.com.vn/",
+    isReal: true,
+    isLogo: true,
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1449247709967-d4461a6a6103?q=80&w=2671&auto=format&fit=crop",
-    category: "gallery.cat3",
+    title: "BANH MI NGON",
+    image: "/projects/5e0d1b7bdd555c0b0544 (1).jpg",
+    category: "gallery.cat6",
+    link: "https://www.behance.net/gallery/167430343/BANH-MI-NGON",
+    isReal: true,
+    isLogo: true,
   },
 ];
 
@@ -28,6 +40,8 @@ const PROJECT_CATEGORIES: Record<string, { en: string; vi: string }> = {
   "gallery.cat1": { en: "Branding · Web Dev", vi: "Thương hiệu · Web" },
   "gallery.cat2": { en: "SaaS · Enterprise", vi: "SaaS · Doanh nghiệp" },
   "gallery.cat3": { en: "Creative · Campaign", vi: "Sáng tạo · Chiến dịch" },
+  "gallery.cat5": { en: "Web Dev", vi: "Lập trình Web" },
+  "gallery.cat6": { en: "Branding", vi: "Thương hiệu" },
 };
 
 export default function ProjectsGallery() {
@@ -60,7 +74,7 @@ export default function ProjectsGallery() {
 
         <div className="mb-16">
           <h2
-            className="text-[14vw] font-bold leading-[0.88] tracking-tighter uppercase text-[#111]"
+            className="text-[14vw] font-bold leading-[1.05] tracking-tighter uppercase text-[#111]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {t.headline1}
@@ -81,23 +95,28 @@ export default function ProjectsGallery() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              onClick={() => {
+                if (project.isReal && project.link) {
+                  window.open(project.link, "_blank", "noopener,noreferrer");
+                }
+              }}
             >
               <span className="absolute -top-6 left-0 text-[10px] font-mono text-black/30 tracking-widest">
                 0{i + 1}
               </span>
               <div className="relative w-full aspect-[4/5] overflow-hidden bg-[#e5e3de] mb-4">
-                <Image src={project.image} alt={t.status} fill sizes="100vw" className="object-cover" quality={90} />
+                <Image src={project.image} alt={project.title || t.status} fill sizes="100vw" className={project.isLogo ? "object-contain p-12" : "object-cover"} quality={90} />
               </div>
               <div className="flex justify-between items-end">
                 <div>
                   <h3 className="text-lg font-bold uppercase tracking-tight text-[#0a0a0a] mb-1" style={{ fontFamily: "var(--font-display)" }}>
-                    {t.status}
+                    {project.isReal ? project.title : t.status}
                   </h3>
                   <p className="text-[10px] font-mono tracking-[0.18em] text-black/40 uppercase">
                     {PROJECT_CATEGORIES[project.category][language]}
                   </p>
                 </div>
-                <span className="text-[11px] font-mono text-black/30 tracking-widest">{t.hover}</span>
+                <span className="text-[11px] font-mono text-black/30 tracking-widest">{project.isReal ? t.viewProject : t.comingSoon}</span>
               </div>
             </motion.div>
           ))}
@@ -126,7 +145,7 @@ export default function ProjectsGallery() {
               className="absolute top-24 left-16 z-10 pointer-events-none"
             >
               <h2
-                className="text-[7vw] font-bold leading-[0.88] tracking-tighter uppercase text-[#111]"
+                className="text-[7vw] font-bold leading-[1.05] tracking-tighter uppercase text-[#111]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {t.headline1}
@@ -148,6 +167,11 @@ export default function ProjectsGallery() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: i * 0.07 }}
+                  onClick={() => {
+                    if (project.isReal && project.link) {
+                      window.open(project.link, "_blank", "noopener,noreferrer");
+                    }
+                  }}
                 >
                   <span className="absolute -top-5 left-0 text-[10px] font-mono text-black/20 tracking-widest">
                     0{i + 1}
@@ -158,7 +182,7 @@ export default function ProjectsGallery() {
                       whileHover={{ scale: 1.04 }}
                       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <Image src={project.image} alt={t.status} fill sizes="(max-width: 1024px) 36vw, 28vw" className="object-cover" quality={90} />
+                      <Image src={project.image} alt={project.title || t.status} fill sizes="(max-width: 1024px) 36vw, 28vw" className={project.isLogo ? "object-contain p-16" : "object-cover"} quality={90} />
                     </motion.div>
                     <motion.div
                       className="absolute inset-0 bg-black/40 flex items-center justify-center"
@@ -172,20 +196,20 @@ export default function ProjectsGallery() {
                         whileHover={{ y: 0, opacity: 1 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
                       >
-                        {t.hover}
+                        {project.isReal ? t.viewProject : t.comingSoon}
                       </motion.span>
                     </motion.div>
                   </div>
                   <div className="mt-5 flex justify-between items-end">
                     <div>
                       <h3 className="text-lg font-bold uppercase tracking-tight text-[#0a0a0a] mb-1" style={{ fontFamily: "var(--font-display)" }}>
-                        {t.status}
+                        {project.isReal ? project.title : t.status}
                       </h3>
                       <p className="text-[10px] font-mono tracking-[0.18em] text-black/35 uppercase">
                         {PROJECT_CATEGORIES[project.category][language]}
                       </p>
                     </div>
-                    <span className="text-[11px] font-mono text-black/25 tracking-widest">{t.hover}</span>
+                    <span className="text-[11px] font-mono text-black/25 tracking-widest">{project.isReal ? t.viewProject : t.comingSoon}</span>
                   </div>
                 </motion.div>
               ))}

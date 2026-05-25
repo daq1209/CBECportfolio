@@ -86,37 +86,37 @@ export default function SquareEditorialHero() {
 
           <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center h-full">
             <div className="col-span-1 lg:col-span-7 flex flex-col z-10 pointer-events-auto">
-              <div className="overflow-hidden mb-1 pb-2">
+              <div className="overflow-hidden mb-1 py-1">
                 <motion.h1
                   custom={0}
                   variants={headlineReveal}
                   initial="hidden"
                   animate="visible"
-                  className="text-[14vw] lg:text-[6.5vw] leading-[0.9] tracking-[-0.02em] uppercase m-0"
+                  className="text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] uppercase m-0"
                   style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
                 >
                   {t.line1}
                 </motion.h1>
               </div>
-              <div className="overflow-hidden mb-1 pb-2">
+              <div className="overflow-hidden mb-1 py-1">
                 <motion.h1
                   custom={1}
                   variants={headlineReveal}
                   initial="hidden"
                   animate="visible"
-                  className="text-[14vw] lg:text-[6.5vw] leading-[0.9] tracking-[-0.02em] uppercase m-0"
+                  className="text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] uppercase m-0"
                   style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
                 >
                   {t.line2}
                 </motion.h1>
               </div>
-              <div className="overflow-hidden pb-2">
+              <div className="overflow-hidden py-1">
                 <motion.h1
                   custom={2}
                   variants={headlineReveal}
                   initial="hidden"
                   animate="visible"
-                  className="text-[14vw] lg:text-[6.5vw] leading-[0.9] tracking-[-0.02em] text-white/70 italic capitalize m-0"
+                  className="text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] text-white/70 italic capitalize m-0"
                   style={{ fontFamily: 'var(--font-display)', fontWeight: 300 }}
                 >
                   {t.line3}

@@ -1,12 +1,10 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function LanguageSwitcher() {
   const { language, setLanguage } = useLanguage();
-  const [hovered, setHovered] = useState(false);
 
   const toggle = () => setLanguage(language === "en" ? "vi" : "en");
   const next = language === "en" ? "VI" : "EN";
@@ -14,8 +12,6 @@ export default function LanguageSwitcher() {
   return (
     <motion.button
       onClick={toggle}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5, delay: 1.2 }}

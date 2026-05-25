@@ -48,7 +48,7 @@ export default function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-[10vw] md:text-[6vw] font-bold leading-none tracking-tighter text-white uppercase"
+            className="text-[10vw] md:text-[6vw] font-bold leading-[1.1] tracking-tighter text-white uppercase"
             style={{ fontFamily: 'var(--font-display)' }}
           >
             {t.heading}
@@ -117,7 +117,7 @@ function ServiceCard({ item, index, colors, topOffset }: ServiceCardProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end relative z-10 w-full h-full">
           <div className="lg:col-span-7 flex flex-col justify-end h-full">
             <h3
-              className="text-[8vw] md:text-[5vw] lg:text-[4vw] font-bold leading-[0.9] tracking-tighter uppercase mb-6 md:mb-12"
+              className="text-[8vw] md:text-[5vw] lg:text-[4vw] font-bold leading-[1.05] tracking-tighter uppercase mb-6 md:mb-12"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {item.title}

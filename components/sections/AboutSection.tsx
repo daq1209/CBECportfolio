@@ -48,28 +48,28 @@ export default function AboutSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          <div className="overflow-hidden">
+          <div className="overflow-hidden py-1">
             <motion.h2
               variants={revealVariants}
-              className="text-[10vw] md:text-[6vw] leading-[0.95] tracking-tighter uppercase font-bold"
+              className="text-[10vw] md:text-[6vw] leading-[1.1] tracking-tighter uppercase font-bold"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               {t.line1}
             </motion.h2>
           </div>
-          <div className="overflow-hidden">
+          <div className="overflow-hidden py-1">
             <motion.h2
               variants={revealVariants}
-              className="text-[10vw] md:text-[6vw] leading-[0.95] tracking-tighter uppercase font-bold text-[#66FF80]"
+              className="text-[10vw] md:text-[6vw] leading-[1.1] tracking-tighter uppercase font-bold text-[#66FF80]"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               {t.line2}
             </motion.h2>
           </div>
-          <div className="overflow-hidden mt-4 md:mt-8 ml-0 md:ml-32">
+          <div className="overflow-hidden mt-4 md:mt-8 ml-0 md:ml-32 py-1">
             <motion.h2
               variants={revealVariants}
-              className="text-[8vw] md:text-[4vw] leading-[0.95] tracking-tight text-white/60 italic"
+              className="text-[8vw] md:text-[4vw] leading-[1.15] tracking-tight text-white/60 italic"
               style={{ fontFamily: 'var(--font-display)', fontWeight: 300 }}
             >
               {t.line3}

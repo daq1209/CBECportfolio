@@ -7,11 +7,9 @@ import { translations } from "@/lib/translations";
 
 function PrincipleItem({
   principle,
-  index,
   isLast,
 }: {
   principle: { number: string; title: string; description: string };
-  index: number;
   isLast: boolean;
 }) {
   const itemRef = useRef<HTMLDivElement>(null);
@@ -36,7 +34,7 @@ function PrincipleItem({
         </div>
         <motion.div style={{ x: titleX }} className="md:col-span-6">
           <h3
-            className="text-[9vw] md:text-[4vw] lg:text-[3.5vw] font-bold leading-[0.95] tracking-tighter uppercase text-white"
+            className="text-[9vw] md:text-[4vw] lg:text-[3.5vw] font-bold leading-[1.1] tracking-tighter uppercase text-white"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {principle.title}
@@ -77,13 +75,13 @@ export default function PrinciplesSection() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2
-            className="text-[8vw] md:text-[4.5vw] font-bold leading-[0.95] tracking-tighter uppercase text-white"
+            className="text-[8vw] md:text-[4.5vw] font-bold leading-[1.1] tracking-tighter uppercase text-white"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {t.heading1}
           </h2>
           <h2
-            className="text-[8vw] md:text-[4.5vw] font-bold leading-[0.95] tracking-tighter uppercase text-[#66FF80]"
+            className="text-[8vw] md:text-[4.5vw] font-bold leading-[1.1] tracking-tighter uppercase text-[#66FF80]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {t.heading2}
@@ -98,7 +96,6 @@ export default function PrinciplesSection() {
             <PrincipleItem
               key={principle.number}
               principle={principle}
-              index={index}
               isLast={index === t.items.length - 1}
             />
           ))}

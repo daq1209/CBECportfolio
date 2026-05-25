@@ -155,7 +155,7 @@ function LangCard({
         <motion.h2
           animate={{ color: hovered || isChoosing ? "#0a0a0a" : "#ffffff" }}
           transition={{ duration: 0.3 }}
-          className="text-[9vw] md:text-[4vw] font-bold leading-none tracking-tighter uppercase"
+          className="text-[9vw] md:text-[4vw] font-bold leading-[1.15] tracking-tighter uppercase py-2"
           style={{ fontFamily: "var(--font-display)" }}
         >
           {label}

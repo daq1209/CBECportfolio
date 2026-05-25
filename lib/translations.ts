@@ -28,6 +28,8 @@ export const translations = {
       description:
         "Our latest projects are currently in production — real work, coming soon.",
       hover: "Coming Soon",
+      comingSoon: "Coming Soon",
+      viewProject: "View Project",
     },
 
     // ── About ──
@@ -151,12 +153,12 @@ export const translations = {
     // ── Hero ──
     hero: {
       logo: "CBEC SOLUTIONS.",
-      line1: "Agency",
-      line2: "SÁNG TẠO",
+      line1: "Creative",
+      line2: "Agency",
       line3: "Toàn cầu.",
-      tagline: "Thiết kế tạo ra kết quả.",
+      tagline: "Thiết kế tạo ra doanh thu.",
       description:
-        "Chúng tôi kết hợp thương hiệu chiến lược, phát triển web cao cấp và phần mềm doanh nghiệp tùy chỉnh để xây dựng trải nghiệm số và hệ thống vận hành có khả năng mở rộng.",
+        "Chiến lược thương hiệu, thiết kế web và phần mềm doanh nghiệp. Chúng tôi xây dựng sản phẩm số và hệ thống vận hành thực tế, có khả năng mở rộng.",
       scroll: "Cuộn để khám phá",
     },
 
@@ -167,19 +169,21 @@ export const translations = {
       headline1: "Dự án",
       headline2: "Tiêu biểu.",
       description:
-        "Các dự án mới nhất của chúng tôi hiện đang trong quá trình sản xuất — công việc thực sự, sắp ra mắt.",
+        "Những dự án mới nhất của chúng tôi đang được triển khai. Việc thật, kết quả thật — sắp ra mắt.",
       hover: "Sắp ra mắt",
+      comingSoon: "Sắp ra mắt",
+      viewProject: "Xem dự án",
     },
 
     // ── About ──
     about: {
       label: "Về chúng tôi",
-      line1: "Chúng tôi kiến tạo",
-      line2: "Trải nghiệm",
-      line3: "Kỹ thuật số.",
-      p1: "Có trụ sở tại Việt Nam, xây dựng cho thị trường toàn cầu. Chúng tôi là một studio sáng tạo tin rằng thẩm mỹ phải thúc đẩy kết quả kinh doanh. Mọi pixel và mọi nhận diện thương hiệu chúng tôi tạo ra đều được thiết kế để thu hút và chuyển đổi.",
-      p2: "Từ phát triển web bespoke và phần mềm doanh nghiệp mạnh mẽ đến hệ sinh thái mạng xã hội toàn diện, chúng tôi cung cấp cơ sở hạ tầng sáng tạo và kỹ thuật mà thương hiệu của bạn cần để nổi bật.",
-      metric: "Trải nghiệm kỹ thuật số đã triển khai.",
+      line1: "Làm",
+      line2: "Sản phẩm",
+      line3: "Số.",
+      p1: "Đội ngũ ở Việt Nam, làm việc với thị trường toàn cầu. Chúng tôi là creative agency tập trung vào việc dùng thiết kế để giải quyết bài toán kinh doanh. Đẹp thôi chưa đủ, mọi thứ chúng tôi làm đều phải mang lại chuyển đổi.",
+      p2: "Từ website, phần mềm quản trị cho đến nội dung mạng xã hội. Chúng tôi lo phần kỹ thuật và sáng tạo để thương hiệu của bạn hoạt động hiệu quả trên môi trường online.",
+      metric: "Sản phẩm kỹ thuật số đã vận hành.",
     },
 
     // ── Services ──
@@ -191,35 +195,35 @@ export const translations = {
           number: "01",
           title: "Thương hiệu & Nhận diện",
           description:
-            "Chúng tôi xây dựng bộ nhận diện thương hiệu thuyết phục, cộng hưởng với đối tượng mục tiêu và thiết lập vị thế vững chắc trên thị trường.",
+            "Làm nhận diện thương hiệu rõ ràng, đúng tệp khách hàng và giúp bạn nổi bật thực sự so với đối thủ.",
           metrics: ["Nhận diện hình ảnh", "Bộ tiêu chuẩn thương hiệu", "Định hướng sáng tạo"],
         },
         {
           number: "02",
           title: "Phát triển Web & UI/UX",
           description:
-            "Website hiệu suất cao, đạt giải thưởng — được thiết kế cho trải nghiệm người dùng mượt mà và tỷ lệ chuyển đổi tối đa.",
+            "Thiết kế và lập trình website chạy nhanh, dễ dùng và tối ưu để khách truy cập mua hàng.",
           metrics: ["Website tùy chỉnh", "Framer/React", "Tối ưu chuyển đổi"],
         },
         {
           number: "03",
           title: "Phần mềm doanh nghiệp",
           description:
-            "Công cụ nội bộ bespoke, hệ thống CRM và nền tảng SaaS tập trung vào UX để tối ưu quy trình vận hành và gia tăng hiệu suất doanh nghiệp.",
+            "Viết phần mềm nội bộ, CRM và SaaS. Giúp doanh nghiệp của bạn tự động hóa công việc và vận hành trơn tru hơn.",
           metrics: ["Nền tảng SaaS", "Công cụ nội bộ", "Kiến trúc hệ thống"],
         },
         {
           number: "04",
           title: "Mạng xã hội & Nội dung",
           description:
-            "Hệ sinh thái nội dung toàn diện giúp xây dựng cộng đồng gắn kết và thúc đẩy tăng trưởng hữu cơ trên mọi điểm chạm kỹ thuật số.",
+            "Làm nội dung mạng xã hội để xây dựng cộng đồng, thu hút người xem và giữ chân khách hàng.",
           metrics: ["Sản xuất nội dung", "Chiến lược kênh", "Quản lý chiến dịch"],
         },
         {
           number: "05",
           title: "Chiến lược sáng tạo",
           description:
-            "Chiến dịch sáng tạo dựa trên dữ liệu, kết nối thẩm mỹ đỉnh cao với tăng trưởng kinh doanh đo lường được.",
+            "Lên chiến dịch sáng tạo dựa trên dữ liệu thật. Kết hợp giữa thiết kế đẹp và số liệu kinh doanh đo đếm được.",
           metrics: ["Chiến dịch số", "Định hướng nghệ thuật", "Marketing tăng trưởng"],
         },
       ],
@@ -230,56 +234,56 @@ export const translations = {
       label: "Nguyên tắc hoạt động",
       heading1: "Cách chúng tôi",
       heading2: "vận hành.",
-      sub: "Sáu nguyên tắc bất biến định hình mọi dự án, mọi quyết định và mọi dòng công việc chúng tôi thực hiện.",
+      sub: "Sáu nguyên tắc làm việc cốt lõi của chúng tôi, áp dụng cho mọi dự án và mọi dòng code.",
       items: [
         {
           number: "01",
-          title: "Hiệu quả là trên hết.",
+          title: "Hiệu quả.",
           description:
-            "Mọi quyết định thiết kế đều được đánh giá qua lăng kính tác động đến trải nghiệm người dùng và mục tiêu kinh doanh. Không tạo ra hiệu quả thì không triển khai.",
+            "Thiết kế phải tốt cho người dùng và ra số cho doanh nghiệp. Cái gì không đem lại giá trị thực tế, chúng tôi bỏ.",
         },
         {
           number: "02",
-          title: "Chỉn chu & Tinh tế.",
+          title: "Chỉn chu.",
           description:
-            "Chúng tôi ám ảnh với từng chi tiết nhỏ. Micro-interaction, typography hoàn hảo và thực thi pixel-perfect là tiêu chuẩn của chúng tôi.",
+            "Kỹ tính từng chi tiết nhỏ. Từ hiệu ứng, font chữ cho đến chất lượng code — mọi thứ đều phải làm tới nơi tới chốn.",
         },
         {
           number: "03",
-          title: "Minh bạch tuyệt đối.",
+          title: "Nói thẳng.",
           description:
-            "Không ẩn sau những thuật ngữ thiết kế phức tạp. Chúng tôi truyền đạt quy trình sáng tạo, thách thức và quyết định với sự thẳng thắn triệt để.",
+            "Không lạm dụng từ ngữ chuyên ngành để lòe khách hàng. Có gì nói nấy về quy trình, khó khăn và cách chúng tôi đưa ra quyết định.",
         },
         {
           number: "04",
-          title: "Sáng tạo linh hoạt.",
+          title: "Làm nhanh.",
           description:
-            "Thế giới số thay đổi nhanh. Chúng tôi còn nhanh hơn. Chúng tôi mang đến công việc sáng tạo cao cấp mà không có sự cồng kềnh của agency truyền thống.",
+            "Làm việc ra kết quả chất lượng nhưng không bị vướng quy trình cồng kềnh như các agency truyền thống.",
         },
         {
           number: "05",
-          title: "Chuẩn mực toàn cầu.",
+          title: "Chuẩn quốc tế.",
           description:
-            "Có trụ sở tại Việt Nam không có nghĩa là tư duy cục bộ. Chúng tôi xây dựng cho sân khấu Mỹ và châu Âu. Mọi lúc, mọi dự án.",
+            "Làm ở Việt Nam nhưng sản phẩm ra lò phải đủ sức mang đi đánh thị trường Mỹ và châu Âu. Không ngoại lệ.",
         },
         {
           number: "06",
-          title: "Bền vững theo thời gian.",
+          title: "Không lỗi thời.",
           description:
-            "Bối cảnh kỹ thuật số thay đổi từng ngày. Chúng tôi đi trước xu hướng thiết kế và chuyển dịch công nghệ để thương hiệu của bạn không bao giờ lỗi thời.",
+            "Công nghệ đổi mới liên tục. Chúng tôi làm sản phẩm với công nghệ và thiết kế hiện đại nhất để đồ của bạn dùng được lâu dài.",
         },
       ],
     },
 
     // ── Contact ──
     contact: {
-      line1: "Hãy cùng",
-      line2: "Xây dựng.",
+      line1: "Bắt tay",
+      line2: "Vào việc.",
       hq: "Trụ sở",
       address: "Tầng 17, 72A Lê Thánh Tôn,\nPhường Bến Nghé, Quận 1,\nTP.HCM",
-      directLine: "Hotline",
+      directLine: "Liên hệ trực tiếp",
       footer: "© 2026 CBEC Solutions. Mọi quyền được bảo lưu.",
-      tagline: "Việt Nam → Toàn cầu",
+      tagline: "Vietnam → Global",
     },
   },
 } as const;

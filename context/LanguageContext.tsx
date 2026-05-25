@@ -19,16 +19,19 @@ const LanguageContext = createContext<LanguageContextType>({
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>("en");
-  const [hasChosen, setHasChosenState] = useState(false);
+  const [hasChosen, setHasChosenState] = useState(true); // Default to true to bypass gate
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    const saved = localStorage.getItem("cbec-lang") as Language | null;
-    if (saved === "en" || saved === "vi") {
-      setLanguageState(saved);
-      setHasChosenState(true);
-    }
+    setTimeout(() => {
+      setMounted(true);
+      const saved = localStorage.getItem("cbec-lang") as Language | null;
+      if (saved === "en" || saved === "vi") {
+        setLanguageState(saved);
+      } else {
+        setLanguageState("en");
+      }
+    }, 0);
   }, []);
 
   const setLanguage = (lang: Language) => {

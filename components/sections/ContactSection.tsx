@@ -27,13 +27,13 @@ export default function ContactSection() {
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
           <h2
-            className="text-[12vw] md:text-[8vw] font-bold leading-[0.9] tracking-tighter uppercase text-white"
+            className="text-[12vw] md:text-[8vw] font-bold leading-[1.1] tracking-tighter uppercase text-white"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {t.line1}
           </h2>
           <h2
-            className="text-[12vw] md:text-[8vw] font-bold leading-[0.9] tracking-tighter uppercase text-[#66FF80]"
+            className="text-[12vw] md:text-[8vw] font-bold leading-[1.1] tracking-tighter uppercase text-[#66FF80]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {t.line2}
