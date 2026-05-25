@@ -13,12 +13,12 @@ export default function ContactSection() {
   const addressLines = t.address.split("\n");
 
   return (
-    <section className="relative w-full bg-[#0a0a0a] text-white overflow-hidden" style={{ minHeight: "100vh" }}>
-      <div className="w-full px-6 md:px-16 pt-20">
+    <section className="relative w-full bg-[#0a0a0a] text-white overflow-hidden flex flex-col justify-between" style={{ minHeight: "100vh" }}>
+      <div className="w-full px-6 md:px-16 pt-20 flex-shrink-0">
         <div className="max-w-[1400px] mx-auto w-full h-px bg-white/10" />
       </div>
 
-      <div className="flex flex-col items-center justify-center min-h-[80vh] px-6 md:px-16 pb-28 md:pb-36">
+      <div className="flex-grow flex flex-col items-center justify-center px-6 md:px-16 py-12 md:py-20">
         <motion.div
           className="text-center mb-12 md:mb-20"
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
@@ -100,7 +100,7 @@ export default function ContactSection() {
       </div>
 
       <motion.div
-        className="absolute bottom-0 left-0 right-0 px-6 md:px-16 pb-8"
+        className="w-full px-6 md:px-16 pb-8 flex-shrink-0"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
