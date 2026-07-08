@@ -1,0 +1,47 @@
+{
+  "intro": "Off the shelf customer relationship management software often comes with high monthly user fees and complex features your team does not use. At CBEC Solutions, we design and build custom CRM systems tailored specifically around your unique sales workflows, customer pipelines, and internal business structures. This approach eliminates licensing fees and improves staff adoption.",
+  "sections": [
+    {
+      "title": "Operational Inefficiencies of Off the Shelf CRM Systems",
+      "paragraphs": [
+        "Many businesses struggle with generic customer relationship management software because the interfaces are cluttered with unused features. Long standing studies from Gartner and Forrester indicate that CRM implementation projects face failure or adoption issues in 30% to 70% of cases. These failures are often caused by user resistance to overly complex layouts and a lack of custom integration with existing business processes.",
+        "Additionally, monthly licensing fees for popular platforms scale rapidly as your team grows, making them highly expensive over time. Custom systems carry zero recurring seat licenses, representing a significant long term cost advantage. By developing a dedicated solution, you ensure that every screen is designed specifically for your daily operations."
+      ]
+    },
+    {
+      "title": "Custom Customer Relationship Management Solutions",
+      "paragraphs": [
+        "We build custom CRM solutions that streamline your sales operations and customer management. Our platforms are designed to be lightweight and fast, showing only the data and fields necessary for your workflow. This simplicity increases employee productivity and reduces the time required to onboard new sales representatives.",
+        "We map your actual offline business processes into intuitive digital stages, allowing your team to update lead statuses with ease. The software can automate repetitive tasks, such as generating follow up reminders and assigning leads to available agents according to custom distribution rules."
+      ]
+    },
+    {
+      "title": "Third Party Integrations and Data Synchronization",
+      "paragraphs": [
+        "Modern sales operations rely on multiple software applications that must communicate seamlessly. We build custom API integrations to connect your CRM to Shopify, Stripe, and third party logistics providers. This synchronization ensures that customer data, order details, and shipping statuses are updated in real time across all platforms.",
+        "By automating these data pipelines, we eliminate the need for manual data entry, which reduces administrative errors and saves hours of employee time. Your database remains clean and accurate, providing a reliable foundation for business analysis and marketing campaigns."
+      ]
+    },
+    {
+      "title": "Business Impact and Lifecycle Management",
+      "paragraphs": [
+        "A custom customer relationship management system directly improves your bottom line by increasing client retention and customer lifetime value. Sales representatives can access a unified timeline showing all past client interactions, including email logs, meeting notes, and transaction histories, enabling personalized follow ups.",
+        "We construct our CRM platforms using scalable cloud databases that grow alongside your business. We also provide complete data migration services, securely transferring your legacy customer information from spreadsheets or older systems into the new secure database."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why should I build a custom CRM instead of buying Hubspot or Salesforce?",
+      "answer": "Custom systems carry zero monthly per user licensing fees. You only pay for the initial build, and the system is designed strictly around your workflow without unnecessary features."
+    },
+    {
+      "question": "Can we import our existing customer spreadsheets?",
+      "answer": "Yes. We build data migration scripts that clean and import your legacy Excel or CSV data directly into the new secure database."
+    },
+    {
+      "question": "Can the CRM connect to our invoicing software?",
+      "answer": "Absolutely. We build integrations with accounting APIs like Xero, QuickBooks, or local billing APIs to automate invoice creation."
+    }
+  ]
+}

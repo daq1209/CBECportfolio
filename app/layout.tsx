@@ -1,63 +1,23 @@
-"use client";
-
-import { Red_Hat_Display, Red_Hat_Text, Be_Vietnam_Pro } from "next/font/google";
-import { ReactLenis } from "lenis/react";
-import { LanguageProvider } from "@/context/LanguageContext";
-import LanguageGate from "@/components/LanguageGate";
-// import LanguageSwitcher from "@/components/LanguageSwitcher";
-import FontWrapper from "@/components/FontWrapper";
-import "./globals.css";
-
-/* ── English Typefaces ── */
-const redHatDisplay = Red_Hat_Display({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700", "900"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const redHatText = Red_Hat_Text({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
-  variable: "--font-body",
-  display: "swap",
-});
-
-/* ── Vietnamese Typefaces ── */
-const beVietnamProDisplay = Be_Vietnam_Pro({
-  subsets: ["latin", "vietnamese"],
-  weight: ["300", "400", "500", "700", "800"],
-  variable: "--font-vi-display",
-  display: "swap",
-});
-
-const beVietnamProBody = Be_Vietnam_Pro({
-  subsets: ["latin", "vietnamese"],
-  weight: ["300", "400", "500"],
-  variable: "--font-vi-body",
-  display: "swap",
-});
-
+/**
+ * Root layout — minimal passthrough.
+ *
+ * The `<html>` and `<body>` tags, font variables, and per-locale metadata are
+ * all defined in `app/[lang]/layout.tsx`.  This file is intentionally thin
+ * because Next.js requires a root layout at `app/layout.tsx` even when the
+ * real root layout lives under a dynamic segment.
+ *
+ * Per Next.js 16 docs: "The root layout can be under a dynamic segment, for
+ * example when implementing internationalization with `app/[lang]/layout.js`."
+ * In that pattern the `app/layout.tsx` file is omitted — HOWEVER to avoid a
+ * build error we keep it as a transparent wrapper that does nothing but pass
+ * children through.  The `<html>` / `<body>` are provided by `[lang]/layout`.
+ */
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html
-      lang="en"
-      className={`${redHatDisplay.variable} ${redHatText.variable} ${beVietnamProDisplay.variable} ${beVietnamProBody.variable}`}
-      suppressHydrationWarning
-    >
-      <body suppressHydrationWarning>
-        <LanguageProvider>
-          <FontWrapper>
-            <LanguageGate />
-            {/* <LanguageSwitcher /> */}
-            <ReactLenis root>{children}</ReactLenis>
-          </FontWrapper>
-        </LanguageProvider>
-      </body>
-    </html>
-  );
+  // `[lang]/layout.tsx` renders <html> and <body>.
+  // This wrapper simply returns children so Next.js finds a root layout.
+  return children;
 }

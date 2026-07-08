@@ -1,24 +1,28 @@
 "use client";
 
-import { useLanguage } from "@/context/LanguageContext";
+interface FontWrapperProps {
+  children: React.ReactNode;
+  lang: string; // kept for potential future per-locale overrides
+}
 
 /**
- * FontWrapper — overrides the --font-display and --font-body CSS variables
- * based on the active language. All child components automatically pick up
- * the correct font without any per-component changes.
+ * FontWrapper — previously swapped CSS font variables between EN/VI typefaces.
  *
- * EN: Red Hat Display (Latin-optimised, geometric, editorial)
- * VI: Be Vietnam Pro (designed for Vietnamese diacritics, equally modern)
+ * Now simplified: a single Be Vietnam Pro instance (with both latin + vietnamese
+ * subsets) is loaded in [lang]/layout.tsx and mapped to --font-display and
+ * --font-body globally. No per-locale swap needed — Be Vietnam Pro renders all
+ * Vietnamese diacritics correctly without any variable reassignment.
+ *
+ * The `lang` prop is kept in the interface for future per-locale font weight
+ * or size adjustments if needed (Vietnamese text often benefits from slightly
+ * higher line-height, which can be added here without touching every component).
  */
-export default function FontWrapper({ children }: { children: React.ReactNode }) {
-  const { language } = useLanguage();
-
+export default function FontWrapper({ children, lang: _lang }: FontWrapperProps) {
+  // Vietnamese text benefits from slightly more generous line-height
+  // Apply a subtle global adjustment on the /vi locale
   const style =
-    language === "vi"
-      ? ({
-          "--font-display": "var(--font-vi-display)",
-          "--font-body": "var(--font-vi-body)",
-        } as React.CSSProperties)
+    _lang === "vi"
+      ? ({ lineHeight: "1.75" } as React.CSSProperties)
       : undefined;
 
   return (

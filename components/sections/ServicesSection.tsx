@@ -2,8 +2,17 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
 import { translations } from "@/lib/translations";
+
+/** Maps translation item index → service page slug (matches lib/services.ts) */
+const SERVICE_SLUGS = [
+  "branding-identity",
+  "web-development",
+  "custom-software",
+  "social-media-content",
+  "ecommerce-amazon",
+];
 
 const CARD_COLORS = [
   { colorBg: "bg-[#111111]", colorBorder: "border-[#222222]", colorText: "text-white", isAccent: false },
@@ -23,13 +32,14 @@ const TOP_OFFSETS = [
 
 const TOTAL_CARDS = 5;
 
-export default function ServicesSection() {
+export default function ServicesSection({ lang }: { lang: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { language } = useLanguage();
+  const language = lang === "vi" ? "vi" : "en";
   const t = translations[language].services;
+  const localePath = lang === "vi" ? "/vi" : "/global";
 
   return (
-    <section ref={sectionRef} className="relative w-full bg-[#0a0a0a] pb-32 md:pb-64 pt-20">
+    <section id="services" ref={sectionRef} className="relative w-full bg-[#0a0a0a] pb-32 md:pb-64 pt-20">
       <div className="max-w-[1400px] mx-auto px-6 md:px-16 w-full">
         <div className="mb-20 md:mb-40 flex flex-col items-center text-center">
           <motion.div
@@ -63,6 +73,7 @@ export default function ServicesSection() {
               index={index}
               colors={CARD_COLORS[index]}
               topOffset={TOP_OFFSETS[index]}
+              href={`${localePath}/services/${SERVICE_SLUGS[index]}`}
             />
           ))}
         </div>
@@ -76,9 +87,10 @@ interface ServiceCardProps {
   index: number;
   colors: { colorBg: string; colorBorder: string; colorText: string; isAccent: boolean };
   topOffset: string;
+  href: string;
 }
 
-function ServiceCard({ item, index, colors, topOffset }: ServiceCardProps) {
+function ServiceCard({ item, index, colors, topOffset, href }: ServiceCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -94,10 +106,11 @@ function ServiceCard({ item, index, colors, topOffset }: ServiceCardProps) {
       className={`sticky ${topOffset} w-full h-auto min-h-[60vh] md:h-[70vh] flex items-center justify-center`}
       style={{ zIndex: index + 10 }}
     >
-      <motion.div
-        style={{ opacity: cardOpacity, scale: cardScale }}
-        className={`w-full h-full max-h-[800px] ${colors.colorBg} ${colors.colorText} rounded-3xl md:rounded-[40px] border ${colors.colorBorder} p-6 sm:p-8 md:p-16 flex flex-col justify-between shadow-[0_-20px_50px_rgba(0,0,0,0.4)] overflow-hidden relative group`}
-      >
+      <Link href={href} className="block w-full h-full max-h-[800px]">
+        <motion.div
+          style={{ opacity: cardOpacity, scale: cardScale }}
+          className={`w-full h-full max-h-[800px] ${colors.colorBg} ${colors.colorText} rounded-3xl md:rounded-[40px] border ${colors.colorBorder} p-6 sm:p-8 md:p-16 flex flex-col justify-between shadow-[0_-20px_50px_rgba(0,0,0,0.4)] overflow-hidden relative group cursor-pointer`}
+        >
         {isAccent && (
           <div className="absolute inset-0 bg-gradient-to-tr from-[#3de65a] to-[#9effaf] opacity-50 pointer-events-none" />
         )}
@@ -139,7 +152,8 @@ function ServiceCard({ item, index, colors, topOffset }: ServiceCardProps) {
             </div>
           </div>
         </div>
-      </motion.div>
+        </motion.div>
+      </Link>
     </div>
   );
 }

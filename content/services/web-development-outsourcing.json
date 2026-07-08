@@ -1,0 +1,47 @@
+{
+  "intro": "A business website is no longer just a digital business card, it is the engine of your digital growth. At CBEC Solutions, we specialize in custom web development that prioritizes page speed, search engine optimization, and user conversion. Using modern technology stacks, we build highly responsive and secure web applications that perform under heavy traffic.",
+  "sections": [
+    {
+      "title": "Impact of Web Performance on Business Revenue",
+      "paragraphs": [
+        "Page load times directly influence user retention and conversion rates. A comprehensive study by Portent indicates that a website loading in one second achieves a conversion rate three times higher than a site taking five seconds to load. Furthermore, Google mobile benchmarks state that 53% of mobile visits are abandoned if a page takes longer than three seconds to load.",
+        "Amazon famously reported that every 100 milliseconds of latency cost them 1% in sales revenue, demonstrating the direct financial impact of web speed. A slow website frustrates users and damages brand credibility, which is why optimizing performance is a core business necessity rather than a minor technical detail."
+      ]
+    },
+    {
+      "title": "Custom Web Engineering Services",
+      "paragraphs": [
+        "We build bespoke web platforms tailored to your specific business requirements. Our services include custom eCommerce development, interactive frontends for software as a service applications, and enterprise database integrations. We avoid generic templates, ensuring that your platform is unique and scalable.",
+        "Every project begins with a detailed discovery phase, during which we map user journeys and define system requirements. This process helps us build intuitive layouts that guide visitors toward your call to action, improving your customer acquisition rates."
+      ]
+    },
+    {
+      "title": "Technical Architecture and Performance Optimization",
+      "paragraphs": [
+        "We construct our web applications using Next.js, React, and Node.js. By utilizing Next.js 15 Server Components and static site generation, we bypass database queries during the initial render. This architecture ensures sub second response times and excellent core web vitals.",
+        "We also optimize all media assets by converting images to WebP or AVIF formats and utilizing lazy loading. This reduces the initial page weight, allowing the website to load quickly even on slower mobile networks."
+      ]
+    },
+    {
+      "title": "Case Study and Realized Performance Metrics",
+      "paragraphs": [
+        "Our development practices have helped clients achieve significant improvements in search engine visibility and conversion rates. For instance, in our recent work with Richmond Smiles, we rebuilt their legacy platform, resulting in a 40% improvement in load times and a corresponding increase in online bookings.",
+        "By aligning the design with modern search engine optimization guidelines, we help clients secure higher organic rankings on Google. We combine clean code with structured metadata, making it easier for search bots to crawl and index your content."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do you use pre-built templates or code from scratch?",
+      "answer": "We design and hand-code every website from scratch using Figma and Next.js. This ensures completely unique designs, lightweight codebases, and top tier performance."
+    },
+    {
+      "question": "Will I be able to update content on the website myself?",
+      "answer": "Yes. We integrate headless Content Management Systems like Sanity or Strapi, allowing your team to update blogs, portfolio items, and text without editing the codebase."
+    },
+    {
+      "question": "How do you ensure the website is secure?",
+      "answer": "We host static frontends on edge networks like Vercel or Netlify, minimizing database vulnerability points. We also configure HTTPS, strict security headers, and safe API endpoints."
+    }
+  ]
+}

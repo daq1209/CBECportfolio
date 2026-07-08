@@ -1,0 +1,47 @@
+{
+  "intro": "Tự động hóa bằng trí tuệ nhân tạo (AI Automation) giúp doanh nghiệp xử lý khối lượng công việc lớn với chi phí vận hành tối thiểu. CBEC Solutions thiết kế các giải pháp AI chuyên biệt, giúp huấn luyện trợ lý chat tự động trả lời khách hàng, tự động trích xuất dữ liệu hóa đơn và tối ưu hóa các quy trình văn phòng lặp đi lặp lại.",
+  "sections": [
+    {
+      "title": "Sự Bùng Nổ Của Tự Động Hóa Và Trí Tuệ Nhân Tạo",
+      "paragraphs": [
+        "Trong kỷ nguyên số, việc duy trì các phương thức vận hành thủ công và các công việc lặp đi lặp lại không chỉ làm tiêu tốn quỹ thời gian quý báu mà còn gia tăng tỷ lệ sai sót do yếu tố con người. Khi tốc độ xử lý dữ liệu và phản hồi yêu cầu của khách hàng trở thành thước đo năng lực cạnh tranh, các doanh nghiệp chậm chân trong việc ứng dụng công nghệ sẽ tự đặt mình vào thế bất lợi.",
+        "Nghiên cứu từ tổ chức McKinsey chỉ ra rằng, hơn 60% công việc văn phòng thông thường có thể được tự động hóa ít nhất 30% số lượng tác vụ bằng các giải pháp công nghệ hiện đại. Việc áp dụng trí tuệ nhân tạo vào các quy trình lặp đi lặp lại không chỉ giúp tối ưu hóa chi phí vận hành mà còn giải phóng nguồn nhân lực để tập trung vào các công việc mang tính chiến lược và tạo ra giá trị gia tăng cao hơn."
+      ]
+    },
+    {
+      "title": "Trợ Lý AI Chăm Sóc Khách Hàng Được Huấn Luyện Riêng",
+      "paragraphs": [
+        "Trợ lý AI của chúng tôi được huấn luyện dựa trên bộ tài liệu nội bộ, thông tin sản phẩm và chính sách bán hàng cụ thể của doanh nghiệp bạn. AI có khả năng trả lời chính xác, tự nhiên 80% câu hỏi thường gặp của khách hàng.",
+        "Hệ thống hoạt động liên tục 24/7 trên Fanpage và Zalo OA, giúp phản hồi khách hàng ngay lập tức và tự động chuyển thông tin cho sales khi có yêu cầu mua hàng."
+      ]
+    },
+    {
+      "title": "Tự Động Hóa Trích Xuất Dữ Liệu Hóa Đơn & Tài Liệu (OCR)",
+      "paragraphs": [
+        "Chúng tôi ứng dụng công nghệ OCR kết hợp AI để quét ảnh chụp hóa đơn, file PDF hợp đồng hoặc phiếu giao nhận. AI tự động đọc hiểu và trích xuất dữ liệu số liệu chính xác.",
+        "Dữ liệu này sau đó được đẩy thẳng vào hệ thống kế toán hoặc Google Sheets nội bộ, tiết kiệm hàng giờ nhập liệu thủ công mỗi ngày."
+      ]
+    },
+    {
+      "title": "Liên Kết Quy Trình Tự Động Giữa Các Phần Mềm",
+      "paragraphs": [
+        "Chúng tôi thiết lập các kịch bản tự động hóa kết nối giữa CRM, email, chat nội bộ (Slack/Telegram) và Google Sheets. Mọi tác vụ chuyển giao thông tin đều được thực hiện tức thì mà không cần con người thao tác.",
+        "Các luồng công việc tự động hoạt động chính xác, giảm thiểu sai sót do con người và cải thiện tốc độ phục vụ khách hàng."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Dữ liệu kinh doanh của chúng tôi có bị rò rỉ khi dùng AI không?",
+      "answer": "Không. CBEC sử dụng các cổng kết nối API bảo mật doanh nghiệp của OpenAI và Google Cloud, cam kết không sử dụng dữ liệu của bạn để huấn luyện các mô hình AI công cộng."
+    },
+    {
+      "question": "Hệ thống AI có thể tự động trả lời Zalo OA được không?",
+      "answer": "Hoàn toàn được. Chúng tôi kết nối AI trực tiếp với Zalo OA của doanh nghiệp để tư vấn sản phẩm, báo giá và xin số điện thoại khách hàng tự động."
+    },
+    {
+      "question": "Chi phí vận hành hệ thống AI hàng tháng là bao nhiêu?",
+      "answer": "Chi phí này phụ thuộc vào số lượng tin nhắn thực tế qua API (thường chỉ vài cent trên mỗi cuộc hội thoại). Bạn chỉ trả tiền theo lượng sử dụng thực tế của doanh nghiệp."
+    }
+  ]
+}

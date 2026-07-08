@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/lib/translations";
 
 function PrincipleItem({
@@ -51,9 +50,9 @@ function PrincipleItem({
   );
 }
 
-export default function PrinciplesSection() {
+export default function PrinciplesSection({ lang }: { lang: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { language } = useLanguage();
+  const language = lang === "vi" ? "vi" : "en";
   const t = translations[language].principles;
 
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });

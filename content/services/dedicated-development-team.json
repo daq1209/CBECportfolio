@@ -1,0 +1,40 @@
+{
+  "intro": "Recruiting and retaining qualified software engineers is a persistent obstacle for growing technology companies. At CBEC Solutions, we provide dedicated development teams in Vietnam that function as a direct extension of your onshore department. We handle all recruitment, administrative overhead, and local office operations, allowing you to manage the daily engineering output.",
+  "sections": [
+    {
+      "title": "Recruitment and Scalability Challenges in Technology Teams",
+      "paragraphs": [
+        "Scaling an engineering team to meet demanding product roadmaps is often limited by local talent shortages and high salary expectations. Research from the Society for Human Resource Management indicates that the average time to fill for specialized engineering roles exceeds 45 days, which directly slows down product releases and increases vacancy costs. This delay impacts overall business agility and prevents companies from capturing market opportunities.",
+        "Furthermore, the administrative burden of human resources, payroll, and local compliance divert management focus away from product strategy. Traditional recruitment methods are not only slow but also carry high agency fees and minimal retention guarantees. Businesses need a flexible staffing model that provides immediate access to senior developers without long term liability."
+      ]
+    },
+    {
+      "title": "Dedicated Team Model and Operational Framework",
+      "paragraphs": [
+        "The dedicated team model offers full time engineers who work exclusively on your products and integrate with your existing corporate culture. Unlike project based outsourcing, these developers build deep domain knowledge of your systems over time, leading to higher quality code and faster delivery. We establish specialized onboarding structures that reduce onboarding latency to just two or three weeks.",
+        "We match developers to your specific requirements, enabling you to choose the exact skill sets needed for your technical architecture. This model allows for resource allocation flexibility, allowing you to scale the team size up or down as project milestones dictate. The engineers work under your direct technical supervision, ensuring complete control over the engineering process."
+      ]
+    },
+    {
+      "title": "Team Integration and Management Practices",
+      "paragraphs": [
+        "Seamless integration with your internal workflows is achieved through transparent project tracking and structured communication. Your dedicated team participates in daily standups, utilizes your Jira or Linear boards, and commits code directly to your private GitHub repositories. This methodology ensures that remote engineers operate under the same standards as your onshore staff.",
+        "We provide the physical office space, modern hardware, and local HR support in Ho Chi Minh City to maintain developer satisfaction and high retention rates. We also facilitate the initial interview and selection process, allowing you to test candidate technical capabilities and communication skills before they join your team."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How quickly can we assemble and start a dedicated team?",
+      "answer": "We can typically set up and launch a dedicated development pod within three to four weeks, depending on your required technology stack and team size."
+    },
+    {
+      "question": "Who manages the day to day work of the developers?",
+      "answer": "You do. The team acts as an extension of your internal IT department. You assign tasks directly, while CBEC handles the local payroll, office, and HR requirements."
+    },
+    {
+      "question": "What is the minimum contract period for a dedicated team?",
+      "answer": "We offer flexible terms, starting with a minimum commitment of three to six months to ensure team stability and consistent delivery quality."
+    }
+  ]
+}

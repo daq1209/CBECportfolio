@@ -2,12 +2,11 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/lib/translations";
 
-export default function AboutSection() {
+export default function AboutSection({ lang }: { lang: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const { language } = useLanguage();
+  const language = lang === "vi" ? "vi" : "en";
   const t = translations[language].about;
 
   const { scrollYProgress } = useScroll({
@@ -30,6 +29,7 @@ export default function AboutSection() {
 
   return (
     <section
+      id="about"
       ref={sectionRef}
       className="relative w-full bg-[#0a0a0a] text-white overflow-hidden py-32 md:py-48 z-20 rounded-t-[40px] md:rounded-t-[60px] -mt-10 md:-mt-20 shadow-[0_-20px_50px_rgba(0,0,0,0.5)]"
     >

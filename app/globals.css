@@ -23,9 +23,12 @@
   --text-muted: rgba(255, 255, 255, 0.50);
   --text-subtle: rgba(255, 255, 255, 0.30);
 
-  /* Typography — injected by next/font in layout.tsx */
-  --font-display: "Red Hat Display", sans-serif;
-  --font-body: "Red Hat Text", sans-serif;
+  /* Typography
+   * --font-primary is injected by next/font (Be Vietnam Pro) in [lang]/layout.tsx
+   * A single family handles both EN and VI with full unicode/diacritic support.
+   */
+  --font-display: var(--font-primary, "Be Vietnam Pro", sans-serif);
+  --font-body:    var(--font-primary, "Be Vietnam Pro", sans-serif);
 }
 
 /* ─────────────────────────────────────────────
@@ -65,4 +68,92 @@ canvas {
 ::selection {
   background: rgba(102, 255, 128, 0.25);
   color: var(--white);
+}
+
+/* ─────────────────────────────────────────────
+   Accessibility — Focus Indicators
+   ───────────────────────────────────────────── */
+
+/* Visible focus ring for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--cbec-green);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Enhanced focus for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--cbec-green);
+  outline-offset: 3px;
+}
+
+/* Remove default outline only when :focus-visible is supported */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ─────────────────────────────────────────────
+   Accessibility — Reduced Motion
+   ───────────────────────────────────────────── */
+
+/* Respect user's motion preferences for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Disable smooth scroll for reduced motion */
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   Accessibility — Skip Link
+   ───────────────────────────────────────────── */
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--cbec-green);
+  color: var(--black);
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.875rem;
+  z-index: 9999;
+  transition: top 0.2s;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--black);
+  outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────
+   Accessibility — Screen Reader Only
+   ───────────────────────────────────────────── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

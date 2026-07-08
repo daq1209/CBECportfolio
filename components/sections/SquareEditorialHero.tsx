@@ -3,7 +3,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import CenterGraphic from "../animations/CenterGraphic";
-import { useLanguage } from "@/context/LanguageContext";
 import { translations } from "@/lib/translations";
 
 const EASE_EDITORIAL: [number, number, number, number] = [0.85, 0, 0.15, 1];
@@ -34,9 +33,9 @@ const fadeSlide = {
   },
 };
 
-export default function SquareEditorialHero() {
+export default function SquareEditorialHero({ lang }: { lang: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { language } = useLanguage();
+  const language = lang === "vi" ? "vi" : "en";
   const t = translations[language].hero;
 
   const { scrollYProgress } = useScroll({
@@ -72,56 +71,47 @@ export default function SquareEditorialHero() {
           style={{ opacity: uiOpacity, y: uiY, scale: uiScale }}
           className="relative z-10 w-full h-full p-6 md:p-12 lg:p-16 flex flex-col justify-between pointer-events-none pb-12 md:pb-24 origin-top"
         >
-          <header className="flex justify-between items-start w-full">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="text-xs md:text-sm font-semibold tracking-widest text-[#66FF80]"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
-              {t.logo}
-            </motion.div>
-          </header>
 
           <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center h-full">
             <div className="col-span-1 lg:col-span-7 flex flex-col z-10 pointer-events-auto">
-              <div className="overflow-hidden mb-1 py-1">
-                <motion.h1
-                  custom={0}
-                  variants={headlineReveal}
-                  initial="hidden"
-                  animate="visible"
-                  className="text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] uppercase m-0"
-                  style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
-                >
-                  {t.line1}
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden mb-1 py-1">
-                <motion.h1
-                  custom={1}
-                  variants={headlineReveal}
-                  initial="hidden"
-                  animate="visible"
-                  className="text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] uppercase m-0"
-                  style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
-                >
-                  {t.line2}
-                </motion.h1>
-              </div>
-              <div className="overflow-hidden py-1">
-                <motion.h1
-                  custom={2}
-                  variants={headlineReveal}
-                  initial="hidden"
-                  animate="visible"
-                  className="text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] text-white/70 italic capitalize m-0"
-                  style={{ fontFamily: 'var(--font-display)', fontWeight: 300 }}
-                >
-                  {t.line3}
-                </motion.h1>
-              </div>
+              <h1 className="m-0 p-0" aria-label={`${t.line1} ${t.line2} ${t.line3}`}>
+                <div className="overflow-hidden mb-1 py-1">
+                  <motion.span
+                    custom={0}
+                    variants={headlineReveal}
+                    initial="hidden"
+                    animate="visible"
+                    className="block text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] uppercase"
+                    style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
+                  >
+                    {t.line1}
+                  </motion.span>
+                </div>
+                <div className="overflow-hidden mb-1 py-1">
+                  <motion.span
+                    custom={1}
+                    variants={headlineReveal}
+                    initial="hidden"
+                    animate="visible"
+                    className="block text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] uppercase"
+                    style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
+                  >
+                    {t.line2}
+                  </motion.span>
+                </div>
+                <div className="overflow-hidden py-1">
+                  <motion.span
+                    custom={2}
+                    variants={headlineReveal}
+                    initial="hidden"
+                    animate="visible"
+                    className="block text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] text-white/70 italic capitalize"
+                    style={{ fontFamily: 'var(--font-display)', fontWeight: 300 }}
+                  >
+                    {t.line3}
+                  </motion.span>
+                </div>
+              </h1>
             </div>
 
             <div className="col-span-1 lg:col-span-5 flex flex-col justify-start items-start lg:items-end lg:pr-0 pointer-events-auto z-10 self-end pb-12 lg:pb-0 lg:self-center lg:translate-x-8 xl:translate-x-12">
@@ -150,7 +140,39 @@ export default function SquareEditorialHero() {
                   variants={fadeSlide}
                   initial="hidden"
                   animate="visible"
-                  className="mt-8 flex items-center gap-4 text-white/50"
+                  className="flex flex-col sm:flex-row items-start gap-4 mb-10"
+                >
+                  {/* Primary CTA */}
+                  <button
+                    onClick={() => {
+                      document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="group flex items-center gap-3 px-6 py-3 bg-[#66FF80] text-[#0a0a0a] rounded-full text-sm font-semibold tracking-tight hover:bg-white transition-colors duration-300 cursor-pointer border-none"
+                    style={{ fontFamily: "var(--font-display)" }}
+                    aria-label={t.ctaPrimary}
+                  >
+                    {t.ctaPrimary}
+                    <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">→</span>
+                  </button>
+
+                  {/* Secondary CTA */}
+                  <button
+                    onClick={() => {
+                      document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className="flex items-center gap-3 px-6 py-3 border border-white/20 text-white/70 rounded-full text-sm font-light tracking-tight hover:border-white/50 hover:text-white transition-all duration-300 cursor-pointer bg-transparent"
+                    style={{ fontFamily: "var(--font-display)" }}
+                    aria-label={t.ctaSecondary}
+                  >
+                    {t.ctaSecondary}
+                  </button>
+                </motion.div>
+
+                <motion.div
+                  variants={fadeSlide}
+                  initial="hidden"
+                  animate="visible"
+                  className="mt-2 flex items-center gap-4 text-white/50"
                 >
                   <span className="text-xs tracking-[0.2em] uppercase font-medium" style={{ fontFamily: 'var(--font-display)' }}>
                     {t.scroll}

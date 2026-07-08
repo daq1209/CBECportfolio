@@ -1,0 +1,40 @@
+{
+  "intro": "Modern businesses lose thousands of productive hours each year on repetitive administrative tasks. At CBEC Solutions, we design custom AI automation services and system integration pipelines that connect your software applications, automate customer support, and process documents. Our solutions help reduce operational overhead and eliminate human entry errors.",
+  "sections": [
+    {
+      "title": "Operational Overhead in Manual Business Processes",
+      "paragraphs": [
+        "Manual data entry and repetitive workflows represent a significant drain on employee time and corporate resources. McKinsey and Company's report on the economic potential of generative AI indicates that automation technologies can automate tasks that consume 60% to 70% of employee time today. By automating these routine operations, companies can free up their staff to focus on high value strategic initiatives.",
+        "Manual processing is also highly susceptible to human error, which can lead to costly billing mistakes and customer dissatisfaction. Tasks such as copy pasting invoice details between platforms, routing customer emails, and compiling weekly reports can be automated easily. Transitioning to automated workflows ensures consistent accuracy and round the clock operation."
+      ]
+    },
+    {
+      "title": "Custom AI Agents and Workflow Automation Solutions",
+      "paragraphs": [
+        "We build custom AI agents integrated directly into your operational workflows to solve specific business challenges. These agents leverage Large Language Models trained on your internal documentation, product guides, and company policies. This training allows the AI to respond accurately to customer support inquiries and process inbound sales leads without human assistance.",
+        "We develop custom webhook systems using secure APIs to automate cross platform data transfers. For instance, when a lead is captured on your website, our system can automatically analyze the query, categorize the client requirements, update your CRM, and send a notification to your team."
+      ]
+    },
+    {
+      "title": "System Integration and Security Protocols",
+      "paragraphs": [
+        "Integrating modern artificial intelligence tools with legacy databases requires a strict focus on data security and privacy. We design secure data pipelines that connect your internal systems to cloud automation platforms without exposing sensitive records. All communication channels utilize encryption protocols and secure access tokens.",
+        "We ensure that your proprietary business data is never used to train public AI models. By utilizing enterprise APIs and private cloud environments, we guarantee that your information remains confidential and compliant with data protection standards. We also establish automated monitoring to track API performance and system health."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Is our business data shared with public AI models?",
+      "answer": "No. We utilize private API endpoints and enterprise data agreements with providers like OpenAI and Google Cloud. Your business data is never used to train public models."
+    },
+    {
+      "question": "How long does it take to train an AI assistant on our data?",
+      "answer": "A basic AI assistant can be built, trained, and integrated into your communication channels within three to four weeks, depending on your database formats."
+    },
+    {
+      "question": "Can we integrate AI with local messaging channels like Zalo?",
+      "answer": "Yes. We connect AI assistants directly with Zalo OA, Facebook Messenger, and Instagram Direct to automate your customer communications."
+    }
+  ]
+}

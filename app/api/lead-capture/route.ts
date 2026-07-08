@@ -1,0 +1,176 @@
+import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+import rateLimiter, { getClientIp, RATE_LIMITS } from "@/lib/rate-limit";
+import { logApiError } from "@/lib/logger";
+
+// Validation schemas with honeypot field 'website'
+const leadMagnetSchema = z.object({
+  type: z.literal("lead-magnet"),
+  email: z.string().email("Invalid email address"),
+  lang: z.string().optional(),
+  source: z.string().optional(),
+  website: z.string().optional(),
+});
+
+const contactFormSchema = z.object({
+  type: z.literal("contact"),
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Invalid email address"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+  lang: z.string().optional(),
+  website: z.string().optional(),
+});
+
+const requestSchema = z.discriminatedUnion("type", [leadMagnetSchema, contactFormSchema]);
+
+export async function POST(request: NextRequest) {
+  try {
+    // Rate limiting check
+    const clientIp = getClientIp(request);
+    const rateLimitResult = rateLimiter.check(
+      `lead-capture:${clientIp}`,
+      RATE_LIMITS.CONTACT_FORM.limit,
+      RATE_LIMITS.CONTACT_FORM.windowMs
+    );
+
+    if (!rateLimitResult.success) {
+      const retryAfter = Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000);
+      return NextResponse.json(
+        { error: "Too many requests. Please try again later." },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": retryAfter.toString(),
+            "X-RateLimit-Limit": RATE_LIMITS.CONTACT_FORM.limit.toString(),
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": new Date(rateLimitResult.resetTime).toISOString(),
+          },
+        }
+      );
+    }
+
+    // CSRF & Same-Origin Verification
+    const origin = request.headers.get("origin");
+    const referer = request.headers.get("referer");
+    const host = request.headers.get("host") || "";
+
+    if (origin) {
+      try {
+        const originUrl = new URL(origin);
+        const hostWithoutPort = host.split(":")[0];
+        const originHostWithoutPort = originUrl.host.split(":")[0];
+        if (hostWithoutPort !== originHostWithoutPort) {
+          console.warn(`[lead-capture] Origin mismatch: expected ${hostWithoutPort}, got ${originHostWithoutPort}`);
+          return NextResponse.json({ error: "Forbidden: Origin mismatch" }, { status: 403 });
+        }
+      } catch (e) {
+        return NextResponse.json({ error: "Forbidden: Invalid origin header" }, { status: 403 });
+      }
+    } else if (referer) {
+      try {
+        const refererUrl = new URL(referer);
+        const hostWithoutPort = host.split(":")[0];
+        const refererHostWithoutPort = refererUrl.host.split(":")[0];
+        if (hostWithoutPort !== refererHostWithoutPort) {
+          console.warn(`[lead-capture] Referer mismatch: expected ${hostWithoutPort}, got ${refererHostWithoutPort}`);
+          return NextResponse.json({ error: "Forbidden: Referer mismatch" }, { status: 403 });
+        }
+      } catch (e) {
+        return NextResponse.json({ error: "Forbidden: Invalid referer header" }, { status: 403 });
+      }
+    } else {
+      console.warn("[lead-capture] Blocked request missing both Origin and Referer headers.");
+      return NextResponse.json({ error: "Forbidden: Same-origin verification failed" }, { status: 403 });
+    }
+
+    const body = await request.json();
+    const result = requestSchema.safeParse(body);
+
+    if (!result.success) {
+      return NextResponse.json(
+        { error: "Validation failed", details: result.error.format() },
+        { status: 400 }
+      );
+    }
+
+    const payload = result.data;
+
+    // Honeypot anti-spam check (website field must remain empty)
+    if (payload.website && payload.website.trim().length > 0) {
+      console.warn("[lead-capture] Honeypot triggered. Request silently dropped.");
+      return NextResponse.json({ success: true }, { status: 200 });
+    }
+
+    let targetUrl = "";
+    let emailBody: Record<string, string> = {};
+
+    if (payload.type === "lead-magnet") {
+      const leadId = process.env.FORMSPREE_LEAD_MAGNET_ID;
+      if (!leadId) {
+        console.error("[lead-capture] Missing FORMSPREE_LEAD_MAGNET_ID environment variable.");
+        return NextResponse.json(
+          { error: "Service Unavailable: configuration missing" },
+          { status: 503 }
+        );
+      }
+      targetUrl = `https://formspree.io/f/${leadId}`;
+      emailBody = {
+        email: payload.email,
+        _subject: `[Lead Magnet] New download — ${payload.source ?? "unknown"} (${payload.lang ?? "unknown"})`,
+        source: payload.source ?? "lead-magnet",
+        locale: payload.lang ?? "unknown",
+      };
+    } else {
+      const contactId = process.env.FORMSPREE_CONTACT_ID;
+      if (!contactId) {
+        console.error("[lead-capture] Missing FORMSPREE_CONTACT_ID environment variable.");
+        return NextResponse.json(
+          { error: "Service Unavailable: configuration missing" },
+          { status: 503 }
+        );
+      }
+      targetUrl = `https://formspree.io/f/${contactId}`;
+      emailBody = {
+        name: payload.name,
+        email: payload.email,
+        message: payload.message,
+        _subject: `[Contact Form] New inquiry from ${payload.name} (${payload.lang ?? "unknown"})`,
+        locale: payload.lang ?? "unknown",
+      };
+    }
+
+    // Forward to Formspree
+    const res = await fetch(targetUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(emailBody),
+    });
+
+    if (!res.ok) {
+      const data = await res.json().catch(() => ({}));
+      logApiError("/api/lead-capture", new Error("Formspree API error"), {
+        status: res.status,
+        formspreeResponse: data,
+        submissionType: payload.type,
+      });
+      return NextResponse.json(
+        { error: "Submission failed" },
+        { status: 502 }
+      );
+    }
+
+    return NextResponse.json({ success: true }, { status: 200 });
+  } catch (err) {
+    logApiError("/api/lead-capture", err, {
+      clientIp: getClientIp(request),
+    });
+    return NextResponse.json(
+      { error: "Internal server error" },
+      { status: 500 }
+    );
+  }
+}
+

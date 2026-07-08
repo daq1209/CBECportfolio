@@ -1,0 +1,47 @@
+{
+  "intro": "Một chiến dịch quảng cáo Facebook, TikTok hay Google Ads thành công cần có một trang đích tối ưu để thuyết phục khách hàng. CBEC Solutions thiết kế và lập trình landing page bán hàng chuyên nghiệp, tải trang cực nhanh dưới 1.5 giây, bố cục nội dung theo chuẩn AIDA giúp tăng gấp đôi tỷ lệ chuyển đổi đơn hàng.",
+  "sections": [
+    {
+      "title": "Tầm Quan Trọng Của Tốc Độ Tải Trang Đối Với Tỷ Lệ Chuyển Đổi",
+      "paragraphs": [
+        "Khi triển khai các chiến dịch quảng cáo trả phí trên Facebook, Google hay TikTok, trang đích đóng vai trò quyết định trong việc thuyết phục người xem hành động. Tuy nhiên, việc sử dụng các nền tảng kéo thả mẫu có sẵn thường tạo ra mã nguồn cồng kềnh và tải chậm trên thiết bị di động, dẫn đến việc người dùng rời đi trước khi kịp đọc nội dung.",
+        "Theo nghiên cứu thực tế từ tổ chức Portent, tỷ lệ chuyển đổi của trang đích giảm trung bình 4.42% cho mỗi giây tải chậm thêm trong khoảng từ giây thứ nhất đến giây thứ năm. Điều này nhấn mạnh rằng tốc độ phản hồi nhanh chóng dưới 1.5 giây không chỉ cải thiện trải nghiệm người dùng mà còn là yếu tố cốt lõi giúp tối ưu hóa ngân sách và nâng cao hiệu quả sinh lời của quảng cáo."
+      ]
+    },
+    {
+      "title": "Tốc Độ Tải Trang Dưới 1.5 Giây Giảm Tỷ Lệ Thoát Trang",
+      "paragraphs": [
+        "Mỗi giây tải chậm làm mất đi 20% lượng khách hàng tiềm năng. Thay vì dùng các công cụ kéo thả tạo mã nguồn nặng, CBEC lập trình code tay landing page Next.js tối giản, nén ảnh WebP/AVIF tự động.",
+        "Trang đích tải tức thì ngay khi khách hàng click vào quảng cáo trên di động, mang lại trải nghiệm mượt mà và tối ưu điểm chất lượng quảng cáo của Google/Facebook."
+      ]
+    },
+    {
+      "title": "Copywriting Theo Bố Cục Thuyết Phục AIDA",
+      "paragraphs": [
+        "Chúng tôi sắp xếp nội dung landing page theo phễu tâm lý mua hàng: Thu hút sự chú ý (Attention), Kích thích sự quan tâm (Interest), Tạo ham muốn sở hữu (Desire) và Kêu gọi hành động rõ ràng (Action).",
+        "Nội dung tập trung làm nổi bật lợi ích sản phẩm, hiển thị feedback khách hàng thực tế và form đăng ký đơn giản để tối đa hóa số lượng lead thu về."
+      ]
+    },
+    {
+      "title": "Tích Hợp Sẵn Mã Theo Dõi Quảng Cáo & Đo Lường",
+      "paragraphs": [
+        "Chúng tôi cài đặt sẵn mã đo lường Facebook Pixel, TikTok Pixel, Google Analytics và thiết lập tracking chuyển đổi chi tiết cho nút bấm và form đăng ký.",
+        "Doanh nghiệp có thể dễ dàng đo lường chính xác chi phí trên mỗi lead (CPL) và hiệu quả của từng nhóm đối tượng quảng cáo khác nhau."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Thời gian thiết kế và hoàn thành một landing page là bao lâu?",
+      "answer": "Quy trình thiết kế giao diện Figma và lập trình hoàn thiện landing page Next.js thường diễn ra nhanh chóng trong vòng 7 đến 10 ngày làm việc."
+    },
+    {
+      "question": "Landing page có hiển thị tốt trên điện thoại không?",
+      "answer": "Có. Hơn 90% khách hàng xem quảng cáo trên di động, vì vậy chúng tôi tối ưu hiển thị, tốc độ tải và form đăng ký ưu tiên cho thiết bị di động."
+    },
+    {
+      "question": "Tôi có được hỗ trợ trỏ tên miền và cài đặt hosting không?",
+      "answer": "Có. CBEC hỗ trợ cấu hình DNS trỏ tên miền của bạn và triển khai lưu trữ landing page trên nền tảng cloud tốc độ cao miễn phí."
+    }
+  ]
+}

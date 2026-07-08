@@ -1,0 +1,47 @@
+{
+  "intro": "Với các doanh nghiệp vừa và nhỏ (SMEs), việc thất thoát lead và thiếu quy trình theo sát khách hàng là nguyên nhân chính làm giảm doanh số. Giải pháp CRM tùy chỉnh của CBEC giúp gom lead tự động từ mọi nguồn về một nơi, nhắc nhở chăm sóc khách hàng và đo lường tỷ lệ chốt sales của từng nhân sự.",
+  "sections": [
+    {
+      "title": "Thách Thức Quản Lý Khách Hàng Của Doanh Nghiệp Nhỏ",
+      "paragraphs": [
+        "Các doanh nghiệp nhỏ thường gặp khó khăn lớn trong việc lưu trữ và khai thác dữ liệu khách hàng một cách tập trung. Việc quản lý thông tin thủ công qua sổ sách hoặc các bảng tính trực tuyến rời rạc làm gia tăng nguy cơ bỏ sót cơ hội bán hàng, chậm trễ trong khâu chăm sóc khách hàng và thiếu tính kết nối giữa các bộ phận.",
+        "Thống kê thực tế từ tổ chức Salesforce chỉ ra rằng, hơn 74% doanh nghiệp vừa và nhỏ ghi nhận mối quan hệ khách hàng cùng hiệu suất chuyển đổi giao dịch được cải thiện rõ rệt sau khi triển khai hệ thống quản trị dữ liệu khách hàng phù hợp. Việc số hóa quy trình quản lý thông tin không chỉ ngăn ngừa thất thoát tệp khách hàng tiềm năng mà còn giúp doanh nghiệp thấu hiểu nhu cầu của người mua để nâng cao chất lượng dịch vụ."
+      ]
+    },
+    {
+      "title": "Gom Lead Tự Động Từ Mọi Kênh Bán Hàng",
+      "paragraphs": [
+        "Khi chạy quảng cáo đa kênh, việc kiểm tra tin nhắn thủ công rất dễ bỏ sót khách hàng. CRM của CBEC kết nối trực tiếp qua API để tự động nhận thông tin khách hàng từ Form website, Zalo OA, Facebook Fanpage.",
+        "Thông tin liên hệ được tự động điền vào danh sách chờ và chia đều cho nhân viên tư vấn theo quy tắc xoay vòng hoặc hiệu suất chốt đơn."
+      ]
+    },
+    {
+      "title": "Quản Lý Lịch Sử Tương Tác Khách Hàng Tập Trung",
+      "paragraphs": [
+        "Nhân viên sales có thể lưu trữ lịch sử cuộc gọi, nội dung trao đổi, báo giá và tệp hợp đồng trên dòng thời gian của từng khách hàng.",
+        "Khi nhân sự thay đổi, người mới tiếp quản có thể xem lại toàn bộ lịch sử tư vấn trước đó để tiếp tục chăm sóc, tránh làm phiền hoặc mất thông tin khách hàng."
+      ]
+    },
+    {
+      "title": "Đo Lường Hiệu Suất Bán Hàng & Tỷ Lệ Chuyển Đổi",
+      "paragraphs": [
+        "CRM cung cấp các báo cáo trực quan về số lượng lead mới nhận, tỷ lệ liên hệ thành công, tỷ lệ chốt đơn và doanh thu của từng nhân sự sales.",
+        "Dữ liệu này giúp chủ doanh nghiệp đánh giá chính xác hiệu quả của các chiến dịch quảng cáo và năng lực của đội ngũ bán hàng."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "CRM tùy chỉnh khác gì so với CRM dùng sẵn như HubSpot?",
+      "answer": "CRM tùy chỉnh được thiết kế theo đúng quy trình bán hàng của bạn, không có tính năng thừa và hoàn toàn không tốn chi phí bản quyền hàng tháng trên mỗi tài khoản nhân viên."
+    },
+    {
+      "question": "Số lượng nhân viên sử dụng hệ thống có bị giới hạn không?",
+      "answer": "Không giới hạn. Doanh nghiệp có thể tự tạo tài khoản cho hàng trăm nhân viên và phân quyền sử dụng mà không phát sinh thêm chi phí."
+    },
+    {
+      "question": "Hệ thống có tự động gửi tin nhắn chúc mừng, nhắc lịch không?",
+      "answer": "Có. Chúng tôi có thể tích hợp các kịch bản tự động gửi tin nhắn Zalo ZNS hoặc SMS khi trạng thái khách hàng thay đổi trong phễu lọc."
+    }
+  ]
+}

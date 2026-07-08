@@ -1,0 +1,47 @@
+{
+  "intro": "Global businesses face increasing software development costs and an acute shortage of senior engineering talent. Vietnam has emerged as a premier technology destination, combining a highly driven technical workforce with competitive operational costs. At CBEC Solutions, we bridge the communication and execution gap by offering Australian led management paired with senior, Ho Chi Minh City based developers. This combination ensures native level English communication, transparent agile workflows, and high quality deliverables.",
+  "sections": [
+    {
+      "title": "Challenges in Local Developer Recruitment",
+      "paragraphs": [
+        "Finding senior software engineers in domestic markets has become a significant bottleneck for growing companies. Rising salary expectations, high recruitment agency fees, and lengthy hiring cycles often delay product launches. According to the ManpowerGroup Talent Shortage Survey, approximately 75% of employers globally report difficulty finding the skilled tech talent they need, leading to project delays and inflated local wages.",
+        "Even when talent is secured, retaining senior engineers in highly competitive local markets requires substantial overhead. Companies must invest heavily in employee benefits and retention programs, further inflating the true cost of software development. Consequently, businesses need a more sustainable scaling strategy that does not compromise on code quality or velocity."
+      ]
+    },
+    {
+      "title": "Vietnam as an Offshore Software Development Hub",
+      "paragraphs": [
+        "Vietnam has rapidly transitioned into one of the top locations for offshore engineering in the world. The country ranked 7th globally in the Kearney Global Services Location Index based on financial attractiveness, talent availability, and its overall business environment. The tech ecosystem in Vietnam boasts over 530,000 active software developers and adds between 50,000 and 60,000 new IT graduates annually, according to official Vietnam IT Market Reports.",
+        "This vast talent pool is highly proficient in modern frameworks such as React, Node.js, and Python. By establishing your offshore development hub in Vietnam, your business can reduce operational overhead by up to 60% compared to onshore hiring. This cost reduction allows companies to reallocate capital toward marketing and product growth strategies."
+      ]
+    },
+    {
+      "title": "Technical Expertise and Quality Assurance at CBEC",
+      "paragraphs": [
+        "Outsourcing often fails due to a lack of alignment between international clients and local teams. We address this challenge through a hybrid management structure, combining local Vietnamese execution speed with Australian oversight to eliminate communication gaps. Our project managers possess extensive experience working with Western businesses, ensuring that all requirements are fully understood before development begins.",
+        "We enforce strict quality control standards throughout the development lifecycle. Every team member undergoes a multi stage technical screening process, coding test, and English communication interview. We only deploy engineers who possess a minimum of three to four years of professional experience, guaranteeing that your code is written according to modern standards."
+      ]
+    },
+    {
+      "title": "Technologies and Project Delivery Standards",
+      "paragraphs": [
+        "Our developers specialize in building applications using Next.js, React, Node.js, Python, PostgreSQL, and Amazon Web Services. We follow industry standard Git workflows, automated testing pipelines, and regular security audits. Your source code remains stored in private repositories, accessible only by verified team members.",
+        "We work in two week sprints, delivering testable software increments at the end of each cycle. You can interact with the application throughout the build, giving feedback that helps shape the development direction. We schedule designated checkpoints for North American, European, and Australian clients to ensure timezone alignment."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How does CBEC Solutions handle intellectual property protection?",
+      "answer": "We sign strict, legally binding non disclosure agreements before any project begins. All intellectual property, assets, and source code are transferred to your company upon project completion and milestone payments."
+    },
+    {
+      "question": "How do you handle communication and timezone differences?",
+      "answer": "Our account management is led by English speaking managers who coordinate all meetings. We structure development schedules to ensure overlap with your local business hours, utilizing Slack, Zoom, and Jira."
+    },
+    {
+      "question": "What is your developer onboarding and hiring standard?",
+      "answer": "Every developer in our pod undergoes a multi stage technical screening, coding test, and English communication interview. We only deploy engineers with a minimum of three to four years of experience."
+    }
+  ]
+}

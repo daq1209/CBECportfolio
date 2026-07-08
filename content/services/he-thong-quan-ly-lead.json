@@ -1,0 +1,47 @@
+{
+  "intro": "Khi chạy quảng cáo trên nhiều kênh như Zalo OA, Facebook Fanpage, TikTok Shop và Website, việc quản lý lead thủ công thường dẫn đến chậm phản hồi và mất khách hàng. Hệ thống quản lý lead đa kênh của CBEC Solutions giúp kết nối API tự động gom mọi tin nhắn, số điện thoại khách hàng về một dashboard duy nhất.",
+  "sections": [
+    {
+      "title": "Sự Thất Thoát Và Lãng Phí Chi Phí Tiếp Thị Khi Thiếu Quy Trình Gom Lead",
+      "paragraphs": [
+        "Khi ngân sách tiếp thị được chi ra để thu hút khách hàng tiềm năng, việc thiếu một quy trình tiếp nhận và phân bổ thông tin tự động sẽ dẫn đến sự lãng phí tài nguyên vô cùng lớn. Việc sales phản hồi trễ hoặc thông tin bị phân mảnh trên nhiều công cụ liên lạc khiến tệp khách hàng nguội lạnh nhanh chóng và dễ dàng tìm kiếm sự thay thế từ các đối thủ cạnh tranh trực tiếp.",
+        "Nghiên cứu được công bố trên Tạp chí Kinh doanh Harvard (Harvard Business Review) chứng minh rằng, các doanh nghiệp phản hồi thông tin khách hàng trong vòng 5 phút đầu tiên có tỷ lệ liên hệ thành công và chuyển đổi cao hơn gấp 10 lần so với phản hồi sau 30 phút. Khi quy trình nhận thông tin và chăm sóc bị chậm trễ, doanh nghiệp đang trực tiếp làm giảm hiệu suất sinh lời của toàn bộ chiến dịch quảng cáo đa kênh."
+      ]
+    },
+    {
+      "title": "Tích Hợp API Đồng Bộ Lead Đa Kênh Tự Động",
+      "paragraphs": [
+        "Chúng tôi kết nối trực tiếp với API của các nền tảng mạng xã hội phổ biến. Khi khách bình luận bài viết, nhắn tin Zalo OA hoặc để lại thông tin trên form web, dữ liệu lập tức được chuẩn hóa.",
+        "Hệ thống tự động phân tích tên, số điện thoại, nhu cầu sản phẩm và nguồn quảng cáo (UTM), tạo thành một bản ghi lead duy nhất trên hệ thống quản lý."
+      ]
+    },
+    {
+      "title": "Cảnh Báo Lead Mới Tức Thì Qua Telegram & Slack",
+      "paragraphs": [
+        "Thời gian phản hồi quyết định 80% khả năng chốt đơn. Ngay khi có khách hàng để lại thông tin, hệ thống sẽ kích hoạt bot gửi thông báo tức thì vào group Telegram hoặc Slack của đội ngũ sales.",
+        "Thông báo hiển thị đầy đủ tên, số điện thoại, sản phẩm quan tâm và link chat trực tiếp, giúp sales liên hệ tư vấn chỉ sau vài giây."
+      ]
+    },
+    {
+      "title": "Đo Lường Phân Bổ Nguồn Khách Hàng Chính Xác",
+      "paragraphs": [
+        "Hệ thống tự động theo dõi và gắn thẻ nguồn lead dựa trên các chiến dịch quảng cáo (UTM tracking). Bạn sẽ biết chính xác lead đến từ bài viết Facebook nào hay chiến dịch TikTok nào.",
+        "Dữ liệu này giúp doanh nghiệp tối ưu ngân sách marketing, tập trung ngân sách vào các kênh mang lại khách hàng thực tế thay vì các chỉ số tương tác ảo."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Hệ thống có hỗ trợ kết nối với TikTok Shop không?",
+      "answer": "Có. Chúng tôi kết nối thông qua cổng API nhà phát triển của TikTok Shop để tự động đồng bộ thông tin đơn hàng và thông tin khách hàng."
+    },
+    {
+      "question": "Chúng tôi có bị trễ dữ liệu khi lead chuyển về không?",
+      "answer": "Không. Dữ liệu được truyền tải theo thời gian thực (Realtime) qua cơ chế Webhook, thông báo sẽ gửi tới sales gần như tức thì."
+    },
+    {
+      "question": "Hệ thống có lưu trữ được file ghi âm cuộc gọi của sales không?",
+      "answer": "Có. Nếu doanh nghiệp tích hợp hệ thống tổng đài IP (như Cloudfone, Stringee), chúng tôi có thể liên kết tự động ghi âm cuộc gọi vào thông tin lead."
+    }
+  ]
+}

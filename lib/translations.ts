@@ -12,11 +12,14 @@ export const translations = {
       logo: "CBEC SOLUTIONS.",
       line1: "Global",
       line2: "CREATIVE",
-      line3: "Agency.",
-      tagline: "Design That Performs.",
+      line3: "Technology.",
+      tagline: "Build What Sells.",
       description:
-        "We combine strategic branding, high-end web development, and custom enterprise software to build digital experiences and operational systems that scale.",
+        "Australian-grade quality at Vietnam cost structure. We combine strategic branding, high-end web development, and custom enterprise software to build digital experiences and operational systems that scale.",
+      trustBadge: "GMT+7 → Perfect overlap with Sydney & Melbourne business hours",
       scroll: "Scroll to discover",
+      ctaPrimary: "View Our Work",
+      ctaSecondary: "Get In Touch",
     },
 
     // ── Projects Gallery ──
@@ -34,13 +37,13 @@ export const translations = {
 
     // ── About ──
     about: {
-      label: "About Agency",
-      line1: "We Engineer",
-      line2: "Digital.",
-      line3: "Experiences.",
-      p1: "Based in Vietnam, built for global markets. We are a creative studio that believes aesthetics must drive business outcomes. Every pixel we push and every brand identity we forge is designed to captivate and convert.",
-      p2: "From bespoke web development and powerful enterprise software to complete social media ecosystems, we deliver the creative and technical infrastructure your brand needs to stand out in a crowded digital landscape.",
-      metric: "Digital experiences launched.",
+      label: "About",
+      line1: "We Build",
+      line2: "Creative.",
+      line3: "Technology.",
+      p1: "Based in Ho Chi Minh City, delivering Australian-grade quality at 40-60% lower cost. We are a creative technology studio that believes aesthetics must drive business outcomes. Every pixel we push and every brand identity we forge is designed to captivate and convert.",
+      p2: "From bespoke web development and powerful enterprise software to complete social media ecosystems, we deliver the creative and technical infrastructure your brand needs to stand out. Our GMT+7 timezone means perfect overlap with Sydney and Melbourne business hours — no communication delays, just seamless collaboration.",
+      metric: "Digital products launched.",
     },
 
     // ── Services ──
@@ -141,6 +144,17 @@ export const translations = {
       directLine: "Direct Line",
       footer: "© 2026 CBEC Solutions. All rights reserved.",
       tagline: "Vietnam → Global",
+      formName: "Your Name",
+      formNamePlaceholder: "e.g. Alex Johnson",
+      formEmail: "Email Address",
+      formEmailPlaceholder: "your@email.com",
+      formMessage: "Message",
+      formMessagePlaceholder: "Tell us about your project...",
+      formSubmit: "Send Message",
+      formSending: "Sending...",
+      formSuccess: "Message received. We’ll be in touch within 24 hours.",
+      formError: "Something went wrong. Please try emailing us directly.",
+      formPrivacy: "We never share your information.",
     },
   },
 
@@ -154,12 +168,14 @@ export const translations = {
     hero: {
       logo: "CBEC SOLUTIONS.",
       line1: "Creative",
-      line2: "Agency",
-      line3: "Toàn cầu.",
-      tagline: "Thiết kế tạo ra doanh thu.",
+      line2: "Technology",
+      line3: "Partner.",
+      tagline: "Build What Sells.",
       description:
         "Chiến lược thương hiệu, thiết kế web và phần mềm doanh nghiệp. Chúng tôi xây dựng sản phẩm số và hệ thống vận hành thực tế, có khả năng mở rộng.",
       scroll: "Cuộn để khám phá",
+      ctaPrimary: "Xem dự án",
+      ctaSecondary: "Liên hệ",
     },
 
     // ── Projects Gallery ──
@@ -181,7 +197,7 @@ export const translations = {
       line1: "Làm",
       line2: "Sản phẩm",
       line3: "Số.",
-      p1: "Đội ngũ ở Việt Nam, làm việc với thị trường toàn cầu. Chúng tôi là creative agency tập trung vào việc dùng thiết kế để giải quyết bài toán kinh doanh. Đẹp thôi chưa đủ, mọi thứ chúng tôi làm đều phải mang lại chuyển đổi.",
+      p1: "Đội ngũ ở Việt Nam, làm việc với thị trường toàn cầu. Chúng tôi là creative technology company tập trung vào việc dùng thiết kế và công nghệ để giải quyết bài toán kinh doanh. Đẹp thôi chưa đủ, mọi thứ chúng tôi làm đều phải bán được hàng.",
       p2: "Từ website, phần mềm quản trị cho đến nội dung mạng xã hội. Chúng tôi lo phần kỹ thuật và sáng tạo để thương hiệu của bạn hoạt động hiệu quả trên môi trường online.",
       metric: "Sản phẩm kỹ thuật số đã vận hành.",
     },
@@ -284,6 +300,17 @@ export const translations = {
       directLine: "Liên hệ trực tiếp",
       footer: "© 2026 CBEC Solutions. Mọi quyền được bảo lưu.",
       tagline: "Vietnam → Global",
+      formName: "Họ tên",
+      formNamePlaceholder: "Ví dụ: Nguyễn Văn A",
+      formEmail: "Email",
+      formEmailPlaceholder: "email@cua.ban.com",
+      formMessage: "Nội dung",
+      formMessagePlaceholder: "Mô tả ngắn về dự án của bạn...",
+      formSubmit: "Gửi tin nhắn",
+      formSending: "Đang gửi...",
+      formSuccess: "Đã nhận được tin nhắn. Chúng tôi sẽ phản hồi trong vòng 24 giờ.",
+      formError: "Có lỗi xảy ra. Vui lòng gửi email trực tiếp cho chúng tôi.",
+      formPrivacy: "Thông tin của bạn được bảo mật tuyệt đối.",
     },
   },
 } as const;

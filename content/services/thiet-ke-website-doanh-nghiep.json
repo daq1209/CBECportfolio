@@ -1,0 +1,47 @@
+{
+  "intro": "Trang web doanh nghiệp là bộ mặt thương hiệu trên môi trường số. Tại CBEC Solutions, chúng tôi không thiết kế các trang web theo mẫu giá rẻ. Chúng tôi xây dựng các giải pháp website độc quyền, tối ưu hóa tốc độ tải trang dưới 1.5 giây, chuẩn SEO để tiếp cận khách hàng tự nhiên và tối đa hóa tỷ lệ chuyển đổi lead kinh doanh.",
+  "sections": [
+    {
+      "title": "Vai Trò Của Giao Diện Thương Hiệu Và Tốc Độ Tải Trang",
+      "paragraphs": [
+        "Ấn tượng đầu tiên của khách hàng quyết định sự thành bại trong việc tiếp cận trên kênh trực tuyến. Theo các nghiên cứu thực tế từ tổ chức Sweor, một người dùng chỉ mất khoảng 0.05 giây để đưa ra nhận xét ban đầu về tính chuyên nghiệp của một giao diện website. Do đó, nếu hình ảnh thương hiệu mờ nhạt hoặc bố cục lộn xộn, doanh nghiệp sẽ mất đi khách hàng tiềm năng trước khi họ kịp tìm hiểu về sản phẩm.",
+        "Bên cạnh yếu tố thị giác, tốc độ tải trang đóng vai trò quyết định đến trải nghiệm sử dụng thực tế. Khi tốc độ tải chậm, tỷ lệ người dùng thoát khỏi trang tăng lên đáng kể. Do đó, việc xây dựng một website có tốc độ phản hồi nhanh là yêu cầu bắt buộc để nâng cao khả năng giữ chân người dùng và cải thiện điểm số tối ưu hóa trên công cụ tìm kiếm."
+      ]
+    },
+    {
+      "title": "Thiết Kế Độc Quyền Đồng Bộ Nhận Diện Thương Hiệu",
+      "paragraphs": [
+        "Mỗi doanh nghiệp có một câu chuyện và giá trị cốt lõi riêng biệt. Đội ngũ designer tại CBEC thiết kế giao diện UI/UX tùy biến hoàn toàn trên Figma, đảm bảo sự đồng bộ với bộ nhận diện thương hiệu của bạn.",
+        "Chúng tôi tối ưu hóa từng điểm chạm trên giao diện từ khoảng cách nút bấm, bố cục lưới, đến các hiệu ứng chuyển động mượt mà, giúp tạo ấn tượng chuyên nghiệp ngay từ lần đầu truy cập."
+      ]
+    },
+    {
+      "title": "Lập Trình Code Tay Next.js Tốc Độ Cao & Bảo Mật Tuyệt Đối",
+      "paragraphs": [
+        "Chúng tôi sử dụng Next.js và React thay vì WordPress để phát triển website. Điều này giúp loại bỏ hoàn toàn mã nguồn rác và các plugin bảo mật kém, hạn chế rủi ro bị hack hệ thống.",
+        "Website được tối giản mã nguồn giúp trang web tải tức thì trong vòng 1.5 giây. Tốc độ này giúp giảm tỷ lệ thoát trang và cải thiện điểm đánh giá sitemap/core web vitals từ Google."
+      ]
+    },
+    {
+      "title": "Cấu Trúc Chuẩn SEO & Tích Hợp Hệ Thống Analytics",
+      "paragraphs": [
+        "CBEC chuẩn bị sẵn hạ tầng SEO kỹ thuật bao gồm cấu trúc thẻ Heading, sitemap động, schema dữ liệu cấu trúc và tối ưu hóa thẻ Alt của hình ảnh.",
+        "Chúng tôi cũng thiết lập các công cụ đo lường như Google Analytics 4, Facebook Pixel, và TikTok Pixel, giúp doanh nghiệp theo dõi nguồn gốc khách hàng và tối ưu ngân sách quảng cáo."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "CBEC thiết kế website theo mẫu có sẵn hay thiết kế mới?",
+      "answer": "Chúng tôi thiết kế giao diện hoàn toàn mới từ đầu trên Figma theo đặc thù thương hiệu của bạn, sau đó lập trình code tay Next.js để tối ưu hiệu năng."
+    },
+    {
+      "question": "Doanh nghiệp có thể tự thay đổi nội dung, bài viết sau này không?",
+      "answer": "Có. CBEC tích hợp các hệ thống quản trị nội dung (CMS) hiện đại và trực quan, giúp nhân viên của bạn dễ dàng cập nhật bài viết, hình ảnh mà không cần biết code."
+    },
+    {
+      "question": "Chính sách bảo hành và bảo trì website như thế nào?",
+      "answer": "Chúng tôi cam kết bảo hành kỹ thuật, sửa lỗi phát sinh miễn phí trong vòng 12 tháng sau khi bàn giao, đảm bảo hệ thống hoạt động ổn định 24/7."
+    }
+  ]
+}

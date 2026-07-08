@@ -1,47 +1,12 @@
-"use client";
+import { redirect } from "next/navigation";
 
-import dynamic from "next/dynamic";
-
-const SquareEditorialHero = dynamic(
-  () => import("@/components/sections/SquareEditorialHero"),
-  { ssr: false },
-);
-
-const ProjectsGallery = dynamic(
-  () => import("@/components/sections/ProjectsGallery"),
-  { ssr: false },
-);
-
-const AboutSection = dynamic(
-  () => import("@/components/sections/AboutSection"),
-  { ssr: false },
-);
-
-const ServicesSection = dynamic(
-  () => import("@/components/sections/ServicesSection"),
-  { ssr: false },
-);
-
-const PrinciplesSection = dynamic(
-  () => import("@/components/sections/PrinciplesSection"),
-  { ssr: false },
-);
-
-const ContactSection = dynamic(
-  () => import("@/components/sections/ContactSection"),
-  { ssr: false },
-);
-
-export default function Home() {
-  return (
-    <main className="bg-[#0a0a0a] min-h-screen">
-      <SquareEditorialHero />
-      <ProjectsGallery />
-      <AboutSection />
-      <ServicesSection />
-      <PrinciplesSection />
-      <ContactSection />
-    </main>
-  );
+/**
+ * Root page — immediately redirects to the default locale (/global).
+ *
+ * The real locale detection + redirection lives in proxy.ts, but this page
+ * acts as a server-side fallback for the `/` route before proxy.ts can run.
+ * In practice proxy.ts intercepts first; this is belt-and-suspenders safety.
+ */
+export default function RootPage() {
+  redirect("/global");
 }
-

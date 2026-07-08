@@ -2,23 +2,93 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useLanguage } from "@/context/LanguageContext";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import { translations } from "@/lib/translations";
+import { trackFormSubmit } from "@/lib/analytics";
 
-export default function ContactSection() {
+type FormStatus = "idle" | "sending" | "success" | "error";
+
+const schema = (isVi: boolean) =>
+  z.object({
+    name: z
+      .string()
+      .min(2, isVi ? "Họ tên phải có ít nhất 2 ký tự" : "Name must be at least 2 characters"),
+    email: z
+      .string()
+      .min(1, isVi ? "Vui lòng nhập email" : "Email is required")
+      .email(isVi ? "Vui lòng nhập email hợp lệ" : "Please enter a valid email address"),
+    message: z
+      .string()
+      .min(10, isVi ? "Nội dung tin nhắn phải có ít nhất 10 ký tự" : "Message must be at least 10 characters"),
+    website: z.string().optional(),
+  });
+
+type FormData = {
+  name: string;
+  email: string;
+  message: string;
+  website?: string;
+};
+
+export default function ContactSection({ lang }: { lang: string }) {
   const [isHovered, setIsHovered] = useState(false);
-  const { language } = useLanguage();
+  const [formStatus, setFormStatus] = useState<FormStatus>("idle");
+  const language = lang === "vi" ? "vi" : "en";
   const t = translations[language].contact;
 
   const addressLines = t.address.split("\n");
 
+  const isVi = language === "vi";
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(schema(isVi)),
+  });
+
+  const onSubmit = async (data: FormData) => {
+    if (formStatus === "sending") return;
+    setFormStatus("sending");
+
+    try {
+      const res = await fetch("/api/lead-capture", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          type: "contact",
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          website: data.website,
+          lang,
+        }),
+      });
+
+      if (res.ok) {
+        setFormStatus("success");
+        reset();
+        // Track successful form submission
+        trackFormSubmit("contact", lang);
+      } else {
+        setFormStatus("error");
+      }
+    } catch {
+      setFormStatus("error");
+    }
+  };
+
   return (
-    <section className="relative w-full bg-[#0a0a0a] text-white overflow-hidden flex flex-col justify-between" style={{ minHeight: "100vh" }}>
+    <section id="contact" className="relative w-full bg-[#0a0a0a] text-white overflow-hidden flex flex-col justify-between" style={{ minHeight: "100vh" }}>
       <div className="w-full px-6 md:px-16 pt-20 flex-shrink-0">
         <div className="max-w-[1400px] mx-auto w-full h-px bg-white/10" />
       </div>
 
       <div className="flex-grow flex flex-col items-center justify-center px-6 md:px-16 py-12 md:py-20">
+        {/* Heading */}
         <motion.div
           className="text-center mb-12 md:mb-20"
           initial={{ opacity: 0, y: 60, scale: 0.95 }}
@@ -40,8 +110,9 @@ export default function ContactSection() {
           </h2>
         </motion.div>
 
+        {/* Email link */}
         <motion.div
-          className="relative group"
+          className="relative group mb-16 md:mb-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -68,6 +139,143 @@ export default function ContactSection() {
           </a>
         </motion.div>
 
+        {/* Contact Form */}
+        <motion.div
+          className="w-full max-w-2xl"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+        >
+          {formStatus === "success" ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="text-center py-12 border border-[#66FF80]/30 rounded-2xl"
+              role="status"
+              aria-live="polite"
+            >
+              <div className="text-[#66FF80] text-3xl mb-4" aria-hidden="true">✓</div>
+              <p className="text-white/70 font-light" style={{ fontFamily: "var(--font-body)" }}>
+                {t.formSuccess}
+              </p>
+            </motion.div>
+          ) : (
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5" noValidate>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {/* Name */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/30" htmlFor="contact-name">
+                    {t.formName}
+                  </label>
+                  <input
+                    id="contact-name"
+                    type="text"
+                    {...register("name")}
+                    placeholder={t.formNamePlaceholder}
+                    aria-required="true"
+                    aria-invalid={errors.name ? "true" : "false"}
+                    aria-describedby={errors.name ? "name-error" : undefined}
+                    className={`bg-white/5 border rounded-xl px-5 py-3.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#66FF80]/50 focus:bg-white/8 transition-all duration-200 ${
+                      errors.name ? "border-red-500/50" : "border-white/10"
+                    }`}
+                    style={{ fontFamily: "var(--font-body)" }}
+                  />
+                  {errors.name && (
+                    <p id="name-error" className="text-red-400 text-xs mt-1 ml-1" role="alert">
+                      {errors.name.message}
+                    </p>
+                  )}
+                </div>
+                {/* Email */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/30" htmlFor="contact-email">
+                    {t.formEmail}
+                  </label>
+                  <input
+                    id="contact-email"
+                    type="email"
+                    {...register("email")}
+                    placeholder={t.formEmailPlaceholder}
+                    aria-required="true"
+                    aria-invalid={errors.email ? "true" : "false"}
+                    aria-describedby={errors.email ? "email-error" : undefined}
+                    className={`bg-white/5 border rounded-xl px-5 py-3.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#66FF80]/50 focus:bg-white/8 transition-all duration-200 ${
+                      errors.email ? "border-red-500/50" : "border-white/10"
+                    }`}
+                    style={{ fontFamily: "var(--font-body)" }}
+                  />
+                  {errors.email && (
+                    <p id="email-error" className="text-red-400 text-xs mt-1 ml-1" role="alert">
+                      {errors.email.message}
+                    </p>
+                  )}
+                </div>
+              </div>
+
+              {/* Message */}
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/30" htmlFor="contact-message">
+                  {t.formMessage}
+                </label>
+                <textarea
+                  id="contact-message"
+                  {...register("message")}
+                  rows={5}
+                  placeholder={t.formMessagePlaceholder}
+                  aria-required="true"
+                  aria-invalid={errors.message ? "true" : "false"}
+                  aria-describedby={errors.message ? "message-error" : undefined}
+                  className={`bg-white/5 border rounded-xl px-5 py-3.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#66FF80]/50 focus:bg-white/8 transition-all duration-200 resize-none ${
+                    errors.message ? "border-red-500/50" : "border-white/10"
+                  }`}
+                  style={{ fontFamily: "var(--font-body)" }}
+                />
+                {errors.message && (
+                  <p id="message-error" className="text-red-400 text-xs mt-1 ml-1" role="alert">
+                    {errors.message.message}
+                  </p>
+                )}
+              </div>
+
+              {/* Honeypot field to prevent automated spam */}
+              <div className="hidden" aria-hidden="true">
+                <input
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  {...register("website")}
+                />
+              </div>
+
+              {/* Submit */}
+              <div className="flex items-center justify-between pt-2">
+                <p className="text-[11px] text-white/20 font-mono">
+                  {t.formPrivacy}
+                </p>
+                <button
+                  type="submit"
+                  disabled={formStatus === "sending"}
+                  aria-busy={formStatus === "sending"}
+                  className="flex items-center gap-3 px-7 py-3.5 bg-[#66FF80] text-[#0a0a0a] rounded-full text-sm font-semibold tracking-tight hover:bg-white transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer border-none"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  {formStatus === "sending" ? t.formSending : t.formSubmit}
+                  {formStatus !== "sending" && <span aria-hidden="true">→</span>}
+                </button>
+              </div>
+
+              {formStatus === "error" && (
+                <p className="text-red-400/70 text-xs font-mono text-center" role="alert" aria-live="assertive">
+                  {t.formError}
+                </p>
+              )}
+            </form>
+          )}
+        </motion.div>
+
+
+        {/* HQ + Phone */}
         <motion.div
           className="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 text-center"
           initial={{ opacity: 0, y: 20 }}
@@ -99,6 +307,7 @@ export default function ContactSection() {
         </motion.div>
       </div>
 
+      {/* Footer */}
       <motion.div
         className="w-full px-6 md:px-16 pb-8 flex-shrink-0"
         initial={{ opacity: 0 }}
@@ -111,19 +320,25 @@ export default function ContactSection() {
             {t.footer}
           </span>
           <div className="flex items-center gap-8 md:gap-6 flex-1 justify-center">
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-white/40 hover:text-[#66FF80] tracking-widest transition-colors uppercase">
+            {/* TODO: Replace with actual Facebook page URL */}
+            <a href="https://facebook.com/cbecsolutions" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-white/40 hover:text-[#66FF80] tracking-widest transition-colors uppercase">
               Facebook
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-white/40 hover:text-[#66FF80] tracking-widest transition-colors uppercase">
+            {/* TODO: Replace with actual Instagram profile URL */}
+            <a href="https://instagram.com/cbecsolutions" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-white/40 hover:text-[#66FF80] tracking-widest transition-colors uppercase">
               Instagram
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-white/40 hover:text-[#66FF80] tracking-widest transition-colors uppercase">
+            {/* TODO: Replace with actual X/Twitter profile URL */}
+            <a href="https://x.com/cbecsolutions" target="_blank" rel="noopener noreferrer" className="text-xs font-mono text-white/40 hover:text-[#66FF80] tracking-widest transition-colors uppercase">
               X
             </a>
           </div>
-          <span className="text-xs font-mono text-white/20 tracking-widest flex-1 text-center md:text-right">
-            {t.tagline}
-          </span>
+          {/* Vietnam legal trust signal — only shown on /vi */}
+          {language === "vi" && (
+            <span className="text-xs font-mono text-white/20 tracking-widest flex-1 text-center md:text-right">
+              MST: 0319431730 · CBEC Solutions Company Limited
+            </span>
+          )}
         </div>
       </motion.div>
     </section>

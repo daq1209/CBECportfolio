@@ -1,0 +1,47 @@
+{
+  "intro": "Các phần mềm có sẵn trên thị trường thường quá phức tạp, dư thừa tính năng hoặc không khớp với quy trình vận hành thực tế tại Việt Nam. CBEC Solutions thiết kế và xây dựng các phần mềm quản lý nội bộ, cổng thông tin, quản lý kho bãi, nhân sự tinh gọn theo đúng luồng hoạt động thực tế của doanh nghiệp.",
+  "sections": [
+    {
+      "title": "Hạn Chế Của Các Phần Mềm Đóng Gói Sẵn",
+      "paragraphs": [
+        "Các giải pháp phần mềm đóng gói sẵn thường được thiết kế để phục vụ số đông nên thường mang tính chất chung chung và thiếu tính linh hoạt. Khi áp dụng vào thực tế, doanh nghiệp buộc phải thay đổi quy trình làm việc vốn có để thích ứng với phần mềm, dẫn đến sự xáo trộn trong vận hành và phản ứng tiêu cực từ đội ngũ nhân sự.",
+        "Theo nghiên cứu thực tế từ tổ chức Gartner, hơn 70% dự án phần mềm quản lý doanh nghiệp đóng gói sẵn gặp khó khăn hoặc không đạt được mục tiêu đề ra do không tương thích với luồng công việc thực tiễn. Thêm vào đó, việc phải chi trả phí bản quyền hàng tháng cho các tính năng dư thừa không sử dụng tới gây ra sự lãng phí ngân sách lớn đối với các doanh nghiệp."
+      ]
+    },
+    {
+      "title": "Số Hóa Quy Trình Vận Hành Thủ Công Thực Tế",
+      "paragraphs": [
+        "Chúng tôi làm việc trực tiếp với đội ngũ của bạn để sơ đồ hóa quy trình vận hành hiện tại từ phê duyệt giấy tờ, quản lý tồn kho đến theo dõi tiến độ công việc.",
+        "Hệ thống số hóa giúp loại bỏ các bảng tính Excel rời rạc và việc truyền đạt thông tin thủ công, chuyển toàn bộ dữ liệu lên một nền tảng cloud bảo mật và tập trung."
+      ]
+    },
+    {
+      "title": "Phân Quyền Sử Dụng Chi Tiết & Bảo Mật Dữ Liệu",
+      "paragraphs": [
+        "Phần mềm nội bộ yêu cầu tính bảo mật thông tin cao. Chúng tôi xây dựng cơ chế phân quyền (RBAC) chi tiết, giúp người quản lý kiểm soát quyền xem và chỉnh sửa dữ liệu của từng phòng ban.",
+        "Nhân viên kho chỉ thấy dữ liệu xuất nhập, nhân viên kế toán quản lý công nợ, và ban giám đốc theo dõi các biểu đồ báo cáo tổng quan."
+      ]
+    },
+    {
+      "title": "Báo Cáo Tự Động & Trực Quan Hóa Số Liệu",
+      "paragraphs": [
+        "Hệ thống tự động tổng hợp số liệu để tạo ra các biểu đồ doanh thu, tốc độ quay vòng hàng tồn kho và hiệu suất làm việc của nhân viên theo thời gian thực.",
+        "Ban lãnh đạo có thể đưa ra quyết định kinh doanh nhanh chóng dựa trên số liệu chính xác thay vì phải đợi các báo cáo thủ công cuối tháng."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Phần mềm quản lý chạy trên nền tảng nào?",
+      "answer": "Chúng tôi xây dựng phần mềm chạy trên nền tảng web (Web Application), giúp nhân sự truy cập sử dụng mượt mà từ máy tính, tablet đến điện thoại mà không cần cài đặt phức tạp."
+    },
+    {
+      "question": "Phần mềm của CBEC có kết nối được với các ứng dụng khác không?",
+      "answer": "Có. Chúng tôi phát triển hệ thống API kết nối đồng bộ dữ liệu với các phần mềm kế toán, CRM, hoặc các cổng thanh toán phổ biến."
+    },
+    {
+      "question": "Doanh nghiệp có phải trả phí duy trì hàng tháng không?",
+      "answer": "Không. Bạn sở hữu hoàn toàn mã nguồn phần mềm sau khi hoàn thành. Bạn chỉ cần trả chi phí thuê máy chủ cloud (như AWS, Google Cloud) theo mức sử dụng thực tế."
+    }
+  ]
+}
