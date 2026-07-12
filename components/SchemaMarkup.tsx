@@ -86,6 +86,7 @@ export default async function SchemaMarkup({ lang }: Props) {
     <script
       type="application/ld+json"
       nonce={nonce}
+      suppressHydrationWarning
       dangerouslySetInnerHTML={{ __html: escapeJsonLd(schema) }}
     />
   );

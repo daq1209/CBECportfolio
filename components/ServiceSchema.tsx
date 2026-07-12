@@ -70,11 +70,13 @@ export default function ServiceSchema({ service, lang, nonce }: Props) {
       <script
         type="application/ld+json"
         nonce={nonce}
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: escapeJsonLd(serviceSchema) }}
       />
       <script
         type="application/ld+json"
         nonce={nonce}
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: escapeJsonLd(breadcrumbSchema) }}
       />
     </>

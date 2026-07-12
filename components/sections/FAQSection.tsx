@@ -148,6 +148,7 @@ export default function FAQSection({ lang, nonce }: { lang: string; nonce?: stri
       <script
         type="application/ld+json"
         nonce={nonce}
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: escapeJsonLd(faqSchema) }}
       />
       <div className="max-w-[1400px] mx-auto px-6 md:px-16 w-full">

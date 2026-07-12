@@ -71,11 +71,13 @@ export default function ProjectSchema({ project, lang, nonce }: Props) {
       <script
         type="application/ld+json"
         nonce={nonce}
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: escapeJsonLd(articleSchema) }}
       />
       <script
         type="application/ld+json"
         nonce={nonce}
+        suppressHydrationWarning
         dangerouslySetInnerHTML={{ __html: escapeJsonLd(breadcrumbSchema) }}
       />
     </>
