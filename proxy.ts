@@ -2,21 +2,13 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 /* ── Supported locales ───────────────────────────────────────────────────── */
-const LOCALES = ["global", "vi"] as const;
+const LOCALES = ["global"] as const;
 type Locale = (typeof LOCALES)[number];
 const DEFAULT_LOCALE: Locale = "global";
 const COOKIE_NAME = "cbec-language";
 
 /* ── Detect preferred locale ─────────────────────────────────────────────── */
 function detectLocale(request: NextRequest): Locale {
-  // 1. Check saved cookie preference
-  const saved = request.cookies.get(COOKIE_NAME)?.value;
-  if (saved === "vi" || saved === "global") return saved as Locale;
-
-  // 2. Infer from Accept-Language header
-  const acceptLang = request.headers.get("accept-language") ?? "";
-  if (acceptLang.toLowerCase().includes("vi")) return "vi";
-
   return DEFAULT_LOCALE;
 }
 
@@ -44,6 +36,13 @@ export function proxy(request: NextRequest) {
     pathname.includes(".") // static files (images, fonts, etc.)
   ) {
     return NextResponse.next();
+  }
+
+  // Legacy redirect for /vi to /global
+  if (pathname === "/vi" || pathname.startsWith("/vi/")) {
+    const newPath = pathname.replace(/^\/vi/, "/global");
+    const redirectUrl = new URL(newPath || "/global", request.url);
+    return NextResponse.redirect(redirectUrl);
   }
 
   // Already under a locale prefix — allow through
