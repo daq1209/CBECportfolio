@@ -16,6 +16,8 @@ export interface ProjectItem {
   slug: string;
   title: string;
   image: string;
+  imagePosition?: string; // Tailwind class for object-position
+  externalLink?: string;
   category: string; // key matching PROJECT_CATEGORIES in gallery
   outcome: { en: string; vi: string };
   client: string;
@@ -34,6 +36,7 @@ export const PROJECTS: ProjectItem[] = [
     slug: "richmond-smiles",
     title: "Richmond Smiles",
     image: "/projects/richmondsmiles.jpg",
+    externalLink: "https://www.richmondsmiles.com.au/",
     category: "gallery.cat1",
     outcome: {
       en: "Dental clinic rebrand + custom web booking platform.",
@@ -90,15 +93,17 @@ export const PROJECTS: ProjectItem[] = [
     ]
   },
   {
-    slug: "leadoi",
-    title: "Leadoi",
-    image: "/projects/383084327_122117840984033541_1787976392589229528_n.jpg",
-    category: "gallery.cat2",
+    slug: "banh-mi-ngon",
+    title: "Banh Mi Ngon",
+    image: "/projects/5e0d1b7bdd555c0b0544 (1).jpg",
+    imagePosition: "object-center",
+    externalLink: "https://www.behance.net/gallery/167430343/BANH-MI-NGON",
+    category: "gallery.cat6",
     outcome: {
       en: "B2B sales engagement portal & automated CRM solution.",
       vi: "Phần mềm quản lý bán hàng B2B & giải pháp tự động hóa CRM."
     },
-    client: "Leadoi Technology JSC (Vietnam)",
+    client: "Banh Mi Ngon",
     year: "2025",
     role: {
       en: "Software Architecture, React Admin Panel, API Integration",
@@ -148,10 +153,11 @@ export const PROJECTS: ProjectItem[] = [
     ]
   },
   {
-    slug: "tradiemate",
-    title: "TradieMate",
-    image: "/projects/5e0d1b7bdd555c0b0544 (1).jpg",
-    category: "gallery.cat5",
+    slug: "dentix-consulting",
+    title: "Dentix Consulting",
+    image: "/projects/84ebc9938460053e5c71.jpg",
+    externalLink: "https://www.behance.net/gallery/229948819/DENTIX-CONSULTING-BRANDING",
+    category: "gallery.cat6",
     outcome: {
       en: "Platform for Australian trade services and booking scheduler.",
       vi: "Ứng dụng đặt lịch thợ sửa chữa & quản lý việc cho thị trường Úc."
@@ -206,10 +212,11 @@ export const PROJECTS: ProjectItem[] = [
     ]
   },
   {
-    slug: "cbec-lab",
-    title: "CBEC Lab",
-    image: "/projects/richmondsmiles.jpg",
-    category: "gallery.cat7",
+    slug: "lee-concept",
+    title: "Lee Concept",
+    image: "/projects/lee concept.png",
+    externalLink: "https://leeconcept.com.vn",
+    category: "gallery.cat5",
     outcome: {
       en: "AI Automation R&D & eCommerce scaling playbooks.",
       vi: "Nghiên cứu ứng dụng AI & cẩm nang tăng trưởng eCommerce."

@@ -92,12 +92,25 @@ export default async function CaseStudyPage({ params }: Props) {
         <span className="text-xs uppercase tracking-[0.2em] font-mono text-[#66FF80]">
           {isVi ? "Dự án tiêu biểu" : "Featured Case Study"}
         </span>
-        <h1
-          className="text-[12vw] md:text-[6vw] font-bold uppercase leading-[1.05] tracking-tighter mt-4 mb-12 text-white"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          {project.title}
-        </h1>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-4 mb-12">
+          <h1
+            className="text-[12vw] md:text-[6vw] font-bold uppercase leading-[1.05] tracking-tighter text-white m-0"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            {project.title}
+          </h1>
+          {project.externalLink && (
+            <a 
+              href={project.externalLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 px-6 py-3 bg-[#66FF80] text-[#0a0a0a] rounded-full text-sm font-semibold tracking-tight hover:bg-white transition-colors duration-300 w-fit"
+            >
+              {isVi ? "Truy cập Website" : "Visit Website"}
+              <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">↗</span>
+            </a>
+          )}
+        </div>
 
         {/* Project Metadata Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-white/[0.08] text-sm font-light">

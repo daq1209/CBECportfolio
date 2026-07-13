@@ -70,7 +70,9 @@ export default function ProjectsGallery({ lang }: { lang: string }) {
             return (
               <Link
                 key={project.slug}
-                href={`/${language}/work/${project.slug}`}
+                href={project.externalLink || `/${lang}/work/${project.slug}`}
+                target={project.externalLink ? "_blank" : undefined}
+                rel={project.externalLink ? "noopener noreferrer" : undefined}
                 className="relative w-full block group"
               >
                 <motion.div
@@ -82,13 +84,13 @@ export default function ProjectsGallery({ lang }: { lang: string }) {
                   <span className="absolute -top-6 left-0 text-[10px] font-mono text-white/30 tracking-widest">
                     0{i + 1}
                   </span>
-                  <div className="relative w-full aspect-[4/5] overflow-hidden bg-[#111] mb-4">
+                  <div className="relative w-full aspect-square overflow-hidden bg-[#111] mb-4">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
                       sizes="100vw"
-                      className="object-cover"
+                      className={`object-cover ${project.imagePosition || "object-center"}`}
                       quality={90}
                     />
                   </div>
@@ -169,15 +171,13 @@ export default function ProjectsGallery({ lang }: { lang: string }) {
             <motion.div style={{ x }} className="absolute top-0 left-0 h-full flex items-center gap-16 xl:gap-24">
               <div className="flex-shrink-0 w-[42vw] h-px" />
               {PROJECTS.map((project, i) => {
-                // Asymmetrical positioning: alternate margin-top to break the grid
-                const mtClasses = ["mt-0", "mt-32", "mt-16", "-mt-20", "mt-24", "-mt-10"];
-                const yOffset = mtClasses[i % mtClasses.length];
-                
                 return (
                   <Link
                     key={project.slug}
-                    href={`/${language}/work/${project.slug}`}
-                    className={`relative flex-shrink-0 w-[36vw] lg:w-[28vw] xl:w-[24vw] block group cursor-none cursor-hover-target ${yOffset}`}
+                    href={project.externalLink || `/${lang}/work/${project.slug}`}
+                    target={project.externalLink ? "_blank" : undefined}
+                    rel={project.externalLink ? "noopener noreferrer" : undefined}
+                    className={`relative flex-shrink-0 w-[40vw] lg:w-[32vw] xl:w-[28vw] block group cursor-none cursor-hover-target`}
                   >
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
@@ -190,7 +190,7 @@ export default function ProjectsGallery({ lang }: { lang: string }) {
                       </span>
                       
                       {/* Image Mask Container for Inner Parallax */}
-                      <div className="relative w-full aspect-[3/4] overflow-hidden bg-[#111] mb-6">
+                      <div className="relative w-full aspect-square overflow-hidden bg-[#111] mb-6">
                         <motion.div
                           className="w-[120%] h-full relative -left-[10%]"
                           style={{ x: imageParallax }}
@@ -205,7 +205,7 @@ export default function ProjectsGallery({ lang }: { lang: string }) {
                               alt={project.title}
                               fill
                               sizes="(max-width: 1024px) 36vw, 28vw"
-                              className="object-cover"
+                              className={`object-cover ${project.imagePosition || "object-center"}`}
                               quality={90}
                               loading="lazy"
                             />
