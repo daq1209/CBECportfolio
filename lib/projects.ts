@@ -266,8 +266,54 @@ export const PROJECTS: ProjectItem[] = [
         vi: "Chia sẻ rộng rãi hơn 5 script quy trình tự động hóa hữu ích tới cộng đồng lập trình."
       }
     ],
+    ],
     galleryImages: [
       "/projects/richmondsmiles.jpg"
+    ]
+  },
+  {
+    slug: "unineon",
+    title: "UniNeon",
+    image: "/projects/61e08dd5eb266a783337.jpg",
+    externalLink: "https://unineon.com/?srsltid=AfmBOorWjOFD-jrHxZD6PHrS9O4HD8Mf-bqsCp3YaUmzTEAOkSpLqtvG",
+    category: "gallery.cat5",
+    outcome: {
+      en: "Custom e-commerce web platform.",
+      vi: "Nền tảng website thương mại điện tử chuyên biệt."
+    },
+    client: "UniNeon",
+    year: "2026",
+    role: {
+      en: "Web Development",
+      vi: "Thiết kế & Lập trình Website"
+    },
+    overview: {
+      en: "UniNeon is a vibrant platform that required a modern web development approach to showcase their glowing products effectively and securely.",
+      vi: "UniNeon là một nền tảng bán hàng nổi bật yêu cầu cách tiếp cận phát triển web hiện đại để giới thiệu các sản phẩm đèn neon một cách hiệu quả."
+    },
+    stats: [
+      { value: "100%", label: { en: "Responsive Design", vi: "Tương thích mọi thiết bị" } }
+    ],
+    challenges: [
+      {
+        en: "Needed a highly visual interface to properly display neon products.",
+        vi: "Cần một giao diện trực quan cao để hiển thị đúng màu sắc các sản phẩm neon."
+      }
+    ],
+    solutions: [
+      {
+        en: "Built a customized web experience tailored for aesthetic product showcases.",
+        vi: "Xây dựng trải nghiệm web tùy chỉnh dành riêng cho việc trưng bày sản phẩm mang tính thẩm mỹ cao."
+      }
+    ],
+    results: [
+      {
+        en: "Successfully launched the digital storefront.",
+        vi: "Ra mắt thành công cửa hàng trực tuyến."
+      }
+    ],
+    galleryImages: [
+      "/projects/61e08dd5eb266a783337.jpg"
     ]
   }
 ];
