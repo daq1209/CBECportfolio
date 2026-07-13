@@ -416,7 +416,7 @@ export default function ContactSection({ lang }: { lang: string }) {
               (+84) 703 819 006
             </a>
             <span className="text-[10px] font-mono text-white/30 mt-2 uppercase tracking-widest">
-              WhatsApp / Zalo
+              WhatsApp
             </span>
           </div>
         </motion.div>

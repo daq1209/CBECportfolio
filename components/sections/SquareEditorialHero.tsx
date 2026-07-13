@@ -142,7 +142,7 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                   variants={fadeSlide}
                   initial="hidden"
                   animate="visible"
-                  className="flex flex-col sm:flex-row items-start gap-4 mb-10"
+                  className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 mb-10 w-full sm:w-auto"
                 >
                   {/* Primary CTA */}
                   <MagneticButton>
@@ -151,7 +151,7 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                         trackCTAClick(t.ctaPrimary, "hero");
                         document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
                       }}
-                      className="group flex items-center gap-3 px-6 py-3 bg-[#66FF80] text-[#0a0a0a] rounded-full text-sm font-semibold tracking-tight hover:bg-white transition-colors duration-300 cursor-pointer border-none"
+                      className="group flex items-center justify-center gap-3 px-6 py-4 md:px-8 bg-[#66FF80] text-[#0a0a0a] rounded-full text-base font-semibold tracking-tight hover:bg-white transition-colors duration-300 cursor-pointer border-none min-h-[48px] md:min-h-[56px] w-full sm:w-auto"
                       style={{ fontFamily: "var(--font-display)" }}
                       aria-label={t.ctaPrimary}
                     >
@@ -167,7 +167,7 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                         trackCTAClick(t.ctaSecondary, "hero");
                         document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
                       }}
-                      className="flex items-center gap-3 px-6 py-3 border border-white/20 text-white/70 rounded-full text-sm font-light tracking-tight hover:border-white/50 hover:text-white transition-all duration-300 cursor-pointer bg-transparent"
+                      className="flex items-center justify-center gap-3 px-6 py-4 md:px-8 border border-white/20 text-white/70 rounded-full text-base font-light tracking-tight hover:border-white/50 hover:text-white transition-all duration-300 cursor-pointer bg-transparent min-h-[48px] md:min-h-[56px] w-full sm:w-auto"
                       style={{ fontFamily: "var(--font-display)" }}
                       aria-label={t.ctaSecondary}
                     >
