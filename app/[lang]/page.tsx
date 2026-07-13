@@ -63,9 +63,6 @@ export default async function HomePage({
       {/* 5. Process — 6-step engagement workflow */}
       <ProcessSection lang={locale} />
 
-      {/* 6. Lead Magnet — eCommerce checklist capture */}
-      {/* <LeadMagnetSection lang={locale} /> */}
-
       {/* 7. Principles — brand values list */}
       <PrinciplesSection lang={locale} />
 

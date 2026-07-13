@@ -56,6 +56,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title,
       description: desc,
       url: `${SITE_URL}/${locale}/work/${slug}`,
+      images: [
+        {
+          url: project.image.startsWith('http') ? project.image : `${SITE_URL}${project.image}`,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
   };
 }

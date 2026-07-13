@@ -83,24 +83,6 @@ export async function generateMetadata({
         "x-default": `${SITE_URL}/global`,
       },
     },
-    keywords:
-      locale === "vi"
-        ? [
-            "thiết kế website doanh nghiệp",
-            "dịch vụ branding",
-            "agency marketing SME",
-            "phần mềm CRM cho doanh nghiệp nhỏ",
-            "AI automation cho sales",
-            "công ty thiết kế website TP.HCM",
-          ]
-        : [
-            "software outsourcing Vietnam",
-            "web development outsourcing Vietnam",
-            "MVP development agency Vietnam",
-            "dedicated development team Vietnam",
-            "AI automation agency for SMEs",
-            "Australian-led software outsourcing Vietnam",
-          ],
     authors: [{ name: "CBEC Solutions", url: SITE_URL }],
     creator: "CBEC Solutions",
     openGraph: {
