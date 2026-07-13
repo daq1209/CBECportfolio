@@ -30,7 +30,8 @@ const schema = (isVi: boolean) =>
     message: z
       .string()
       .min(10, isVi ? "Nội dung tin nhắn phải có ít nhất 10 ký tự" : "Message must be at least 10 characters"),
-    website: z.string().optional(),
+    currentWebsite: z.string().optional(),
+    _gotcha: z.string().optional(),
   });
 
 type FormData = {
@@ -41,7 +42,8 @@ type FormData = {
   service: string;
   budget?: string;
   message: string;
-  website?: string;
+  currentWebsite?: string;
+  _gotcha?: string;
 };
 
 export default function ContactSection({ lang }: { lang: string }) {
@@ -79,7 +81,8 @@ export default function ContactSection({ lang }: { lang: string }) {
           service: data.service,
           budget: data.budget,
           message: data.message,
-          website: data.website,
+          currentWebsite: data.currentWebsite,
+          _gotcha: data._gotcha,
           lang,
         }),
       });
@@ -271,6 +274,22 @@ export default function ContactSection({ lang }: { lang: string }) {
                 </div>
               </div>
 
+              {/* Current Website */}
+              <div className="flex flex-col gap-2">
+                <label className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/30" htmlFor="contact-currentWebsite">
+                  {/* @ts-ignore */}
+                  {t.formCurrentWebsite || "Current Website"}
+                </label>
+                <input
+                  id="contact-currentWebsite"
+                  type="text"
+                  {...register("currentWebsite")}
+                  placeholder={(t as any).formCurrentWebsitePlaceholder || "https://your-website.com"}
+                  className="bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#66FF80]/50 focus:bg-white/8 transition-all duration-200"
+                  style={{ fontFamily: "var(--font-body)" }}
+                />
+              </div>
+
               {/* Service & Budget */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 {/* Service */}
@@ -356,7 +375,7 @@ export default function ContactSection({ lang }: { lang: string }) {
                   type="text"
                   tabIndex={-1}
                   autoComplete="off"
-                  {...register("website")}
+                  {...register("_gotcha")}
                 />
               </div>
 

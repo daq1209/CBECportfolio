@@ -9,7 +9,7 @@ const leadMagnetSchema = z.object({
   email: z.string().email("Invalid email address"),
   lang: z.string().optional(),
   source: z.string().optional(),
-  website: z.string().optional(),
+  _gotcha: z.string().optional(),
 });
 
 const contactFormSchema = z.object({
@@ -22,7 +22,8 @@ const contactFormSchema = z.object({
   budget: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
   lang: z.string().optional(),
-  website: z.string().optional(),
+  currentWebsite: z.string().optional(),
+  _gotcha: z.string().optional(),
 });
 
 const requestSchema = z.discriminatedUnion("type", [leadMagnetSchema, contactFormSchema]);
@@ -99,8 +100,8 @@ export async function POST(request: NextRequest) {
 
     const payload = result.data;
 
-    // Honeypot anti-spam check (website field must remain empty)
-    if (payload.website && payload.website.trim().length > 0) {
+    // Honeypot anti-spam check (_gotcha field must remain empty)
+    if (payload._gotcha && payload._gotcha.trim().length > 0) {
       console.warn("[lead-capture] Honeypot triggered. Request silently dropped.");
       return NextResponse.json({ success: true }, { status: 200 });
     }
@@ -137,6 +138,11 @@ export async function POST(request: NextRequest) {
       emailBody = {
         name: payload.name,
         email: payload.email,
+        company: payload.company,
+        phone: payload.phone,
+        service: payload.service,
+        budget: payload.budget,
+        currentWebsite: payload.currentWebsite,
         message: payload.message,
         _subject: `[Contact Form] New inquiry from ${payload.name} (${payload.lang ?? "unknown"})`,
         locale: payload.lang ?? "unknown",
