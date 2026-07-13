@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import CenterGraphic from "../animations/CenterGraphic";
+import MagneticButton from "../animations/MagneticButton";
 import { translations } from "@/lib/translations";
 import { trackCTAClick } from "@/lib/analytics";
 
@@ -82,7 +83,7 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                     variants={headlineReveal}
                     initial="hidden"
                     animate="visible"
-                    className="block text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] uppercase"
+                    className="block text-[12vw] sm:text-[10vw] lg:text-[6.5vw] leading-[1.1] tracking-[-0.02em] uppercase"
                     style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
                   >
                     {t.line1}
@@ -94,7 +95,7 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                     variants={headlineReveal}
                     initial="hidden"
                     animate="visible"
-                    className="block text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] uppercase"
+                    className="block text-[12vw] sm:text-[10vw] lg:text-[6.5vw] leading-[1.1] tracking-[-0.02em] uppercase"
                     style={{ fontFamily: 'var(--font-display)', fontWeight: 500 }}
                   >
                     {t.line2}
@@ -106,7 +107,7 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                     variants={headlineReveal}
                     initial="hidden"
                     animate="visible"
-                    className="block text-[14vw] lg:text-[6.5vw] leading-[1.15] tracking-[-0.02em] text-white/70 italic capitalize"
+                    className="block text-[12vw] sm:text-[10vw] lg:text-[6.5vw] leading-[1.1] tracking-[-0.02em] text-white/70 italic capitalize"
                     style={{ fontFamily: 'var(--font-display)', fontWeight: 300 }}
                   >
                     {t.line3}
@@ -121,7 +122,7 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                   variants={fadeSlide}
                   initial="hidden"
                   animate="visible"
-                  className="text-[2rem] md:text-[2.5rem] leading-[1.1] text-white font-bold tracking-[-0.02em] mb-4"
+                  className="text-[1.75rem] md:text-[2.5rem] leading-[1.1] text-white font-bold tracking-[-0.02em] mb-4"
                   style={{ fontFamily: 'var(--font-display)', fontWeight: 700 }}
                 >
                   {t.tagline}
@@ -144,31 +145,35 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                   className="flex flex-col sm:flex-row items-start gap-4 mb-10"
                 >
                   {/* Primary CTA */}
-                  <button
-                    onClick={() => {
-                      trackCTAClick(t.ctaPrimary, "hero");
-                      document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="group flex items-center gap-3 px-6 py-3 bg-[#66FF80] text-[#0a0a0a] rounded-full text-sm font-semibold tracking-tight hover:bg-white transition-colors duration-300 cursor-pointer border-none"
-                    style={{ fontFamily: "var(--font-display)" }}
-                    aria-label={t.ctaPrimary}
-                  >
-                    {t.ctaPrimary}
-                    <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">→</span>
-                  </button>
+                  <MagneticButton>
+                    <button
+                      onClick={() => {
+                        trackCTAClick(t.ctaPrimary, "hero");
+                        document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      className="group flex items-center gap-3 px-6 py-3 bg-[#66FF80] text-[#0a0a0a] rounded-full text-sm font-semibold tracking-tight hover:bg-white transition-colors duration-300 cursor-pointer border-none"
+                      style={{ fontFamily: "var(--font-display)" }}
+                      aria-label={t.ctaPrimary}
+                    >
+                      {t.ctaPrimary}
+                      <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">→</span>
+                    </button>
+                  </MagneticButton>
 
                   {/* Secondary CTA */}
-                  <button
-                    onClick={() => {
-                      trackCTAClick(t.ctaSecondary, "hero");
-                      document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
-                    }}
-                    className="flex items-center gap-3 px-6 py-3 border border-white/20 text-white/70 rounded-full text-sm font-light tracking-tight hover:border-white/50 hover:text-white transition-all duration-300 cursor-pointer bg-transparent"
-                    style={{ fontFamily: "var(--font-display)" }}
-                    aria-label={t.ctaSecondary}
-                  >
-                    {t.ctaSecondary}
-                  </button>
+                  <MagneticButton>
+                    <button
+                      onClick={() => {
+                        trackCTAClick(t.ctaSecondary, "hero");
+                        document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      className="flex items-center gap-3 px-6 py-3 border border-white/20 text-white/70 rounded-full text-sm font-light tracking-tight hover:border-white/50 hover:text-white transition-all duration-300 cursor-pointer bg-transparent"
+                      style={{ fontFamily: "var(--font-display)" }}
+                      aria-label={t.ctaSecondary}
+                    >
+                      {t.ctaSecondary}
+                    </button>
+                  </MagneticButton>
                 </motion.div>
 
                 <motion.div

@@ -5,6 +5,9 @@ import { headers } from "next/headers";
 const SquareEditorialHero = dynamic(
   () => import("@/components/sections/SquareEditorialHero"),
 );
+const TechStackMarquee = dynamic(
+  () => import("@/components/sections/TechStackMarquee"),
+);
 const ProjectsGallery = dynamic(
   () => import("@/components/sections/ProjectsGallery"),
 );
@@ -44,6 +47,9 @@ export default async function HomePage({
     <main id="main-content" className="bg-[#0a0a0a] min-h-screen">
       {/* 1. Hero — scroll-jacked editorial cinematic */}
       <SquareEditorialHero lang={locale} />
+      
+      {/* 1.5. Tech Stack Marquee */}
+      <TechStackMarquee />
 
       {/* 2. Work — horizontal-scroll case studies */}
       <ProjectsGallery lang={locale} />

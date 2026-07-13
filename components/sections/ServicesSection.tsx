@@ -115,11 +115,23 @@ function ServiceCard({ item, index, colors, topOffset, href }: ServiceCardProps)
         href={href} 
         className="block w-full h-full max-h-[800px]"
         onClick={() => trackServiceView(href, item.title)}
+        onMouseMove={(e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          e.currentTarget.style.setProperty("--x", `${x}px`);
+          e.currentTarget.style.setProperty("--y", `${y}px`);
+        }}
       >
         <motion.div
           style={{ opacity: cardOpacity, scale: cardScale }}
           className={`w-full h-full max-h-[800px] ${colors.colorBg} ${colors.colorText} rounded-3xl md:rounded-[40px] border ${colors.colorBorder} p-6 sm:p-8 md:p-16 flex flex-col justify-between shadow-[0_-20px_50px_rgba(0,0,0,0.4)] overflow-hidden relative group cursor-pointer`}
         >
+        {/* Spotlight Effect - Hidden on mobile, visible on md+ */}
+        <div className="pointer-events-none absolute -inset-px hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{
+          background: `radial-gradient(600px circle at var(--x) var(--y), rgba(255,255,255,0.1), transparent 40%)`
+        }} />
+        
         {isAccent && (
           <div className="absolute inset-0 bg-gradient-to-tr from-[#3de65a] to-[#9effaf] opacity-50 pointer-events-none" />
         )}

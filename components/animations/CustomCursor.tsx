@@ -1,70 +1,88 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
-interface CustomCursorProps {
-  cursorText?: string;
-  className?: string;
-}
-
-export default function CustomCursor({ cursorText = "VIEW", className }: CustomCursorProps) {
-  const [isHovered, setIsHovered] = useState(false);
+export default function CustomCursor() {
+  const [isHovering, setIsHovering] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(true); // default to true, update on mount
   
-  // Mouse position
-  const mouseX = useMotionValue(-100);
-  const mouseY = useMotionValue(-100);
-
-  // Smooth spring physics for the cursor to follow the mouse
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+  
   const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
-  const cursorX = useSpring(mouseX, springConfig);
-  const cursorY = useSpring(mouseY, springConfig);
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    // Check if device has touch capability (likely mobile)
+    if (typeof window !== 'undefined') {
+      setIsDesktop(!window.matchMedia("(pointer: coarse)").matches);
+    }
+
     const moveCursor = (e: MouseEvent) => {
-      mouseX.set(e.clientX - 40); // Offset by half the cursor size (80px / 2)
-      mouseY.set(e.clientY - 40);
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
-      // Check if the hovered element or its parent has the class 'cursor-hover-target'
       const target = e.target as HTMLElement;
-      if (target.closest(".cursor-hover-target")) {
-        setIsHovered(true);
+      // Triggers hover effect for buttons, links, and specific interactive elements
+      if (
+        target.tagName.toLowerCase() === "a" ||
+        target.tagName.toLowerCase() === "button" ||
+        target.closest("a") ||
+        target.closest("button") ||
+        target.classList.contains("interactive") ||
+        target.closest(".interactive")
+      ) {
+        setIsHovering(true);
       } else {
-        setIsHovered(false);
+        setIsHovering(false);
       }
     };
 
     window.addEventListener("mousemove", moveCursor);
-    document.addEventListener("mouseover", handleMouseOver);
+    window.addEventListener("mouseover", handleMouseOver);
 
     return () => {
       window.removeEventListener("mousemove", moveCursor);
-      document.removeEventListener("mouseover", handleMouseOver);
+      window.removeEventListener("mouseover", handleMouseOver);
     };
-  }, [mouseX, mouseY]);
+  }, [cursorX, cursorY]);
+
+  if (!isDesktop) return null;
 
   return (
-    <motion.div
-      style={{
-        x: cursorX,
-        y: cursorY,
-      }}
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{
-        scale: isHovered ? 1 : 0,
-        opacity: isHovered ? 1 : 0,
-      }}
-      transition={{ duration: 0.3, ease: "easeOut" }}
-      className={`fixed top-0 left-0 w-[80px] h-[80px] bg-white rounded-full mix-blend-difference z-[100] pointer-events-none flex items-center justify-center ${className || ""}`}
-    >
-      <span
-        className="text-[#0a0a0a] text-[10px] font-mono tracking-widest uppercase font-bold"
-        style={{ mixBlendMode: "normal" }}
-      >
-        {cursorText}
-      </span>
-    </motion.div>
+    <>
+      <style dangerouslySetInnerHTML={{__html: `
+        /* Hide default cursor on desktop when this component is active */
+        @media (pointer: fine) {
+          body {
+            cursor: none;
+          }
+          a, button, [role="button"], input, select, textarea {
+            cursor: none;
+          }
+        }
+      `}} />
+      <motion.div
+        className="fixed top-0 left-0 w-4 h-4 rounded-full bg-[#66FF80] pointer-events-none z-[9999] mix-blend-difference"
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+          translateX: "-50%",
+          translateY: "-50%",
+        }}
+        animate={{
+          scale: isHovering ? 2.5 : 1,
+          opacity: isHovering ? 0.8 : 1,
+        }}
+        transition={{
+          scale: { type: "spring", stiffness: 300, damping: 20 },
+          opacity: { duration: 0.2 },
+        }}
+      />
+    </>
   );
 }

@@ -39,9 +39,6 @@ export default function ProjectsGallery({ lang }: { lang: string }) {
 
   return (
     <section id="projects" className="bg-[#0a0a0a] text-white">
-      {/* Include the custom cursor. It will only show when hovering elements with 'cursor-hover-target' */}
-      <CustomCursor cursorText={language === "en" ? "VIEW" : "XEM"} />
-
       {/* MOBILE */}
       <div className="block md:hidden px-6 pt-24 pb-16">
         <div className="flex justify-between items-center mb-16">
