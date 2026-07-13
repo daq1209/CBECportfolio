@@ -62,3 +62,6 @@ ehthumbs.db
 .agents/
 .gemini/
 agentic-awesome-skills*
+
+# custom additions
+add ons/
