@@ -266,7 +266,6 @@ export const PROJECTS: ProjectItem[] = [
         vi: "Chia sẻ rộng rãi hơn 5 script quy trình tự động hóa hữu ích tới cộng đồng lập trình."
       }
     ],
-    ],
     galleryImages: [
       "/projects/richmondsmiles.jpg"
     ]
