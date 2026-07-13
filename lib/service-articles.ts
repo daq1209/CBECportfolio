@@ -6,8 +6,8 @@
  * Refactored to import article contents from standalone JSON files for easier editing.
  */
 
-import softwareOutsourcing from "@/content/services/software-outsourcing-vietnam.json";
-import webDevelopmentOutsourcing from "@/content/services/web-development-outsourcing.json";
+import customSoftwareSolutions from "@/content/services/custom-software-solutions.json";
+import webDevelopment from "@/content/services/web-development.json";
 import dedicatedDevelopmentTeam from "@/content/services/dedicated-development-team.json";
 import customCrmDevelopment from "@/content/services/custom-crm-development.json";
 import mvpDevelopment from "@/content/services/mvp-development.json";
@@ -17,6 +17,7 @@ import crmSme from "@/content/services/crm-cho-doanh-nghiep-nho.json";
 import heThongQuanLyLead from "@/content/services/he-thong-quan-ly-lead.json";
 import thietKeWebsite from "@/content/services/thiet-ke-website-doanh-nghiep.json";
 import dichVuBranding from "@/content/services/dich-vu-branding.json";
+import brandingAndIdentity from "@/content/services/branding-and-identity.json";
 import tuDongHoaAi from "@/content/services/tu-dong-hoa-ai-cho-doanh-nghiep.json";
 import thietKeLandingPage from "@/content/services/thiet-ke-landing-page-ban-hang.json";
 
@@ -32,8 +33,8 @@ export interface ServiceArticle {
 }
 
 export const SERVICE_ARTICLES: Record<string, ServiceArticle> = {
-  "software-outsourcing-vietnam": softwareOutsourcing as ServiceArticle,
-  "web-development-outsourcing": webDevelopmentOutsourcing as ServiceArticle,
+  "custom-software-solutions": customSoftwareSolutions as ServiceArticle,
+  "web-development": webDevelopment as ServiceArticle,
   "dedicated-development-team": dedicatedDevelopmentTeam as ServiceArticle,
   "custom-crm-development": customCrmDevelopment as ServiceArticle,
   "mvp-development": mvpDevelopment as ServiceArticle,
@@ -43,6 +44,7 @@ export const SERVICE_ARTICLES: Record<string, ServiceArticle> = {
   "he-thong-quan-ly-lead": heThongQuanLyLead as ServiceArticle,
   "thiet-ke-website-doanh-nghiep": thietKeWebsite as ServiceArticle,
   "dich-vu-branding": dichVuBranding as ServiceArticle,
+  "branding-and-identity": brandingAndIdentity as ServiceArticle,
   "tu-dong-hoa-ai-cho-doanh-nghiep": tuDongHoaAi as ServiceArticle,
   "thiet-ke-landing-page-ban-hang": thietKeLandingPage as ServiceArticle
 };

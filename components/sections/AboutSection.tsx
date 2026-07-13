@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { translations } from "@/lib/translations";
+import Image from "next/image";
 
 export default function AboutSection({ lang }: { lang: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -51,7 +52,7 @@ export default function AboutSection({ lang }: { lang: string }) {
           <div className="overflow-hidden py-1">
             <motion.h2
               variants={revealVariants}
-              className="text-[10vw] md:text-[6vw] leading-[1.1] tracking-tighter uppercase font-bold"
+              className="text-[12vw] md:text-[8vw] leading-[0.9] tracking-tighter uppercase font-bold"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               {t.line1}
@@ -60,17 +61,20 @@ export default function AboutSection({ lang }: { lang: string }) {
           <div className="overflow-hidden py-1">
             <motion.h2
               variants={revealVariants}
-              className="text-[10vw] md:text-[6vw] leading-[1.1] tracking-tighter uppercase font-bold text-[#66FF80]"
+              className="text-[12vw] md:text-[8vw] leading-[0.9] tracking-tighter uppercase font-bold text-[#66FF80]"
               style={{ fontFamily: 'var(--font-display)' }}
             >
               {t.line2}
             </motion.h2>
           </div>
-          <div className="overflow-hidden mt-4 md:mt-8 ml-0 md:ml-32 py-1">
+          <div className="overflow-hidden py-1">
             <motion.h2
               variants={revealVariants}
-              className="text-[8vw] md:text-[4vw] leading-[1.15] tracking-tight text-white/60 italic"
-              style={{ fontFamily: 'var(--font-display)', fontWeight: 300 }}
+              className="text-[12vw] md:text-[8vw] leading-[0.9] tracking-tighter uppercase font-bold text-transparent"
+              style={{ 
+                fontFamily: 'var(--font-display)', 
+                WebkitTextStroke: '2px rgba(255, 255, 255, 0.4)' 
+              }}
             >
               {t.line3}
             </motion.h2>
@@ -96,22 +100,23 @@ export default function AboutSection({ lang }: { lang: string }) {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-[#66FF80]/10 to-transparent z-0" />
-            <div className="relative z-10">
-              <div className="text-[15vw] md:text-[10vw] font-bold leading-none tracking-tighter text-white font-mono opacity-80 mix-blend-overlay">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10" />
+            <motion.div style={{ scale: useTransform(scrollYProgress, [0, 1], [1, 1.2]) }} className="absolute inset-0">
+              <Image
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80"
+                alt="Our Team"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover opacity-80"
+              />
+            </motion.div>
+            <div className="relative z-20">
+              <div className="text-[15vw] md:text-[10vw] font-bold leading-none tracking-tighter text-white font-mono opacity-90 drop-shadow-xl">
                 100+
               </div>
-              <div className="text-white/70 tracking-widest uppercase font-mono text-sm mt-4 pl-2 border-l border-[#66FF80]">
+              <div className="text-white/90 tracking-widest uppercase font-mono text-sm mt-4 pl-2 border-l border-[#66FF80]">
                 {t.metric}
               </div>
-            </div>
-            <div className="pointer-events-none absolute inset-0 z-20 opacity-[0.05] mix-blend-screen">
-              <svg className="absolute inset-0 w-full h-full">
-                <filter id="aboutNoise">
-                  <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" stitchTiles="stitch" />
-                </filter>
-                <rect width="100%" height="100%" filter="url(#aboutNoise)" />
-              </svg>
             </div>
           </motion.div>
         </div>

@@ -4,14 +4,20 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 import { translations } from "@/lib/translations";
+import { trackServiceView } from "@/lib/analytics";
 
-/** Maps translation item index → service page slug (matches lib/services.ts) */
-const SERVICE_SLUGS = [
-  "branding-identity",
+const SERVICE_SLUGS_VI = [
+  "dich-vu-branding",
+  "thiet-ke-website-doanh-nghiep",
+  "phan-mem-quan-ly-doanh-nghiep",
+  "tu-dong-hoa-ai",
+];
+
+const SERVICE_SLUGS_EN = [
+  "branding-services",
   "web-development",
   "custom-software",
-  "social-media-content",
-  "ecommerce-amazon",
+  "ai-automation",
 ];
 
 const CARD_COLORS = [
@@ -27,10 +33,9 @@ const TOP_OFFSETS = [
   "top-[8vh] md:top-[16vh]",
   "top-[8vh] md:top-[24vh]",
   "top-[8vh] md:top-[32vh]",
-  "top-[8vh] md:top-[40vh]",
 ];
 
-const TOTAL_CARDS = 5;
+const TOTAL_CARDS = 4;
 
 export default function ServicesSection({ lang }: { lang: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -68,12 +73,12 @@ export default function ServicesSection({ lang }: { lang: string }) {
         <div className="relative w-full flex flex-col gap-10 md:gap-0 pb-[10vh]">
           {t.items.map((item, index) => (
             <ServiceCard
-              key={item.number}
+              key={index}
               item={item}
               index={index}
               colors={CARD_COLORS[index]}
               topOffset={TOP_OFFSETS[index]}
-              href={`${localePath}/services/${SERVICE_SLUGS[index]}`}
+              href={`${localePath}/${(lang === "vi" ? SERVICE_SLUGS_VI : SERVICE_SLUGS_EN)[index]}`}
             />
           ))}
         </div>
@@ -106,7 +111,11 @@ function ServiceCard({ item, index, colors, topOffset, href }: ServiceCardProps)
       className={`sticky ${topOffset} w-full h-auto min-h-[60vh] md:h-[70vh] flex items-center justify-center`}
       style={{ zIndex: index + 10 }}
     >
-      <Link href={href} className="block w-full h-full max-h-[800px]">
+      <Link 
+        href={href} 
+        className="block w-full h-full max-h-[800px]"
+        onClick={() => trackServiceView(href, item.title)}
+      >
         <motion.div
           style={{ opacity: cardOpacity, scale: cardScale }}
           className={`w-full h-full max-h-[800px] ${colors.colorBg} ${colors.colorText} rounded-3xl md:rounded-[40px] border ${colors.colorBorder} p-6 sm:p-8 md:p-16 flex flex-col justify-between shadow-[0_-20px_50px_rgba(0,0,0,0.4)] overflow-hidden relative group cursor-pointer`}
@@ -115,10 +124,7 @@ function ServiceCard({ item, index, colors, topOffset, href }: ServiceCardProps)
           <div className="absolute inset-0 bg-gradient-to-tr from-[#3de65a] to-[#9effaf] opacity-50 pointer-events-none" />
         )}
 
-        <div className="flex justify-between items-start relative z-10 w-full mb-10">
-          <div className="text-xl md:text-2xl font-mono tracking-widest opacity-50">
-            {item.number} / {String(TOTAL_CARDS).padStart(2, "0")}
-          </div>
+        <div className="flex justify-end items-start relative z-10 w-full mb-10">
           <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-current opacity-30 flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" />

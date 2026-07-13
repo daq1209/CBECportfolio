@@ -1,26 +1,27 @@
 # Brand Information & Portfolio Strategy (CBEC Solutions)
 
-Dựa trên kim chỉ nam **"No fluff, no theory—just execution that drives revenue"**, dưới đây là bản định hình thương hiệu (Brand Positioning) chính thức cho CBEC Solutions, kết hợp nền tảng vận hành E-commerce và hệ sinh thái công nghệ tự động hóa.
+Dựa trên bản định hình chiến lược từ **Báo Cáo Audit Website**, dưới đây là định vị thương hiệu (Brand Positioning) chính thức cho CBEC Solutions: một **Creative Technology Agency** với hai nhánh dịch vụ chuyên biệt phục vụ thị trường nội địa (Việt Nam) và quốc tế (Global Outsourcing).
+
+> **[INTERNAL NOTE - BÍ MẬT CHIẾN LƯỢC]**
+> Việc phân chia 2 nhánh (Thị trường nội địa vs Outsourcing quốc tế) là mô hình vận hành và tầm nhìn nội bộ. Tuyệt đối **KHÔNG** đưa các từ khóa như "Dual Market", "Outsourcing division", "Thị trường nội địa vs Quốc tế" trực tiếp vào copywriting trên web (đặc biệt là trang chủ). Website phải luôn giao tiếp như một Agency hợp nhất mang tiêu chuẩn toàn cầu.
 
 ## 1. Brand Tagline & Essence
-- **Tagline:** **Build What Sells.**
-  *Triết lý:* "Our tagline captures our entire philosophy in three words. Not 'build what's trendy' or 'build what you love'—build what actually sells. It's a reminder that commerce is the ultimate validation. Ideas, design, and innovation only matter if they drive transactions and generate revenue."
+- **Tagline:** **Build What Scales.**
 - **Brand Essence:** 
-  "CBEC Solutions is the strategic partner for businesses looking to win in US and European eCommerce markets. We combine market intelligence, product strategy, and operational excellence to build brands that don't just exist—they sell."
+  "CBEC Solutions là đối tác công nghệ và sáng tạo, giúp doanh nghiệp xây dựng thương hiệu, website, phần mềm nội bộ và hệ thống AI automation. Chúng tôi kết hợp tiêu chuẩn quốc tế và tư duy thực chiến để tạo ra các sản phẩm công nghệ không chỉ đẹp mắt mà còn thúc đẩy tăng trưởng thực sự."
 
 ## 2. Mission & Vision (Why We Exist)
 - **Our Mission:** 
-  "To empower businesses with the insights, infrastructure, and execution capabilities needed to build profitable eCommerce brands in global markets."
+  "Cung cấp nền tảng công nghệ, phần mềm, và nhận diện thương hiệu tiêu chuẩn quốc tế cho các startup, SME tại Việt Nam và trên toàn thế giới."
 - **Our Vision:** 
-  "To be the go-to strategic partner for eCommerce operators who want to compete globally without compromising on execution quality or commercial discipline. We see a future where Vietnamese operational excellence meets global eCommerce standards—where businesses don't choose between cost efficiency and strategic sophistication. CBEC Solutions bridges that gap, delivering world-class eCommerce infrastructure with the speed and agility of a next-generation agency."
+  "Trở thành cầu nối công nghệ đáng tin cậy: mang tư duy thiết kế và phát triển phần mềm chuẩn quốc tế đến với các doanh nghiệp Việt, đồng thời là đối tác gia công phần mềm (outsourcing) chất lượng cao, tối ưu chi phí cho các công ty tại Úc, Mỹ và Châu Âu."
 
 ## 3. Core Values (Giá trị cốt lõi)
-1. **Revenue First:** Every project, every decision, every optimization is judged by its impact on the bottom line.
-2. **Operator Mentality:** We think like owners, not vendors. Your business outcomes are our scoreboard.
-3. **Radical Transparency:** No hiding behind jargon. We communicate performance, challenges, and opportunities with brutal honesty.
-4. **Speed of Execution:** Markets move fast. We move faster. Velocity is a competitive advantage.
-5. **Global Standards:** Vietnam-based doesn't mean local-thinking. We compete on the world stage.
-6. **Continuous Learning:** eCommerce evolves daily. We stay ahead by learning relentlessly and adapting quickly.
+1. **Value-Driven Execution:** Không lý thuyết sáo rỗng. Mọi sản phẩm (website, phần mềm, bộ nhận diện) đều phải mang lại giá trị kinh doanh rõ ràng.
+2. **Global Standards (Tiêu chuẩn quốc tế):** Xây dựng kiến trúc hệ thống mạnh mẽ và thiết kế cao cấp, đáp ứng những tiêu chuẩn khắt khe nhất. *(Thay thế cho Dual-Market Expertise trên mặt tiền public)*
+3. **Radical Transparency:** Giao tiếp trung thực, quy trình minh bạch, không giấu giếm rủi ro kỹ thuật.
+4. **Agile & Scalable:** Giải pháp công nghệ linh hoạt, sẵn sàng mở rộng cùng sự phát triển của doanh nghiệp.
+5. **Quality over Quantity:** Đề cao chất lượng code, tư duy kiến trúc hệ thống và tính nhất quán trong thiết kế.
 
 ## 4. Brand Personality & Archetypes (Tính cách thương hiệu)
 ### How We Sound & Feel
@@ -47,22 +48,34 @@ Dựa trên kim chỉ nam **"No fluff, no theory—just execution that drives re
 3. **Global Mindset:** Vietnam-based, globally competitive. We understand local efficiency and international standards.
 
 ## 6. Đối Tượng Khán Giả & Nỗi Đau (Target Audience & Pain Points)
-- **Đối tượng:** Doanh nghiệp Việt Nam muốn mở rộng E-commerce sang Mỹ/Châu Âu, hoặc các doanh nghiệp truyền thống cần "Level up" thoát khỏi vận hành thủ công.
-- **Pain Points:** Mù mờ về thị trường quốc tế, chi phí nhân sự cao, kẹt dòng tiền pháp lý, website/listing không ra đơn, quản lý supplier kém.
+Dựa theo chiến lược SEO và UX, CBEC hướng tới 2 nhóm khách hàng riêng biệt:
+
+### A. Khách hàng quốc tế (Global Outsourcing)
+- **Đối tượng:** CTO, Tech Founders, SME tại Úc, Mỹ, Châu Âu cần xây dựng team hoặc outsource dự án phần mềm.
+- **Nỗi đau (Pain Points):** Chi phí thuê nhân sự IT bản địa quá cao, khó tìm kiếm senior dev, rủi ro giao tiếp khi outsource sang các quốc gia khác.
+- **Điều họ cần:** Trust, quy trình minh bạch, khả năng tiếng Anh lưu loát, chi phí hợp lý, năng lực triển khai dự án rõ ràng.
+
+### B. Khách hàng Việt Nam (Vietnam Local Market)
+- **Đối tượng:** Chủ doanh nghiệp SME, Startup, Trưởng phòng Sales/Marketing tại Việt Nam.
+- **Nỗi đau (Pain Points):** Thiếu đồng bộ nhận diện thương hiệu, website chậm/kém chuyển đổi, quản lý dữ liệu khách hàng (lead) thủ công, quy trình nội bộ cồng kềnh.
+- **Điều họ cần:** Giải pháp thực tế giúp tăng doanh thu, tối ưu vận hành, tư vấn rõ ràng không dùng quá nhiều từ ngữ chuyên ngành (jargon), có pháp nhân uy tín.
 
 ## 7. Các Dịch Vụ Cốt Lõi (Core Services)
-### Nhóm A: Thương mại điện tử & Vận hành chiến lược (eCommerce & Operations)
-1. **Market opportunity identification (US & Europe)**
-2. **Product development & GTM strategy**
-3. **Supplier sourcing & management**
-4. **Amazon & eCommerce account management**
-5. **Listing optimization & performance improvement**
 
-### Nhóm B: Công nghệ số & Mở rộng quy mô (Digital Ecosystem & Scaling)
-1. **Branding Development**
-2. **Web Design & Development (SEO Integrated)**
-3. **Social Media Automation Tech**
-4. **Strategic Investment & LLC Setup**
+### Nhóm 1: Global / Outsourcing
+1. **Custom Software Solutions** (Phát triển phần mềm tùy chỉnh)
+2. **Web Development & UI/UX** (Thiết kế kiến trúc Web & UX/UI)
+3. **Dedicated Development Team** (Cung cấp đội ngũ lập trình chuyên trách)
+4. **MVP Development** (Xây dựng sản phẩm khả dụng tối thiểu cho Startup)
+5. **Custom CRM Development** (Phát triển CRM nội bộ)
+6. **AI Automation** (Tích hợp AI và tự động hóa quy trình)
+
+### Nhóm 2: Vietnam Local Market
+1. **Dịch vụ Branding** (Nghiên cứu định vị & Thiết kế nhận diện thương hiệu)
+2. **Thiết kế Website Doanh Nghiệp** (Web công ty, Landing page bán hàng)
+3. **Phần mềm Quản lý Doanh Nghiệp** (ERP mini, phần mềm nội bộ)
+4. **Hệ Thống Quản Lý Lead** (Tích hợp CRM, Zalo, Facebook)
+5. **Tự Động Hóa AI Cho Doanh Nghiệp** (Ứng dụng AI vào sales & marketing)
 
 ## 8. Định Hướng Thiết Kế Portfolio (Aesthetic Direction)
 - **Tone & Mood:** Professional, Clean, Result-Oriented. Thể hiện đúng tinh thần "Clarity & Confidence".

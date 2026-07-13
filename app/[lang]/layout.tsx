@@ -114,7 +114,7 @@ export async function generateMetadata({
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: "CBEC Solutions — Creative Technology Company",
+          alt: "CBEC Solutions — Creative Agency",
         },
       ],
     },

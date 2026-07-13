@@ -1,47 +1,51 @@
 {
-  "intro": "Off the shelf customer relationship management software often comes with high monthly user fees and complex features your team does not use. At CBEC Solutions, we design and build custom CRM systems tailored specifically around your unique sales workflows, customer pipelines, and internal business structures. This approach eliminates licensing fees and improves staff adoption.",
+  "intro": "Spreadsheets and generic software are killing your operational efficiency. At CBEC Solutions, we specialize in Custom CRM Development tailored specifically to your unique business workflows. While off-the-shelf CRMs are bloated with features you never use and price models that punish growth, our custom-built solutions fit your business perfectly. By outsourcing your CRM development to our expert Vietnam-based engineering team, Australian and global businesses can drastically cut operational costs, automate repetitive administrative tasks, and unlock real-time data insights without the exorbitant local development price tags.",
   "sections": [
     {
-      "title": "Operational Inefficiencies of Off the Shelf CRM Systems",
+      "title": "The Problem: The Hidden Costs of Off-the-Shelf CRMs",
       "paragraphs": [
-        "Many businesses struggle with generic customer relationship management software because the interfaces are cluttered with unused features. Long standing studies from Gartner and Forrester indicate that CRM implementation projects face failure or adoption issues in 30% to 70% of cases. These failures are often caused by user resistance to overly complex layouts and a lack of custom integration with existing business processes.",
-        "Additionally, monthly licensing fees for popular platforms scale rapidly as your team grows, making them highly expensive over time. Custom systems carry zero recurring seat licenses, representing a significant long term cost advantage. By developing a dedicated solution, you ensure that every screen is designed specifically for your daily operations."
+        "Most growing companies rely on generic platforms like Salesforce, HubSpot, or a tangled web of Excel spreadsheets to manage their customer relationships and sales pipelines. The issue? Generic CRMs are built for everyone, meaning they are built perfectly for no one. You are forced to change your business processes to match the software, leading to poor team adoption and massive inefficiencies.",
+        "Moreover, the pricing models of enterprise CRMs are inherently predatory for growing SMEs. Paying $150 to $300 per user, per month quickly balloons into tens of thousands of dollars annually. To make matters worse, to actually customize these platforms to your needs, you have to hire specialized consultants at premium Australian rates, making the total cost of ownership astronomical."
       ]
     },
     {
-      "title": "Custom Customer Relationship Management Solutions",
+      "title": "The Solution: A Bespoke CRM Built for Your Workflow",
       "paragraphs": [
-        "We build custom CRM solutions that streamline your sales operations and customer management. Our platforms are designed to be lightweight and fast, showing only the data and fields necessary for your workflow. This simplicity increases employee productivity and reduces the time required to onboard new sales representatives.",
-        "We map your actual offline business processes into intuitive digital stages, allowing your team to update lead statuses with ease. The software can automate repetitive tasks, such as generating follow up reminders and assigning leads to available agents according to custom distribution rules."
+        "CBEC Solutions offers a radically better approach: own your software. We build Custom CRM systems from the ground up, designed meticulously around your exact lead flow, sales activities, and operational pipelines. You get a lean, powerful application that does exactly what you need it to do—nothing more, nothing less.",
+        "By leveraging our Vietnam-based development hub, the initial investment to build your custom CRM is often equivalent to just one year of licensing fees for a generic enterprise platform. Once it is built, you own it. No more per-seat licensing fees, no more scaling penalties. You get Australian-standard software engineering at a highly competitive offshore cost structure."
       ]
     },
     {
-      "title": "Third Party Integrations and Data Synchronization",
+      "title": "Features That Drive Revenue and Reduce Friction",
       "paragraphs": [
-        "Modern sales operations rely on multiple software applications that must communicate seamlessly. We build custom API integrations to connect your CRM to Shopify, Stripe, and third party logistics providers. This synchronization ensures that customer data, order details, and shipping statuses are updated in real time across all platforms.",
-        "By automating these data pipelines, we eliminate the need for manual data entry, which reduces administrative errors and saves hours of employee time. Your database remains clean and accurate, providing a reliable foundation for business analysis and marketing campaigns."
+        "We do not just build databases; we build revenue engines. We implement tailored lead pipelines with custom status stages, automated scoring matrices, and intelligent assignment logic mapped to your specific organizational chart. We seamlessly integrate your new CRM with your existing ecosystem: connecting your website forms, payment gateways like Stripe, communication tools like Slack, and automated email sequences.",
+        "To empower your leadership team, we engineer real-time dashboards with clean data visualization. Track conversion rates, monitor sales representative activity, forecast revenue accurately, and receive instant bottleneck alerts to make proactive, data-driven decisions."
       ]
     },
     {
-      "title": "Business Impact and Lifecycle Management",
+      "title": "Security, Scalability, and Seamless Handoff",
       "paragraphs": [
-        "A custom customer relationship management system directly improves your bottom line by increasing client retention and customer lifetime value. Sales representatives can access a unified timeline showing all past client interactions, including email logs, meeting notes, and transaction histories, enabling personalized follow ups.",
-        "We construct our CRM platforms using scalable cloud databases that grow alongside your business. We also provide complete data migration services, securely transferring your legacy customer information from spreadsheets or older systems into the new secure database."
+        "Security and data integrity are paramount in CRM development. We architect your custom platform using robust technologies like Next.js, Node.js, and PostgreSQL, deployed on highly secure, compliant infrastructure (AWS). We implement strict Role-Based Access Control (RBAC), ensuring that your team members only see the data they are authorized to access.",
+        "We also understand that software is only as good as its adoption rate. We provide comprehensive API integration documentation and conduct interactive onboarding sessions to ensure your team transitions smoothly to the new system, maximizing your return on investment from day one."
       ]
     }
   ],
   "faqs": [
     {
-      "question": "Why should I build a custom CRM instead of buying Hubspot or Salesforce?",
-      "answer": "Custom systems carry zero monthly per user licensing fees. You only pay for the initial build, and the system is designed strictly around your workflow without unnecessary features."
+      "question": "Is a custom CRM more expensive than using Salesforce or HubSpot?",
+      "answer": "The initial development cost is higher than a single month's subscription, but the long-term ROI is massive. Because you own the software, you eliminate per-user licensing fees. For growing teams, a custom CRM pays for itself typically within 12 to 18 months, while perfectly matching your workflow."
     },
     {
-      "question": "Can we import our existing customer spreadsheets?",
-      "answer": "Yes. We build data migration scripts that clean and import your legacy Excel or CSV data directly into the new secure database."
+      "question": "Can my custom CRM integrate with my current tools?",
+      "answer": "Yes. We build custom CRMs with API-first architectures. We can seamlessly integrate your CRM with accounting software (Xero, QuickBooks), payment gateways (Stripe), marketing tools, and internal communication apps like Slack or Microsoft Teams."
     },
     {
-      "question": "Can the CRM connect to our invoicing software?",
-      "answer": "Absolutely. We build integrations with accounting APIs like Xero, QuickBooks, or local billing APIs to automate invoice creation."
+      "question": "Who owns the data and the source code?",
+      "answer": "You do. Unlike SaaS platforms that lock your data in their ecosystem, you have 100% ownership of your data, the database architecture, and the complete source code upon project handover."
+    },
+    {
+      "question": "How long does it take to develop a custom CRM?",
+      "answer": "A robust, phase-one custom CRM typically takes between 8 to 12 weeks to design, develop, and test. We use an Agile methodology, meaning we can launch core pipeline features early and add integrations in subsequent sprints."
     }
   ]
 }

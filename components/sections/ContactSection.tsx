@@ -19,6 +19,14 @@ const schema = (isVi: boolean) =>
       .string()
       .min(1, isVi ? "Vui lòng nhập email" : "Email is required")
       .email(isVi ? "Vui lòng nhập email hợp lệ" : "Please enter a valid email address"),
+    company: z
+      .string()
+      .min(1, isVi ? "Vui lòng nhập tên doanh nghiệp" : "Company name is required"),
+    phone: z.string().optional(),
+    service: z
+      .string()
+      .min(1, isVi ? "Vui lòng chọn dịch vụ" : "Please select a service"),
+    budget: z.string().optional(),
     message: z
       .string()
       .min(10, isVi ? "Nội dung tin nhắn phải có ít nhất 10 ký tự" : "Message must be at least 10 characters"),
@@ -28,6 +36,10 @@ const schema = (isVi: boolean) =>
 type FormData = {
   name: string;
   email: string;
+  company: string;
+  phone?: string;
+  service: string;
+  budget?: string;
   message: string;
   website?: string;
 };
@@ -62,6 +74,10 @@ export default function ContactSection({ lang }: { lang: string }) {
           type: "contact",
           name: data.name,
           email: data.email,
+          company: data.company,
+          phone: data.phone,
+          service: data.service,
+          budget: data.budget,
           message: data.message,
           website: data.website,
           lang,
@@ -213,6 +229,102 @@ export default function ContactSection({ lang }: { lang: string }) {
                 </div>
               </div>
 
+              {/* Company & Phone */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {/* Company */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/30" htmlFor="contact-company">
+                    {t.formCompany}
+                  </label>
+                  <input
+                    id="contact-company"
+                    type="text"
+                    {...register("company")}
+                    placeholder={t.formCompanyPlaceholder}
+                    aria-required="true"
+                    aria-invalid={errors.company ? "true" : "false"}
+                    aria-describedby={errors.company ? "company-error" : undefined}
+                    className={`bg-white/5 border rounded-xl px-5 py-3.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#66FF80]/50 focus:bg-white/8 transition-all duration-200 ${
+                      errors.company ? "border-red-500/50" : "border-white/10"
+                    }`}
+                    style={{ fontFamily: "var(--font-body)" }}
+                  />
+                  {errors.company && (
+                    <p id="company-error" className="text-red-400 text-xs mt-1 ml-1" role="alert">
+                      {errors.company.message}
+                    </p>
+                  )}
+                </div>
+                {/* Phone */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/30" htmlFor="contact-phone">
+                    {t.formPhone}
+                  </label>
+                  <input
+                    id="contact-phone"
+                    type="text"
+                    {...register("phone")}
+                    placeholder={t.formPhonePlaceholder}
+                    className="bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#66FF80]/50 focus:bg-white/8 transition-all duration-200"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  />
+                </div>
+              </div>
+
+              {/* Service & Budget */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {/* Service */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/30" htmlFor="contact-service">
+                    {t.formService}
+                  </label>
+                  <div className="relative">
+                    <select
+                      id="contact-service"
+                      {...register("service")}
+                      aria-required="true"
+                      aria-invalid={errors.service ? "true" : "false"}
+                      aria-describedby={errors.service ? "service-error" : undefined}
+                      className={`w-full appearance-none bg-white/5 border rounded-xl px-5 py-3.5 text-sm text-white focus:outline-none focus:border-[#66FF80]/50 focus:bg-white/8 transition-all duration-200 ${
+                        errors.service ? "border-red-500/50" : "border-white/10"
+                      }`}
+                      style={{ fontFamily: "var(--font-body)" }}
+                    >
+                      <option value="" disabled className="bg-[#0a0a0a] text-white/50">
+                        {t.formService}
+                      </option>
+                      {t.formServiceOptions.map((opt, i) => (
+                        <option key={i} value={opt} className="bg-[#0a0a0a] text-white">
+                          {opt}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-white/50">
+                      <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                  </div>
+                  {errors.service && (
+                    <p id="service-error" className="text-red-400 text-xs mt-1 ml-1" role="alert">
+                      {errors.service.message}
+                    </p>
+                  )}
+                </div>
+                {/* Budget */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/30" htmlFor="contact-budget">
+                    {t.formBudget}
+                  </label>
+                  <input
+                    id="contact-budget"
+                    type="text"
+                    {...register("budget")}
+                    placeholder={t.formBudgetPlaceholder}
+                    className="bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-sm text-white placeholder-white/20 focus:outline-none focus:border-[#66FF80]/50 focus:bg-white/8 transition-all duration-200"
+                    style={{ fontFamily: "var(--font-body)" }}
+                  />
+                </div>
+              </div>
+
               {/* Message */}
               <div className="flex flex-col gap-2">
                 <label className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/30" htmlFor="contact-message">
@@ -260,7 +372,7 @@ export default function ContactSection({ lang }: { lang: string }) {
                   className="flex items-center gap-3 px-7 py-3.5 bg-[#66FF80] text-[#0a0a0a] rounded-full text-sm font-semibold tracking-tight hover:bg-white transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer border-none"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
-                  {formStatus === "sending" ? t.formSending : t.formSubmit}
+                  {formStatus === "sending" ? t.formSending : t.formButton}
                   {formStatus !== "sending" && <span aria-hidden="true">→</span>}
                 </button>
               </div>
@@ -303,6 +415,9 @@ export default function ContactSection({ lang }: { lang: string }) {
             >
               (+84) 703 819 006
             </a>
+            <span className="text-[10px] font-mono text-white/30 mt-2 uppercase tracking-widest">
+              WhatsApp / Zalo
+            </span>
           </div>
         </motion.div>
       </div>
@@ -333,12 +448,10 @@ export default function ContactSection({ lang }: { lang: string }) {
               X
             </a>
           </div>
-          {/* Vietnam legal trust signal — only shown on /vi */}
-          {language === "vi" && (
-            <span className="text-xs font-mono text-white/20 tracking-widest flex-1 text-center md:text-right">
-              MST: 0319431730 · CBEC Solutions Company Limited
-            </span>
-          )}
+          {/* Legal trust signal — shown globally for transparency */}
+          <span className="text-[10px] md:text-xs font-mono text-white/20 tracking-widest flex-1 text-center md:text-right">
+            MST: 0319431730 · CBEC Solutions
+          </span>
         </div>
       </motion.div>
     </section>

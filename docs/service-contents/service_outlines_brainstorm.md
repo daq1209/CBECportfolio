@@ -6,9 +6,9 @@ This document contains structured outlines for all thirteen service pages of CBE
 
 ## GLOBAL SERVICES (ENGLISH ONLY)
 
-### 1. Software Outsourcing in Vietnam
+### 1. Custom Software Solutions
 * **Target Audience:** Chief Technology Officers, tech founders in Australia, USA, and Europe.
-* **Primary Keyword:** `Software Outsourcing Vietnam`
+* **Primary Keyword:** `Custom Software Solutions Vietnam`
 * **Content Outline:**
   * **H1:** Software Outsourcing Services in Vietnam
   * **H2:** Challenges in Local Developer Recruitment
@@ -29,9 +29,9 @@ This document contains structured outlines for all thirteen service pages of CBE
   * **H2:** Frequently Asked Questions
     * Intellectual property ownership, source code transfer, non-disclosure agreements, timezone coordination.
 
-### 2. Web Development Outsourcing
+### 2. Web Development & UI/UX
 * **Target Audience:** eCommerce brands, software startups, and enterprise companies.
-* **Primary Keyword:** `Web development outsourcing`
+* **Primary Keyword:** `Web development and UI/UX Vietnam`
 * **Content Outline:**
   * **H1:** Web Development Outsourcing Services
   * **H2:** Impact of Web Performance on Business Revenue

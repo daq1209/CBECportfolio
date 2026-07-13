@@ -40,7 +40,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   for (const service of SERVICES) {
     if (service.locale === "global" || service.locale === "both") {
       entries.push({
-        url: `${BASE_URL}/global/services/${service.slug}`,
+        url: `${BASE_URL}/global/${service.slug}`,
         lastModified: now,
         changeFrequency: "weekly",
         priority: 0.8,
@@ -48,8 +48,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? {
               alternates: {
                 languages: {
-                  en: `${BASE_URL}/global/services/${service.slug}`,
-                  "vi-VN": `${BASE_URL}/vi/services/${service.slug}`,
+                  en: `${BASE_URL}/global/${service.slug}`,
+                  "vi-VN": `${BASE_URL}/vi/${service.slug}`,
                 },
               },
             }
@@ -59,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     if (service.locale === "vi" || service.locale === "both") {
       entries.push({
-        url: `${BASE_URL}/vi/services/${service.slug}`,
+        url: `${BASE_URL}/vi/${service.slug}`,
         lastModified: now,
         changeFrequency: "weekly",
         priority: 0.8,
@@ -67,8 +67,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? {
               alternates: {
                 languages: {
-                  en: `${BASE_URL}/global/services/${service.slug}`,
-                  "vi-VN": `${BASE_URL}/vi/services/${service.slug}`,
+                  en: `${BASE_URL}/global/${service.slug}`,
+                  "vi-VN": `${BASE_URL}/vi/${service.slug}`,
                 },
               },
             }

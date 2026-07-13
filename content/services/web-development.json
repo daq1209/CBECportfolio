@@ -1,0 +1,51 @@
+{
+  "intro": "A website is no longer just a digital brochure; it is the core engine of your sales, marketing, and operational growth. At CBEC Solutions, we specialize in high-performance Web Development Outsourcing in Vietnam. Designed specifically for Australian agencies, SaaS companies, and established brands, our bespoke web solutions combine stunning UI/UX design with lightning-fast Next.js and React architectures. We do not use bloated templates—we build custom digital experiences that rank higher on Google, convert visitors into qualified leads, and scale effortlessly.",
+  "sections": [
+    {
+      "title": "The Problem: Sluggish Websites and Bloated Templates",
+      "paragraphs": [
+        "Many businesses rely on off-the-shelf themes or heavy page builders like Elementor to launch their websites quickly. While initially cost-effective, this approach leads to massive technical debt. Bloated code results in slow page load times, which directly harms your Core Web Vitals score on Google, dropping your SEO rankings. A slow website frustrates users, skyrocketing bounce rates and killing conversion potential.",
+        "Furthermore, maintaining a generic WordPress site often involves constantly patching insecure plugins. When you attempt to hire local Australian developers to build a custom, high-performance web application from scratch, you are met with quotes ranging from $30,000 to $80,000+, putting premium digital experiences out of reach for many growing SMEs."
+      ]
+    },
+    {
+      "title": "The Solution: Bespoke Next.js Web Development Outsourcing",
+      "paragraphs": [
+        "CBEC Solutions provides an elite alternative. By outsourcing your web development to our Vietnam-based engineering team, you access enterprise-grade web architectures at a fraction of the local cost. We build exclusively on modern, headless frameworks—primarily Next.js and React—ensuring your website is statically generated (SSG) or server-side rendered (SSR) for instantaneous load times.",
+        "A faster website directly correlates with better SEO performance and higher conversion rates. Our design-to-code process ensures pixel-perfect implementation of Figma prototypes, complete with smooth micro-animations that engage users without sacrificing speed. We deliver premium, Australian-standard web experiences at 40-60% lower costs."
+      ]
+    },
+    {
+      "title": "Our Process: From Figma to Lightning-Fast Code",
+      "paragraphs": [
+        "We treat web development as software engineering. Our process begins with a deep dive into your brand identity and user journey. We then translate these insights into bespoke UI/UX designs. Once approved, our front-end developers write clean, semantic HTML5, modern CSS (Tailwind), and optimized JavaScript to bring the design to life.",
+        "We integrate seamlessly with headless Content Management Systems (CMS) like Sanity or Contentful. This decoupled architecture means your marketing team gets a highly intuitive, customized dashboard to publish blogs and update content instantly, while the front-end remains incredibly fast and secure."
+      ]
+    },
+    {
+      "title": "SEO, Accessibility, and Performance by Default",
+      "paragraphs": [
+        "We do not treat SEO or performance as an afterthought. Every website we develop in Vietnam is engineered to score 95+ on Google Lighthouse. We implement strict web accessibility standards (WCAG 2.1 AA), semantic HTML structures, dynamic XML sitemaps, and optimized metadata rendering.",
+        "Images are automatically optimized and served in next-gen formats (WebP), fonts are preloaded, and JavaScript payloads are minimized. The result is a digital asset that not only looks spectacular but acts as a highly tuned lead generation machine for your business."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Why do you use Next.js instead of WordPress for web development?",
+      "answer": "Next.js offers superior performance, security, and scalability. Unlike traditional WordPress which relies on slow database queries and vulnerable plugins, Next.js pre-renders pages for instant loading. It provides a significantly better user experience and higher SEO rankings."
+    },
+    {
+      "question": "Can my marketing team easily update content on a custom-coded website?",
+      "answer": "Absolutely. We integrate powerful Headless CMS platforms like Sanity or Contentful. Your team will have a user-friendly dashboard to manage blogs, update text, and swap images without needing to touch a single line of code."
+    },
+    {
+      "question": "Do you design the website or just code it?",
+      "answer": "We do both. We offer end-to-end web development services. Our UI/UX designers will create custom Figma prototypes based on your brand guidelines. Once approved, our engineering team brings those designs to life."
+    },
+    {
+      "question": "Will my outsourced website be optimized for mobile devices?",
+      "answer": "Yes. We employ a strict mobile-first development approach. Your website will be fully responsive, ensuring perfect layout, typography, and interactive elements across all screen sizes, from iPhones to ultra-wide desktop monitors."
+    }
+  ]
+}

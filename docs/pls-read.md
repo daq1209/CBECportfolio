@@ -22,7 +22,10 @@ CBEC Solutions hiện đang có nền tảng thương hiệu khá tốt: website
 **Vấn đề hiện tại:** Nếu dùng một homepage chung để nói với cả hai nhóm, thông điệp sẽ bị loãng. Người nước ngoài muốn thấy năng lực outsourcing và delivery. Khách Việt Nam muốn thấy dịch vụ rõ, uy tín pháp lý, case study, giá trị kinh doanh, và cách liên hệ nhanh.
 
 **CBEC nên chuyển từ định vị chung chung kiểu "creative agency" sang:**
-> "CBEC Solutions là creative technology company giúp doanh nghiệp xây dựng thương hiệu, website, phần mềm nội bộ và hệ thống AI automation với một nhánh phục vụ thị trường Việt Nam và một nhánh outsourcing cho khách hàng quốc tế."
+> "CBEC Solutions là creative technology agency giúp doanh nghiệp xây dựng thương hiệu, website, phần mềm nội bộ và hệ thống AI automation với một nhánh phục vụ thị trường Việt Nam và một nhánh outsourcing cho khách hàng quốc tế."
+
+> **[INTERNAL NOTE - BÍ MẬT CHIẾN LƯỢC]**
+> Chú ý: Việc chia 2 nhánh trên là cấu trúc vận hành nội bộ. Tuyệt đối **KHÔNG** dùng các từ khóa phân chia rạch ròi "Dual Market", "Outsourcing division", "Thị trường nội địa vs Quốc tế" làm content public trên website để tránh lộ chiến lược. Trên mặt tiền website, định vị luôn là một Agency hợp nhất mang tiêu chuẩn toàn cầu.
 
 ## 2. SEO Overview
 **Điểm mạnh hiện tại:**

@@ -2,15 +2,9 @@
 
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { trackLanguageSwitch } from "@/lib/analytics";
-
-const NAV_LINKS_EN = [
-  { label: "Work", href: "#projects" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
-];
+import { translations, Language } from "@/lib/translations";
 
 interface NavbarProps {
   /** Current locale from [lang] segment. "vi" | "en" (maps from "vi" | "global") */
@@ -19,11 +13,14 @@ interface NavbarProps {
 
 export default function Navbar({ lang }: NavbarProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const [hidden, setHidden] = useState(false);
   const [atTop, setAtTop] = useState(true);
   const { scrollY } = useScroll();
 
-  const links = NAV_LINKS_EN;
+  const language: Language = lang === "vi" ? "vi" : "en";
+  const localePath = lang === "vi" ? "/vi" : "/global";
+  const links = translations[language].nav;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const prev = scrollY.getPrevious() ?? 0;
@@ -31,10 +28,16 @@ export default function Navbar({ lang }: NavbarProps) {
     setHidden(latest > prev && latest > 120);
   });
 
+  const isHome = pathname === "/global" || pathname === "/vi" || pathname === "/";
+
   const handleAnchor = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (isHome) {
+      const el = document.querySelector(href);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    } else {
+      router.push(`${localePath}${href}`);
     }
   };
 
@@ -54,7 +57,11 @@ export default function Navbar({ lang }: NavbarProps) {
         href="#hero"
         onClick={(e) => {
           e.preventDefault();
-          window.scrollTo({ top: 0, behavior: "smooth" });
+          if (isHome) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          } else {
+            router.push(`${localePath}`);
+          }
         }}
         className="text-[11px] font-semibold tracking-widest text-[#66FF80] hover:opacity-80 transition-opacity"
         style={{ fontFamily: "var(--font-display)" }}

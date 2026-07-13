@@ -42,14 +42,14 @@ export async function generateMetadata({
 
   // For alternate links, if the service only exists for one locale, we shouldn't map alternative locales to it
   const alternates: Metadata["alternates"] = {
-    canonical: `${SITE_URL}/${locale}/services/${slug}`,
+    canonical: `${SITE_URL}/${locale}/${slug}`,
   };
 
   if (service.locale === "both") {
     alternates.languages = {
-      en: `${SITE_URL}/global/services/${slug}`,
-      "vi-VN": `${SITE_URL}/vi/services/${slug}`,
-      "x-default": `${SITE_URL}/global/services/${slug}`,
+      en: `${SITE_URL}/global/${slug}`,
+      "vi-VN": `${SITE_URL}/vi/${slug}`,
+      "x-default": `${SITE_URL}/global/${slug}`,
     };
   }
 
@@ -62,7 +62,7 @@ export async function generateMetadata({
       type: "website",
       title: `${name} | CBEC Solutions`,
       description: desc,
-      url: `${SITE_URL}/${locale}/services/${slug}`,
+      url: `${SITE_URL}/${locale}/${slug}`,
     },
   };
 }

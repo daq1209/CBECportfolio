@@ -36,7 +36,7 @@ export default function ServiceSchema({ service, lang, nonce }: Props) {
       name: isVi ? "Việt Nam" : "Australia",
     },
     serviceType: isVi ? service.name.vi : service.name.en,
-    url: `${SITE_URL}/${lang}/services/${service.slug}`,
+    url: `${SITE_URL}/${lang}/${service.slug}`,
   };
 
   // BreadcrumbList schema
@@ -60,7 +60,7 @@ export default function ServiceSchema({ service, lang, nonce }: Props) {
         "@type": "ListItem",
         position: 3,
         name: isVi ? service.name.vi : service.name.en,
-        item: `${SITE_URL}/${lang}/services/${service.slug}`,
+        item: `${SITE_URL}/${lang}/${service.slug}`,
       },
     ],
   };

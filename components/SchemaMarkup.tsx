@@ -23,7 +23,7 @@ export default async function SchemaMarkup({ lang }: Props) {
     url: "https://www.cbecsolutions.com",
     logo: "https://www.cbecsolutions.com/logo.png",
     description:
-      "CBEC Solutions is a creative technology company helping startups and SMEs build brands, websites, custom software, CRM systems, and AI automation.",
+      "CBEC Solutions is a creative agency helping startups and SMEs build brands, websites, custom software, CRM systems, and AI automation.",
     address: {
       "@type": "PostalAddress",
       streetAddress: "72A Lê Thánh Tôn, Floor 17",

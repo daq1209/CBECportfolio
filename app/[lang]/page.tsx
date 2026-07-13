@@ -58,7 +58,7 @@ export default async function HomePage({
       <ProcessSection lang={locale} />
 
       {/* 6. Lead Magnet — eCommerce checklist capture */}
-      <LeadMagnetSection lang={locale} />
+      {/* <LeadMagnetSection lang={locale} /> */}
 
       {/* 7. Principles — brand values list */}
       <PrinciplesSection lang={locale} />

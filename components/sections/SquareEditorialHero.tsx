@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import CenterGraphic from "../animations/CenterGraphic";
 import { translations } from "@/lib/translations";
+import { trackCTAClick } from "@/lib/analytics";
 
 const EASE_EDITORIAL: [number, number, number, number] = [0.85, 0, 0.15, 1];
 
@@ -145,6 +146,7 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                   {/* Primary CTA */}
                   <button
                     onClick={() => {
+                      trackCTAClick(t.ctaPrimary, "hero");
                       document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
                     }}
                     className="group flex items-center gap-3 px-6 py-3 bg-[#66FF80] text-[#0a0a0a] rounded-full text-sm font-semibold tracking-tight hover:bg-white transition-colors duration-300 cursor-pointer border-none"
@@ -158,6 +160,7 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                   {/* Secondary CTA */}
                   <button
                     onClick={() => {
+                      trackCTAClick(t.ctaSecondary, "hero");
                       document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
                     }}
                     className="flex items-center gap-3 px-6 py-3 border border-white/20 text-white/70 rounded-full text-sm font-light tracking-tight hover:border-white/50 hover:text-white transition-all duration-300 cursor-pointer bg-transparent"

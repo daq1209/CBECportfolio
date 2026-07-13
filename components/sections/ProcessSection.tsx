@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { trackCTAClick } from "@/lib/analytics";
 
 const STEPS_EN = [
   {
@@ -206,6 +207,7 @@ export default function ProcessSection({ lang }: { lang: string }) {
             href="#contact"
             onClick={(e) => {
               e.preventDefault();
+              trackCTAClick(isVi ? "Đặt lịch Discovery Call" : "Book a Discovery Call", "process_section");
               document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
             }}
             className="inline-flex items-center gap-3 text-[11px] font-mono tracking-[0.2em] uppercase text-[#0a0a0a] bg-[#66FF80] px-8 py-4 hover:bg-white transition-colors duration-300"

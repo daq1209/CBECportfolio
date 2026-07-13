@@ -37,10 +37,10 @@ export const SERVICES: ServiceItem[] = [
   // ─── GLOBAL SERVICES (Outsourcing & Custom Build for International Market) ───
 
   {
-    slug: "software-outsourcing-vietnam",
+    slug: "custom-software",
     locale: "global",
     number: "01",
-    name: { en: "Software Outsourcing", vi: "Outsourcing Phần Mềm" },
+    name: { en: "Custom Software Solutions", vi: "Phần Mềm Doanh Nghiệp" },
     tagline: {
       en: "Scale your development capacity with senior Vietnam-based engineers.",
       vi: "Mở rộng năng lực phát triển với kỹ sư công nghệ cao tại Việt Nam."
@@ -95,10 +95,10 @@ export const SERVICES: ServiceItem[] = [
   },
 
   {
-    slug: "web-development-outsourcing",
+    slug: "web-development",
     locale: "global",
     number: "02",
-    name: { en: "Web Development Outsourcing", vi: "Outsourcing Thiết Kế Website" },
+    name: { en: "Web Development & UI/UX", vi: "Phát Triển Web & UI/UX" },
     tagline: {
       en: "High-performance, custom-coded web architectures that load instantly and scale.",
       vi: "Kiến trúc web code tay hiệu suất cao, tải trang tức thì và dễ mở rộng."
@@ -327,6 +327,64 @@ export const SERVICES: ServiceItem[] = [
   },
 
   {
+    slug: "tu-dong-hoa-ai",
+    locale: "vi",
+    number: "05-vi",
+    name: { en: "AI Automation", vi: "Tự Động Hóa AI" },
+    tagline: {
+      en: "Automate manual operations, enrich data, and integrate LLMs into your product.",
+      vi: "Tự động hóa vận hành thủ công và tích hợp AI vào quy trình làm việc."
+    },
+    metaDescription: {
+      en: "Unlock efficiency with AI automation. We integrate OpenAI, Gemini, and custom agents to automate support, sales, and data entry.",
+      vi: "Nâng cao hiệu suất bằng tự động hóa AI. Tích hợp OpenAI, Gemini và các trợ lý ảo để chăm sóc khách hàng và xử lý dữ liệu."
+    },
+    overview: {
+      en: "We integrate modern LLM APIs (OpenAI GPT, Google Gemini, Claude) directly into your business logic. We design agents that categorize emails, process unstructured documents, automate sales outreach, and provide smart customer support, eliminating repetitive manual work.",
+      vi: "Chúng tôi tích hợp các API ngôn ngữ lớn (OpenAI GPT, Google Gemini, Claude) trực tiếp vào hệ thống của bạn. Thiết kế bot phân loại email, trích xuất dữ liệu tài liệu giấy tờ, gửi email chào hàng và CSKH thông minh."
+    },
+    features: [
+      {
+        icon: "🤖",
+        title: { en: "Custom AI Agents", vi: "Trợ Lý AI Riêng Biệt" },
+        description: {
+          en: "AI agents trained on your custom knowledge base to support customer inquiries, internal compliance, or drafting reports.",
+          vi: "AI được đào tạo theo tài liệu nội bộ để giải đáp thắc mắc, kiểm tra quy trình hoặc soạn thảo báo cáo."
+        }
+      },
+      {
+        icon: "⚙️",
+        title: { en: "Workflow Automation", vi: "Tự động hóa quy trình" },
+        description: {
+          en: "Connecting software tools via Make, Zapier, or custom Node.js cron jobs to sync data and trigger actions automatically.",
+          vi: "Kết nối các hệ thống qua Make, Zapier hoặc script tự động để đồng bộ dữ liệu và kích hoạt công việc."
+        }
+      },
+      {
+        icon: "📝",
+        title: { en: "Data Extraction & Parsing", vi: "Trích xuất & Xử lý Dữ liệu" },
+        description: {
+          en: "Transforming invoices, PDFs, and unstructured logs into clean JSON data structured directly into your database.",
+          vi: "Chuyển hóa hóa đơn, file PDF và văn bản thô thành dữ liệu JSON cấu trúc trực tiếp vào database."
+        }
+      }
+    ],
+    deliverables: [
+      { en: "AI Integration Feasibility Report", vi: "Báo cáo khả thi tích hợp AI" },
+      { en: "Automated Integration Workflow Design", vi: "Thiết kế sơ đồ tự động hóa" },
+      { en: "Deployed Custom AI Agent Backend", vi: "Triển khai backend cho trợ lý AI" },
+      { en: "Data Pipeline & Database Sync Setup", vi: "Thiết lập đường truyền dữ liệu tự động" },
+      { en: "Monitoring dashboard for API token spend", vi: "Bảng theo dõi chi phí sử dụng API token" }
+    ],
+    idealFor: {
+      en: "Australian SMEs handling high email volumes, operations teams reducing manual data entry. AI automation at Vietnam rates (60% less than local developers) with English-fluent implementation.",
+      vi: "Doanh nghiệp xử lý lượng email/tickets lớn, cần giảm thời gian nhập liệu thủ công."
+    },
+    cta: { en: "Automate Your Workflows", vi: "Tự động hóa bằng AI" },
+    accentColor: "#FFD700"
+  },
+
+  {
     slug: "dedicated-development-team",
     locale: "global",
     number: "06",
@@ -445,9 +503,67 @@ export const SERVICES: ServiceItem[] = [
   },
 
   {
+    slug: "branding-services",
+    locale: "global",
+    number: "08",
+    name: { en: "Branding Services", vi: "Dịch Vụ Thiết Kế Thương Hiệu" },
+    tagline: {
+      en: "Establish a clear brand positioning and visual identity system.",
+      vi: "Xây dựng định vị và hệ thống nhận diện thương hiệu chuyên nghiệp."
+    },
+    metaDescription: {
+      en: "Professional brand identity design in Vietnam. Visual guidelines, logo suites, and naming architecture for corporate expansion.",
+      vi: "Dịch vụ thiết kế nhận diện thương hiệu. Tạo dựng logo, cẩm nang thương hiệu (Brand Guidelines) và tài sản truyền thông chuẩn quốc tế."
+    },
+    overview: {
+      en: "Branding is not just a logo. We help businesses define their market position, build a consistent visual identity system, and produce marketing assets that communicate trust, helping you command higher margins and stand out from competitors.",
+      vi: "Thương hiệu không chỉ là logo đẹp. Chúng tôi giúp doanh nghiệp xác định định vị thị trường, xây dựng hệ thống nhận diện đồng nhất và sản xuất ấn phẩm truyền thông uy tín, giúp tạo giá trị cạnh tranh vượt trội."
+    },
+    features: [
+      {
+        icon: "🧭",
+        title: { en: "Brand Positioning Strategy", vi: "Chiến Lược Định Vị" },
+        description: {
+          en: "Analyzing competitor landscape, customer personas, and defining core brand values before designing visuals.",
+          vi: "Nghiên cứu đối thủ cạnh tranh, phác họa chân dung khách hàng và xác định giá trị cốt lõi trước khi thiết kế hình ảnh."
+        }
+      },
+      {
+        icon: "🎨",
+        title: { en: "Visual Identity System", vi: "Nhận Diện Hình Ảnh" },
+        description: {
+          en: "Logo suite, brand color palette, typography grid, typography rules, and usage constraints.",
+          vi: "Bộ logo chuẩn, bảng màu thương hiệu, quy chuẩn font chữ và các trường hợp chống chỉ định sử dụng."
+        }
+      },
+      {
+        icon: "💼",
+        title: { en: "Corporate Marketing Assets", vi: "Ấn Phẩm Văn Phòng & Marketing" },
+        description: {
+          en: "Business cards, letterheads, presentation slides, brand patterns, and social media template grids.",
+          vi: "Danh thiếp, phong bì thư, slide thuyết trình, pattern thương hiệu và khung bài đăng MXH."
+        }
+      }
+    ],
+    deliverables: [
+      { en: "Brand Strategy & Positioning Document", vi: "Tài liệu chiến lược định vị thương hiệu" },
+      { en: "Vector Logo Suite (AI, SVG, PDF, PNG)", vi: "Bộ file logo gốc chất lượng cao đầy đủ định dạng" },
+      { en: "Detailed Brand Guidelines Book (PDF)", vi: "Cẩm nang hướng dẫn sử dụng thương hiệu (PDF)" },
+      { en: "Corporate Stationery Assets templates", vi: "Mẫu thiết kế ấn phẩm văn phòng" },
+      { en: "Custom Canva Social Media template kit", vi: "Bộ template thiết kế bài đăng mạng xã hội trên Canva" }
+    ],
+    idealFor: {
+      en: "New startups looking to launch, and legacy businesses seeking a modern rebrand to attract younger consumers.",
+      vi: "Startup chuẩn bị ra mắt sản phẩm mới hoặc doanh nghiệp lâu năm muốn tái định vị hình ảnh hiện đại hơn."
+    },
+    cta: { en: "Get Brand Design Consultation", vi: "Nhận tư vấn thiết kế thương hiệu" },
+    accentColor: "#33CCFF"
+  },
+
+  {
     slug: "dich-vu-branding",
     locale: "vi",
-    number: "08",
+    number: "08-vi",
     name: { en: "Branding Services", vi: "Dịch Vụ Thiết Kế Thương Hiệu" },
     tagline: {
       en: "Establish a clear brand positioning and visual identity system.",

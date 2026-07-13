@@ -7,15 +7,23 @@ export const translations = {
       prompt: "Select your language",
     },
 
+    // ── Navbar ──
+    nav: [
+      { label: "Work", href: "#projects" },
+      { label: "About", href: "#about" },
+      { label: "Services", href: "#services" },
+      { label: "Contact", href: "#contact" },
+    ],
+
     // ── Hero ──
     hero: {
       logo: "CBEC SOLUTIONS.",
-      line1: "Global",
-      line2: "CREATIVE",
-      line3: "Technology.",
-      tagline: "Build What Sells.",
+      line1: "Creative",
+      line2: "Technology",
+      line3: "Agency.",
+      tagline: "Build What Scales.",
       description:
-        "Australian-grade quality at Vietnam cost structure. We combine strategic branding, high-end web development, and custom enterprise software to build digital experiences and operational systems that scale.",
+        "CBEC Solutions is a creative technology agency helping businesses build brands, websites, custom software, and AI automation workflows. We combine reliable engineering with strategic design to build digital products that scale.",
       trustBadge: "GMT+7 → Perfect overlap with Sydney & Melbourne business hours",
       scroll: "Scroll to discover",
       ctaPrimary: "View Our Work",
@@ -38,11 +46,11 @@ export const translations = {
     // ── About ──
     about: {
       label: "About",
-      line1: "We Build",
-      line2: "Creative.",
-      line3: "Technology.",
-      p1: "Based in Ho Chi Minh City, delivering Australian-grade quality at 40-60% lower cost. We are a creative technology studio that believes aesthetics must drive business outcomes. Every pixel we push and every brand identity we forge is designed to captivate and convert.",
-      p2: "From bespoke web development and powerful enterprise software to complete social media ecosystems, we deliver the creative and technical infrastructure your brand needs to stand out. Our GMT+7 timezone means perfect overlap with Sydney and Melbourne business hours — no communication delays, just seamless collaboration.",
+      line1: "Reliable",
+      line2: "Technical",
+      line3: "Execution.",
+      p1: "Based in Ho Chi Minh City, we deliver the creative and technical infrastructure your business needs to stand out.",
+      p2: "From strategic branding to complex software architectures, we bridge the gap between vision and reliable execution.",
       metric: "Digital products launched.",
     },
 
@@ -74,17 +82,10 @@ export const translations = {
         },
         {
           number: "04",
-          title: "Social Media & Content",
+          title: "AI Automation",
           description:
-            "End-to-end content ecosystems that build engaged communities and drive organic growth across all digital touchpoints.",
-          metrics: ["Content Creation", "Platform Strategy", "Campaign Management"],
-        },
-        {
-          number: "05",
-          title: "Creative Strategy",
-          description:
-            "Data-informed creative campaigns that bridge the gap between stunning aesthetics and measurable business growth.",
-          metrics: ["Digital Campaigns", "Art Direction", "Growth Marketing"],
+            "Intelligent automation systems and AI-powered workflows that eliminate repetitive tasks, reduce operational costs, and boost your team's productivity.",
+          metrics: ["Process Automation", "AI Chatbots", "Workflow Optimization"],
         },
       ],
     },
@@ -94,43 +95,32 @@ export const translations = {
       label: "Our Principles",
       heading1: "How we",
       heading2: "operate.",
-      sub: "Six non-negotiable principles that define every engagement, every decision, and every line of work we deliver.",
+      sub: "Five non-negotiable principles that define every engagement.",
       items: [
         {
           number: "01",
-          title: "Impact First.",
-          description:
-            "Every design decision is judged by its impact on user experience and business goals. If it doesn't move the needle, it doesn't ship.",
+          title: "Value-Driven Execution.",
+          description: "Every product we build must deliver clear business value and drive revenue.",
         },
         {
           number: "02",
-          title: "Craft & Precision.",
-          description:
-            "We obsess over the details. Micro-interactions, flawless typography, and pixel-perfect execution are our standard.",
+          title: "Global Standards.",
+          description: "We build robust architectures and premium designs that meet top-tier international standards.",
         },
         {
           number: "03",
           title: "Radical Transparency.",
-          description:
-            "No hiding behind design jargon. We communicate our creative process, challenges, and decisions with brutal honesty.",
+          description: "We communicate challenges and decisions with brutal honesty.",
         },
         {
           number: "04",
-          title: "Agile Creativity.",
-          description:
-            "Digital moves fast. We move faster. We deliver high-end creative work without the traditional agency bloat.",
+          title: "Agile & Scalable.",
+          description: "Our technology solutions are flexible and ready to scale with your business.",
         },
         {
           number: "05",
-          title: "Global Standards.",
-          description:
-            "Vietnam-based doesn't mean local-thinking. We build for the US and European stage. Every single time.",
-        },
-        {
-          number: "06",
-          title: "Future Proof.",
-          description:
-            "The digital landscape evolves daily. We stay ahead of design trends and technological shifts so your brand never looks dated.",
+          title: "Quality over Quantity.",
+          description: "We prioritize code quality, system architecture, and design consistency above all.",
         },
       ],
     },
@@ -144,15 +134,29 @@ export const translations = {
       directLine: "Direct Line",
       footer: "© 2026 CBEC Solutions. All rights reserved.",
       tagline: "Vietnam → Global",
-      formName: "Your Name",
-      formNamePlaceholder: "e.g. Alex Johnson",
-      formEmail: "Email Address",
-      formEmailPlaceholder: "your@email.com",
-      formMessage: "Message",
-      formMessagePlaceholder: "Tell us about your project...",
-      formSubmit: "Send Message",
+      formName: "Full Name*",
+      formNamePlaceholder: "John Doe",
+      formEmail: "Email Address*",
+      formEmailPlaceholder: "john@company.com",
+      formCompany: "Company Name*",
+      formCompanyPlaceholder: "Acme Corp",
+      formPhone: "Phone Number",
+      formPhonePlaceholder: "+1 234 567 8900",
+      formService: "How can we help you?*",
+      formServiceOptions: [
+        "Software Outsourcing",
+        "Web Development",
+        "Custom CRM",
+        "MVP Development",
+        "Other"
+      ],
+      formBudget: "Estimated Budget",
+      formBudgetPlaceholder: "$5,000 - $10,000+",
+      formMessage: "Project Details*",
+      formMessagePlaceholder: "Tell us about your project, goals, and timeline...",
+      formButton: "Submit Inquiry",
       formSending: "Sending...",
-      formSuccess: "Message received. We’ll be in touch within 24 hours.",
+      formSuccess: "Message received. We'll be in touch shortly.",
       formError: "Something went wrong. Please try emailing us directly.",
       formPrivacy: "We never share your information.",
     },
@@ -164,15 +168,23 @@ export const translations = {
       prompt: "Chọn ngôn ngữ của bạn",
     },
 
+    // ── Navbar ──
+    nav: [
+      { label: "Dự Án", href: "#projects" },
+      { label: "Về Chúng Tôi", href: "#about" },
+      { label: "Dịch Vụ", href: "#services" },
+      { label: "Liên Hệ", href: "#contact" },
+    ],
+
     // ── Hero ──
     hero: {
       logo: "CBEC SOLUTIONS.",
       line1: "Creative",
       line2: "Technology",
-      line3: "Partner.",
-      tagline: "Build What Sells.",
+      line3: "Agency.",
+      tagline: "Build What Scales.",
       description:
-        "Chiến lược thương hiệu, thiết kế web và phần mềm doanh nghiệp. Chúng tôi xây dựng sản phẩm số và hệ thống vận hành thực tế, có khả năng mở rộng.",
+        "CBEC Solutions là đối tác công nghệ sáng tạo, giúp doanh nghiệp xây dựng thương hiệu, website, phần mềm và tự động hoá AI. Chúng tôi kết hợp năng lực kỹ thuật vững chắc và tư duy thiết kế chiến lược để tạo ra các sản phẩm số có khả năng mở rộng.",
       scroll: "Cuộn để khám phá",
       ctaPrimary: "Xem dự án",
       ctaSecondary: "Liên hệ",
@@ -194,11 +206,11 @@ export const translations = {
     // ── About ──
     about: {
       label: "Về chúng tôi",
-      line1: "Làm",
-      line2: "Sản phẩm",
-      line3: "Số.",
-      p1: "Đội ngũ ở Việt Nam, làm việc với thị trường toàn cầu. Chúng tôi là creative technology company tập trung vào việc dùng thiết kế và công nghệ để giải quyết bài toán kinh doanh. Đẹp thôi chưa đủ, mọi thứ chúng tôi làm đều phải bán được hàng.",
-      p2: "Từ website, phần mềm quản trị cho đến nội dung mạng xã hội. Chúng tôi lo phần kỹ thuật và sáng tạo để thương hiệu của bạn hoạt động hiệu quả trên môi trường online.",
+      line1: "Năng lực",
+      line2: "Thực thi",
+      line3: "Đáng tin.",
+      p1: "Có trụ sở tại TP.HCM, chúng tôi cung cấp hạ tầng kỹ thuật và giải pháp sáng tạo để doanh nghiệp của bạn bứt phá.",
+      p2: "Từ chiến lược thương hiệu đến kiến trúc phần mềm phức tạp, chúng tôi là cầu nối giữa tầm nhìn và năng lực thực thi.",
       metric: "Sản phẩm kỹ thuật số đã vận hành.",
     },
 
@@ -230,17 +242,10 @@ export const translations = {
         },
         {
           number: "04",
-          title: "Mạng xã hội & Nội dung",
+          title: "AI & Tự động hoá",
           description:
-            "Làm nội dung mạng xã hội để xây dựng cộng đồng, thu hút người xem và giữ chân khách hàng.",
-          metrics: ["Sản xuất nội dung", "Chiến lược kênh", "Quản lý chiến dịch"],
-        },
-        {
-          number: "05",
-          title: "Chiến lược sáng tạo",
-          description:
-            "Lên chiến dịch sáng tạo dựa trên dữ liệu thật. Kết hợp giữa thiết kế đẹp và số liệu kinh doanh đo đếm được.",
-          metrics: ["Chiến dịch số", "Định hướng nghệ thuật", "Marketing tăng trưởng"],
+            "Xây dựng hệ thống tự động hoá và luồng làm việc bằng AI giúp loại bỏ các tác vụ lặp lại, giảm chi phí vận hành và tăng hiệu suất.",
+          metrics: ["Tự động hoá quy trình", "Chatbot AI", "Tối ưu vận hành"],
         },
       ],
     },
@@ -250,43 +255,32 @@ export const translations = {
       label: "Nguyên tắc hoạt động",
       heading1: "Cách chúng tôi",
       heading2: "vận hành.",
-      sub: "Sáu nguyên tắc làm việc cốt lõi của chúng tôi, áp dụng cho mọi dự án và mọi dòng code.",
+      sub: "Năm nguyên tắc làm việc cốt lõi của chúng tôi.",
       items: [
         {
           number: "01",
-          title: "Hiệu quả.",
-          description:
-            "Thiết kế phải tốt cho người dùng và ra số cho doanh nghiệp. Cái gì không đem lại giá trị thực tế, chúng tôi bỏ.",
+          title: "Thực thi tạo giá trị.",
+          description: "Sản phẩm công nghệ phải mang lại giá trị kinh doanh và thúc đẩy tăng trưởng thực sự.",
         },
         {
           number: "02",
-          title: "Chỉn chu.",
-          description:
-            "Kỹ tính từng chi tiết nhỏ. Từ hiệu ứng, font chữ cho đến chất lượng code — mọi thứ đều phải làm tới nơi tới chốn.",
+          title: "Tiêu chuẩn quốc tế.",
+          description: "Kiến trúc hệ thống mạnh mẽ và thiết kế cao cấp, đáp ứng những tiêu chuẩn khắt khe nhất.",
         },
         {
           number: "03",
-          title: "Nói thẳng.",
-          description:
-            "Không lạm dụng từ ngữ chuyên ngành để lòe khách hàng. Có gì nói nấy về quy trình, khó khăn và cách chúng tôi đưa ra quyết định.",
+          title: "Minh bạch tuyệt đối.",
+          description: "Giao tiếp trung thực, quy trình minh bạch, không giấu giếm rủi ro kỹ thuật.",
         },
         {
           number: "04",
-          title: "Làm nhanh.",
-          description:
-            "Làm việc ra kết quả chất lượng nhưng không bị vướng quy trình cồng kềnh như các agency truyền thống.",
+          title: "Linh hoạt & Mở rộng.",
+          description: "Giải pháp công nghệ linh hoạt, sẵn sàng mở rộng cùng sự phát triển của doanh nghiệp.",
         },
         {
           number: "05",
-          title: "Chuẩn quốc tế.",
-          description:
-            "Làm ở Việt Nam nhưng sản phẩm ra lò phải đủ sức mang đi đánh thị trường Mỹ và châu Âu. Không ngoại lệ.",
-        },
-        {
-          number: "06",
-          title: "Không lỗi thời.",
-          description:
-            "Công nghệ đổi mới liên tục. Chúng tôi làm sản phẩm với công nghệ và thiết kế hiện đại nhất để đồ của bạn dùng được lâu dài.",
+          title: "Chất lượng trên số lượng.",
+          description: "Đề cao chất lượng code, tư duy kiến trúc hệ thống và tính nhất quán trong thiết kế.",
         },
       ],
     },
@@ -300,15 +294,29 @@ export const translations = {
       directLine: "Liên hệ trực tiếp",
       footer: "© 2026 CBEC Solutions. Mọi quyền được bảo lưu.",
       tagline: "Vietnam → Global",
-      formName: "Họ tên",
+      formName: "Họ tên*",
       formNamePlaceholder: "Ví dụ: Nguyễn Văn A",
-      formEmail: "Email",
-      formEmailPlaceholder: "email@cua.ban.com",
-      formMessage: "Nội dung",
-      formMessagePlaceholder: "Mô tả ngắn về dự án của bạn...",
-      formSubmit: "Gửi tin nhắn",
+      formEmail: "Email*",
+      formEmailPlaceholder: "email@congty.com",
+      formCompany: "Tên Doanh Nghiệp*",
+      formCompanyPlaceholder: "Ví dụ: Công ty TNHH ABC",
+      formPhone: "Số điện thoại",
+      formPhonePlaceholder: "090 123 4567",
+      formService: "Bạn cần hỗ trợ mảng nào?*",
+      formServiceOptions: [
+        "Outsourcing Phần Mềm",
+        "Thiết Kế Website",
+        "Phần Mềm Quản Trị CRM",
+        "Phát Triển MVP",
+        "Khác"
+      ],
+      formBudget: "Ngân sách dự kiến",
+      formBudgetPlaceholder: "100tr - 200tr+",
+      formMessage: "Chi tiết dự án*",
+      formMessagePlaceholder: "Mô tả ngắn gọn về yêu cầu và mục tiêu của bạn...",
+      formButton: "Gửi yêu cầu",
       formSending: "Đang gửi...",
-      formSuccess: "Đã nhận được tin nhắn. Chúng tôi sẽ phản hồi trong vòng 24 giờ.",
+      formSuccess: "Đã nhận được thông tin. Chúng tôi sẽ liên hệ lại sớm nhất.",
       formError: "Có lỗi xảy ra. Vui lòng gửi email trực tiếp cho chúng tôi.",
       formPrivacy: "Thông tin của bạn được bảo mật tuyệt đối.",
     },
