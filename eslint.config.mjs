@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Agent/skill files — not our code
     ".agent/**",
+    "agentic-awesome-skills-main/**",
+    "scripts/**",
   ]),
 ]);
 

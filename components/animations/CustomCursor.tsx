@@ -17,6 +17,7 @@ export default function CustomCursor() {
   useEffect(() => {
     // Check if device has touch capability (likely mobile)
     if (typeof window !== 'undefined') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsDesktop(!window.matchMedia("(pointer: coarse)").matches);
     }
 

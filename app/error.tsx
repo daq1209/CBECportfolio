@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { logClientError } from "@/lib/logger";
+import Link from "next/link";
 
 export default function Error({
   error,
@@ -72,7 +73,7 @@ export default function Error({
             >
               Try again
             </button>
-            <a
+            <Link
               href="/"
               style={{
                 backgroundColor: "transparent",
@@ -89,8 +90,8 @@ export default function Error({
               onMouseOver={(e) => e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)"}
               onMouseOut={(e) => e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)"}
             >
-              Go home
-            </a>
+              Go to Home
+            </Link>
           </div>
           {process.env.NODE_ENV === "development" && error.message && (
             <details style={{

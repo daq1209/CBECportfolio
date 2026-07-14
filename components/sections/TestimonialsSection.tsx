@@ -40,11 +40,11 @@ export default function TestimonialsSection() {
             >
               {/* Giant quote mark */}
               <span className="absolute -top-12 -left-6 text-8xl text-white/5 font-serif select-none" aria-hidden="true">
-                "
+                &quot;
               </span>
               
               <p className="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed tracking-tight text-white/90 mb-8 relative z-10">
-                "{testimonial.quote}"
+                &quot;{testimonial.quote}&quot;
               </p>
               
               <div className="flex items-center gap-4">
