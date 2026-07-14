@@ -140,7 +140,7 @@ export default async function LangLayout({
   if (!isLocale(lang)) notFound();
 
   const htmlLang = META_CONFIG[lang].htmlLang;
-  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-Z8K38PT8G7";
 
   return (
     <html lang={htmlLang} className={beVietnamPro.variable}>
