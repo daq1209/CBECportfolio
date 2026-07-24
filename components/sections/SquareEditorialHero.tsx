@@ -144,34 +144,34 @@ export default function SquareEditorialHero({ lang }: { lang: string }) {
                   animate="visible"
                   className="flex flex-col sm:flex-row items-stretch sm:items-start gap-4 mb-10 w-full sm:w-auto"
                 >
-                  {/* Primary CTA */}
-                  <MagneticButton>
-                    <button
-                      onClick={() => {
-                        trackCTAClick(t.ctaPrimary, "hero");
-                        document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
-                      }}
-                      className="group flex items-center justify-center gap-3 px-6 py-4 md:px-8 bg-[#66FF80] text-[#0a0a0a] rounded-full text-base font-semibold tracking-tight hover:bg-white transition-colors duration-300 cursor-pointer border-none min-h-[48px] md:min-h-[56px] w-full sm:w-auto"
-                      style={{ fontFamily: "var(--font-display)" }}
-                      aria-label={t.ctaPrimary}
-                    >
-                      {t.ctaPrimary}
-                      <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">→</span>
-                    </button>
-                  </MagneticButton>
-
-                  {/* Secondary CTA */}
+                  {/* Primary Highlighted CTA — Get In Touch */}
                   <MagneticButton>
                     <button
                       onClick={() => {
                         trackCTAClick(t.ctaSecondary, "hero");
                         document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
                       }}
-                      className="flex items-center justify-center gap-3 px-6 py-4 md:px-8 border border-white/20 text-white/70 rounded-full text-base font-light tracking-tight hover:border-white/50 hover:text-white transition-all duration-300 cursor-pointer bg-transparent min-h-[48px] md:min-h-[56px] w-full sm:w-auto"
+                      className="group flex items-center justify-center gap-3 px-6 py-4 md:px-8 bg-[#66FF80] text-[#0a0a0a] rounded-full text-base font-semibold tracking-tight hover:bg-white transition-colors duration-300 cursor-pointer border-none min-h-[48px] md:min-h-[56px] w-full sm:w-auto shadow-[0_0_25px_rgba(102,255,128,0.3)]"
                       style={{ fontFamily: "var(--font-display)" }}
                       aria-label={t.ctaSecondary}
                     >
                       {t.ctaSecondary}
+                      <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">→</span>
+                    </button>
+                  </MagneticButton>
+
+                  {/* Secondary Unhighlighted CTA — View Our Work */}
+                  <MagneticButton>
+                    <button
+                      onClick={() => {
+                        trackCTAClick(t.ctaPrimary, "hero");
+                        document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      className="flex items-center justify-center gap-3 px-6 py-4 md:px-8 border border-white/20 text-white/70 rounded-full text-base font-light tracking-tight hover:border-white/50 hover:text-white transition-all duration-300 cursor-pointer bg-transparent min-h-[48px] md:min-h-[56px] w-full sm:w-auto"
+                      style={{ fontFamily: "var(--font-display)" }}
+                      aria-label={t.ctaPrimary}
+                    >
+                      {t.ctaPrimary}
                     </button>
                   </MagneticButton>
                 </motion.div>

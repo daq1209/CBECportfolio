@@ -7,23 +7,23 @@ import { escapeJsonLd } from "@/lib/security";
 const FAQS_EN = [
   {
     q: "What does 'fixed-scope proposal' actually mean?",
-    a: "It means we agree on deliverables, timeline, and price upfront — in writing. Zero scope creep, zero surprise invoices. If requirements change materially, we renegotiate transparently before starting new work.",
+    a: "It means we agree on deliverables, timeline, and price upfront in writing. Zero scope creep, zero surprise invoices. If requirements change materially, we renegotiate transparently before starting new work.",
   },
   {
     q: "Where is your team based and can I meet you in person?",
-    a: "Our core team is in Ho Chi Minh City, Vietnam, with strategic oversight from Australia. We run async-first for speed, but we're always available for video calls — and in-person meetings for clients in Vietnam or visiting the region.",
+    a: "Our core team is in Ho Chi Minh City, Vietnam, with strategic oversight from Australia. We run async-first for speed, but we are always available for video calls and in-person meetings for clients in Vietnam.",
   },
   {
     q: "How do you handle IP and data security for overseas clients?",
-    a: "All work is covered under NDA before any brief is shared. Code ownership transfers fully to the client upon final payment. We follow GDPR-compatible data practices for all EU/Australian clients.",
+    a: "All work is covered under NDA before any brief is shared. Code ownership transfers fully to the client upon final payment. We follow GDPR-compatible data practices for all international clients.",
   },
   {
     q: "What's your typical project timeline?",
-    a: "Brand + website projects: 4–6 weeks. Custom software / CRM: 8–16 weeks depending on scope. AI automation integrations: 2–4 weeks. We don't pad timelines — these are actual delivery windows.",
+    a: "Brand + website projects: 4 to 6 weeks. Custom software / CRM: 8 to 16 weeks depending on scope. AI automation integrations: 2 to 4 weeks. We do not pad timelines, these are actual delivery windows.",
   },
   {
     q: "Do you work with early-stage startups or only established businesses?",
-    a: "Both. For early-stage startups we offer founder packages focused on brand + MVP web presence. For established businesses, we focus on operational tech, CRM systems, and scaling infrastructure. Budget minimums apply — contact us for details.",
+    a: "Both. For early-stage startups we offer founder packages focused on brand and MVP web presence. For established businesses, we focus on operational tech, CRM systems, and scaling infrastructure. Budget minimums apply, contact us for details.",
   },
   {
     q: "What does ongoing support look like after launch?",
@@ -34,27 +34,27 @@ const FAQS_EN = [
 const FAQS_VI = [
   {
     q: "\"Fixed-scope proposal\" nghĩa là gì trong thực tế?",
-    a: "Deliverable, timeline và chi phí được thống nhất trước bằng văn bản. Không scope creep, không phát sinh hóa đơn bất ngờ. Nếu yêu cầu thay đổi đáng kể, chúng tôi đàm phán lại minh bạch trước khi bắt đầu hạng mục mới.",
+    a: "Hạng mục, tiến độ và chi phí được thống nhất trước bằng văn bản. Không có phát sinh chi phí ngoài hợp đồng. Nếu có thay đổi yêu cầu, hai bên sẽ trao đổi và thống nhất lại trước khi thực hiện.",
   },
   {
-    q: "Team của bạn ở đâu và tôi có thể gặp trực tiếp không?",
-    a: "Team core ở TP.HCM, với định hướng chiến lược từ Australia. Chúng tôi làm việc async để đảm bảo tốc độ, nhưng luôn sẵn sàng video call — và gặp trực tiếp với khách hàng tại Việt Nam.",
+    q: "Đội ngũ của CBEC ở đâu và có thể gặp trực tiếp không?",
+    a: "Đội ngũ kỹ thuật của chúng tôi đặt tại TP.HCM, kết hợp cùng cố vấn chiến lược từ Úc. Chúng tôi trao đổi chủ yếu qua email và video call, đồng thời sẵn sàng gặp trực tiếp khách hàng tại TP.HCM.",
   },
   {
-    q: "Chi phí như thế nào? Có phù hợp với SME không?",
-    a: "Có các package phù hợp cho SME từ branding cơ bản đến website và phần mềm tùy chỉnh. Ngân sách tối thiểu tuỳ theo hạng mục — liên hệ để được tư vấn cụ thể.",
+    q: "Chi phí như thế nào? Có phù hợp với doanh nghiệp vừa và nhỏ không?",
+    a: "Chúng tôi có các gói dịch vụ linh hoạt cho SME từ thiết kế website đến phát triển phần mềm theo yêu cầu. Vui lòng liên hệ để nhận tư vấn và báo giá chi tiết.",
   },
   {
-    q: "Timeline dự án thường là bao lâu?",
-    a: "Branding + website: 4–6 tuần. Phần mềm tùy chỉnh / CRM: 8–16 tuần tùy scope. Tích hợp AI automation: 2–4 tuần. Chúng tôi không padding timeline — đây là cửa sổ giao hàng thực tế.",
+    q: "Thời gian thực hiện một dự án thường là bao lâu?",
+    a: "Website và nhận diện thương hiệu từ 4 đến 6 tuần. Phần mềm quản lý CRM từ 8 đến 16 tuần tùy quy mô. Tích hợp AI từ 2 đến 4 tuần. Đây là mốc thời gian hoàn thành thực tế.",
   },
   {
-    q: "CBEC có hỗ trợ sau khi ra mắt không?",
-    a: "Có. Chúng tôi cung cấp partnership retainer hàng tháng cho nội dung, tối ưu và bảo trì kỹ thuật. 30 ngày đầu sau launch luôn bao gồm gói monitoring không tính thêm phí.",
+    q: "CBEC có hỗ trợ sau khi ra mắt sản phẩm không?",
+    a: "Có. Chúng tôi cung cấp các gói bảo trì và hỗ trợ kỹ thuật hàng tháng. 30 ngày đầu sau khi ra mắt luôn đi kèm dịch vụ theo dõi và vận hành miễn phí.",
   },
   {
-    q: "Tôi cần chuẩn bị gì trước khi liên hệ?",
-    a: "Không cần nhiều — chỉ cần hiểu mục tiêu kinh doanh của bạn. Brief chi tiết? Tốt hơn. Chỉ có ý tưởng? Vẫn ổn. Discovery call giúp chúng tôi cùng nhau định hình scope phù hợp nhất.",
+    q: "Tôi cần chuẩn bị thông tin gì trước khi liên hệ?",
+    a: "Bạn chỉ cần chia sẻ mục tiêu kinh doanh hoặc yêu cầu sơ bộ. Trong buổi trao đổi ban đầu, chúng tôi sẽ cùng bạn xác định chi tiết phạm vi dự án phù hợp.",
   },
 ];
 

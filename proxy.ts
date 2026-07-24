@@ -2,13 +2,26 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 /* ── Supported locales ───────────────────────────────────────────────────── */
-const LOCALES = ["global"] as const;
+const LOCALES = ["global", "vi"] as const;
 type Locale = (typeof LOCALES)[number];
 const DEFAULT_LOCALE: Locale = "global";
 const COOKIE_NAME = "cbec-language";
 
-/* ── Detect preferred locale ─────────────────────────────────────────────── */
+/* ── Detect preferred locale from cookie → Accept-Language → default ─────── */
 function detectLocale(request: NextRequest): Locale {
+  // 1. Respect previously saved cookie choice
+  const cookie = request.cookies.get(COOKIE_NAME)?.value;
+  if (cookie === "vi" || cookie === "global") return cookie;
+
+  // 2. Parse Accept-Language header
+  const acceptLang = request.headers.get("accept-language") ?? "";
+  const preferred = acceptLang
+    .split(",")
+    .map((s) => s.split(";")[0].trim().toLowerCase())
+    .find((lang) => lang.startsWith("vi"));
+
+  if (preferred) return "vi";
+
   return DEFAULT_LOCALE;
 }
 
@@ -38,23 +51,16 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // Legacy redirect for /vi to /global
-  if (pathname === "/vi" || pathname.startsWith("/vi/")) {
-    const newPath = pathname.replace(/^\/vi/, "/global");
-    const redirectUrl = new URL(newPath || "/global", request.url);
-    return NextResponse.redirect(redirectUrl);
-  }
-
-  // Already under a locale prefix — allow through
+  // Already under a supported locale prefix — allow through
   const hasLocale = LOCALES.some(
     (locale) =>
       pathname === `/${locale}` || pathname.startsWith(`/${locale}/`)
   );
 
-  // If not under a locale, redirect root "/" or paths to detected locale
+  // If not under a locale, redirect root "/" or unknown paths to detected locale
   if (!hasLocale) {
     const locale = detectLocale(request);
-    const redirectUrl = new URL(`/${locale}${pathname}`, request.url);
+    const redirectUrl = new URL(`/${locale}${pathname === "/" ? "" : pathname}`, request.url);
     const response = NextResponse.redirect(redirectUrl);
 
     // Persist the detected choice in a cookie (1 year)
@@ -87,10 +93,10 @@ export function proxy(request: NextRequest) {
   // 'unsafe-inline' style-src is kept as Next.js requires inline stylesheet injection at runtime
   const cspHeaderValue = `
     default-src 'self';
-    script-src ${scriptSrcRule};
+    script-src ${scriptSrcRule} https://www.googletagmanager.com https://www.google-analytics.com;
     style-src 'self' 'unsafe-inline';
-    img-src 'self' blob: data: https://images.unsplash.com;
-    connect-src 'self';
+    img-src 'self' blob: data: https://images.unsplash.com https://www.google-analytics.com https://www.googletagmanager.com https://*.google.com https://*.google.com.vn;
+    connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net;
     font-src 'self' data:;
     object-src 'none';
     base-uri 'self';

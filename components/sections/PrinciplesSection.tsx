@@ -37,12 +37,12 @@ export default function PrinciplesSection({ lang }: { lang: string }) {
             <span className="text-xs uppercase tracking-[0.2em] font-mono text-white/50">{t.label}</span>
           </div>
           
-          <h2
+          <div
             className="text-[8vw] md:text-[4vw] font-bold leading-[1.1] tracking-tighter uppercase text-white drop-shadow-lg"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {t.heading1} <span className="text-[#66FF80]">{t.heading2}</span>
-          </h2>
+          </div>
         </div>
 
         {/* Horizontal Track */}
@@ -69,12 +69,12 @@ export default function PrinciplesSection({ lang }: { lang: string }) {
                 <div className="text-[#66FF80] font-mono text-sm tracking-widest font-bold">
                   {principle.number}
                 </div>
-                <h3
+                <div
                   className="text-[7vw] md:text-[2.5vw] font-bold leading-[1.1] tracking-tighter uppercase text-white"
                   style={{ fontFamily: "var(--font-display)" }}
                 >
                   {principle.title}
-                </h3>
+                </div>
                 <p className="text-base md:text-lg font-light text-white/70 leading-relaxed mt-2 line-clamp-3">
                   {principle.description}
                 </p>

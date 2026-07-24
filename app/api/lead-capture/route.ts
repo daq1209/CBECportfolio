@@ -68,7 +68,7 @@ export async function POST(request: NextRequest) {
           console.warn(`[lead-capture] Origin mismatch: expected ${hostWithoutPort}, got ${originHostWithoutPort}`);
           return NextResponse.json({ error: "Forbidden: Origin mismatch" }, { status: 403 });
         }
-      } catch (e) {
+      } catch (_) {
         return NextResponse.json({ error: "Forbidden: Invalid origin header" }, { status: 403 });
       }
     } else if (referer) {
@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
           console.warn(`[lead-capture] Referer mismatch: expected ${hostWithoutPort}, got ${refererHostWithoutPort}`);
           return NextResponse.json({ error: "Forbidden: Referer mismatch" }, { status: 403 });
         }
-      } catch (e) {
+      } catch (_) {
         return NextResponse.json({ error: "Forbidden: Invalid referer header" }, { status: 403 });
       }
     } else {
@@ -106,64 +106,29 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ success: true }, { status: 200 });
     }
 
-    let targetUrl = "";
-    let emailBody: Record<string, string> = {};
-
-    if (payload.type === "lead-magnet") {
-      const leadId = process.env.FORMSPREE_LEAD_MAGNET_ID;
-      if (!leadId) {
-        console.error("[lead-capture] Missing FORMSPREE_LEAD_MAGNET_ID environment variable.");
-        return NextResponse.json(
-          { error: "Service Unavailable: configuration missing" },
-          { status: 503 }
-        );
-      }
-      targetUrl = `https://formspree.io/f/${leadId}`;
-      emailBody = {
-        email: payload.email,
-        _subject: `[Lead Magnet] New download — ${payload.source ?? "unknown"} (${payload.lang ?? "unknown"})`,
-        source: payload.source ?? "lead-magnet",
-        locale: payload.lang ?? "unknown",
-      };
-    } else {
-      const contactId = process.env.FORMSPREE_CONTACT_ID;
-      if (!contactId) {
-        console.error("[lead-capture] Missing FORMSPREE_CONTACT_ID environment variable.");
-        return NextResponse.json(
-          { error: "Service Unavailable: configuration missing" },
-          { status: 503 }
-        );
-      }
-      targetUrl = `https://formspree.io/f/${contactId}`;
-      emailBody = {
-        name: payload.name,
-        email: payload.email,
-        company: payload.company,
-        phone: payload.phone ?? "",
-        service: payload.service,
-        budget: payload.budget ?? "",
-        currentWebsite: payload.currentWebsite ?? "",
-        message: payload.message,
-        _subject: `[Contact Form] New inquiry from ${payload.name} (${payload.lang ?? "unknown"})`,
-        locale: payload.lang ?? "unknown",
-      };
+    // Forward to Google Apps Script → Google Sheets
+    const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+    if (!webhookUrl) {
+      console.error("[lead-capture] Missing GOOGLE_SHEETS_WEBHOOK_URL environment variable.");
+      return NextResponse.json(
+        { error: "Service Unavailable: configuration missing" },
+        { status: 503 }
+      );
     }
 
-    // Forward to Formspree
-    const res = await fetch(targetUrl, {
+    const res = await fetch(webhookUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
-      body: JSON.stringify(emailBody),
+      body: JSON.stringify(payload),
     });
 
     if (!res.ok) {
       const data = await res.json().catch(() => ({}));
-      logApiError("/api/lead-capture", new Error("Formspree API error"), {
+      logApiError("/api/lead-capture", new Error("Google Apps Script error"), {
         status: res.status,
-        formspreeResponse: data,
+        webhookResponse: data,
         submissionType: payload.type,
       });
       return NextResponse.json(

@@ -9,42 +9,42 @@ const STEPS_EN = [
     number: "01",
     title: "Discovery Call",
     description:
-      "30-minute strategy session. We map your market, goals, and revenue gaps. No sales pitch — just clarity on whether we're the right fit.",
+      "30-minute strategy session. We map your market, goals, and revenue gaps. No sales pitch, just clarity on whether we're the right fit.",
     tag: "Week 1",
   },
   {
     number: "02",
     title: "Proposal & Scope",
     description:
-      "Fixed-scope proposal delivered within 48 hours. Clear deliverables, timeline, and investment. No surprises, ever.",
+      "Fixed-scope proposal delivered within 48 hours. Clear deliverables, timeline, and investment with no hidden fees.",
     tag: "Week 1",
   },
   {
     number: "03",
     title: "Strategy & Architecture",
     description:
-      "We define the technical architecture, brand direction, and go-to-market positioning before writing a single line of code.",
+      "We define the technical architecture, brand direction, and positioning before writing a single line of code.",
     tag: "Week 2",
   },
   {
     number: "04",
     title: "Build & Iterate",
     description:
-      "Rapid execution in 2-week sprints with weekly check-ins. You see real progress — not just status updates.",
-    tag: "Weeks 3–8",
+      "Rapid execution in 2-week sprints with weekly check-ins. You see real progress, not just status updates.",
+    tag: "Weeks 3 to 8",
   },
   {
     number: "05",
     title: "Launch & Optimize",
     description:
-      "We don't disappear at launch. The first 30 days post-launch include active monitoring, A/B testing, and conversion optimization.",
+      "The first 30 days post-launch include active monitoring, testing, and conversion optimization.",
     tag: "Launch",
   },
   {
     number: "06",
     title: "Scale Together",
     description:
-      "Ongoing retainer partnerships for brands ready to scale. Dedicated capacity, priority support, quarterly strategy reviews.",
+      "Ongoing retainer partnerships for brands ready to scale. Dedicated capacity, priority support, and regular strategy reviews.",
     tag: "Ongoing",
   },
 ];
@@ -52,44 +52,44 @@ const STEPS_EN = [
 const STEPS_VI = [
   {
     number: "01",
-    title: "Discovery Call",
+    title: "Trao đổi giải pháp",
     description:
-      "Cuộc gọi chiến lược 30 phút. Chúng tôi phân tích thị trường, mục tiêu và điểm nghẽn doanh thu của bạn. Không bán hàng — chỉ làm rõ xem chúng ta có phù hợp không.",
+      "Cuộc gọi 30 phút nhằm tìm hiểu mục tiêu và yêu cầu của bạn. Đánh giá mức độ phù hợp giữa hai bên.",
     tag: "Tuần 1",
   },
   {
     number: "02",
-    title: "Đề xuất & Phạm vi",
+    title: "Đề xuất & Báo giá",
     description:
-      "Báo giá fixed-scope giao trong 48 giờ. Deliverable, timeline và chi phí rõ ràng. Không bao giờ có chi phí phát sinh.",
+      "Gửi kế hoạch và báo giá trọn gói trong 48 giờ. Hạng mục, tiến độ và chi phí rõ ràng, không chi phí phát sinh.",
     tag: "Tuần 1",
   },
   {
     number: "03",
     title: "Chiến lược & Kiến trúc",
     description:
-      "Định nghĩa kiến trúc kỹ thuật, định hướng thương hiệu và positioning trước khi viết bất kỳ dòng code nào.",
+      "Thống nhất kiến trúc kỹ thuật và nhận diện thương hiệu trước khi tiến hành lập trình.",
     tag: "Tuần 2",
   },
   {
     number: "04",
-    title: "Build & Cải tiến",
+    title: "Lập trình & Hoàn thiện",
     description:
-      "Thực thi nhanh theo sprint 2 tuần với check-in hàng tuần. Bạn thấy tiến độ thực tế — không chỉ là status update.",
-    tag: "Tuần 3–8",
+      "Thực thi theo từng đợt 2 tuần và báo cáo tiến độ hàng tuần giúp bạn nắm rõ sản phẩm thực tế.",
+    tag: "Tuần 3 đến 8",
   },
   {
     number: "05",
-    title: "Ra mắt & Tối ưu",
+    title: "Vận hành & Tối ưu",
     description:
-      "Chúng tôi không biến mất sau khi launch. 30 ngày đầu sau ra mắt bao gồm monitoring, A/B testing và tối ưu chuyển đổi.",
+      "Hỗ trợ theo dõi hệ thống, kiểm tra phản hồi và tối ưu hiệu quả sử dụng trong 30 ngày đầu sau ra mắt.",
     tag: "Ra mắt",
   },
   {
     number: "06",
-    title: "Scale cùng nhau",
+    title: "Đồng hành dài hạn",
     description:
-      "Partnership retainer dài hạn cho các thương hiệu sẵn sàng mở rộng. Năng lực dedicated, hỗ trợ ưu tiên, review chiến lược hàng quý.",
+      "Dịch vụ bảo trì và nâng cấp định kỳ giúp hệ thống hoạt động ổn định và mở rộng khi cần.",
     tag: "Dài hạn",
   },
 ];
@@ -129,22 +129,22 @@ export default function ProcessSection({ lang }: { lang: string }) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          <h2
+          <div
             className="text-[8vw] md:text-[4.5vw] font-bold leading-[1.1] tracking-tighter uppercase text-white"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {isVi ? "Quy trình" : "Execution"}
-          </h2>
-          <h2
+          </div>
+          <div
             className="text-[8vw] md:text-[4.5vw] font-bold leading-[1.1] tracking-tighter uppercase text-[#66FF80]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {isVi ? "Chuẩn chỉnh." : "by Design."}
-          </h2>
+          </div>
           <p className="mt-6 md:mt-10 text-lg md:text-xl font-light text-white/50 max-w-2xl leading-relaxed">
             {isVi
-              ? "Mỗi engagement chạy theo một quy trình cố định — nhanh, minh bạch và không có surprises."
-              : "Every engagement runs the same proven playbook — fast, transparent, and ruthlessly outcome-focused."}
+              ? "Mỗi dự án được triển khai theo quy trình minh bạch, đảm bảo đúng tiến độ và chi phí."
+              : "Every project follows a proven process that is fast, transparent, and outcome focused."}
           </p>
         </motion.div>
 
@@ -182,12 +182,12 @@ export default function ProcessSection({ lang }: { lang: string }) {
                 </span>
               </div>
 
-              <h3
+              <div
                 className="text-xl md:text-2xl font-bold uppercase tracking-tight text-white mb-4 leading-tight"
                 style={{ fontFamily: "var(--font-display)" }}
               >
                 {step.title}
-              </h3>
+              </div>
               <p className="text-sm md:text-base font-light text-white/50 leading-relaxed">
                 {step.description}
               </p>

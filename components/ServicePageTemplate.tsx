@@ -24,34 +24,34 @@ const fadeUp = {
   transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
 };
 
-function getLucideIcon(emoji: string) {
+function getLucideIcon(iconName: string) {
   const iconProps = { className: "w-8 h-8", strokeWidth: 1.5 };
-  if (emoji.includes("⚡")) return <Zap {...iconProps} />;
-  if (emoji.includes("🔄")) return <RefreshCw {...iconProps} />;
-  if (emoji.includes("🛡️") || emoji.includes("🛡")) return <Shield {...iconProps} />;
-  if (emoji.includes("🚀")) return <Rocket {...iconProps} />;
-  if (emoji.includes("🎨")) return <Palette {...iconProps} />;
-  if (emoji.includes("📂")) return <Folder {...iconProps} />;
-  if (emoji.includes("📊")) return <BarChart {...iconProps} />;
-  if (emoji.includes("🔌")) return <Plug {...iconProps} />;
-  if (emoji.includes("📈")) return <TrendingUp {...iconProps} />;
-  if (emoji.includes("💡")) return <Lightbulb {...iconProps} />;
-  if (emoji.includes("🧱")) return <Layers {...iconProps} />;
-  if (emoji.includes("🔑")) return <Key {...iconProps} />;
-  if (emoji.includes("🤖")) return <Bot {...iconProps} />;
-  if (emoji.includes("⚙️") || emoji.includes("⚙")) return <Settings {...iconProps} />;
-  if (emoji.includes("📝")) return <FileText {...iconProps} />;
-  if (emoji.includes("👥")) return <Users {...iconProps} />;
-  if (emoji.includes("🏢")) return <Building {...iconProps} />;
-  if (emoji.includes("🤝")) return <Handshake {...iconProps} />;
-  if (emoji.includes("📱")) return <Smartphone {...iconProps} />;
-  if (emoji.includes("🧭")) return <Compass {...iconProps} />;
-  if (emoji.includes("💼")) return <Briefcase {...iconProps} />;
-  if (emoji.includes("🔐")) return <Lock {...iconProps} />;
-  if (emoji.includes("🎯")) return <Target {...iconProps} />;
-  if (emoji.includes("📞")) return <Phone {...iconProps} />;
-  if (emoji.includes("🔍")) return <Search {...iconProps} />;
-  if (emoji.includes("🔔")) return <Bell {...iconProps} />;
+  if (iconName === "zap") return <Zap {...iconProps} />;
+  if (iconName === "refresh-cw") return <RefreshCw {...iconProps} />;
+  if (iconName === "shield") return <Shield {...iconProps} />;
+  if (iconName === "rocket") return <Rocket {...iconProps} />;
+  if (iconName === "palette") return <Palette {...iconProps} />;
+  if (iconName === "folder") return <Folder {...iconProps} />;
+  if (iconName === "bar-chart") return <BarChart {...iconProps} />;
+  if (iconName === "plug") return <Plug {...iconProps} />;
+  if (iconName === "trending-up") return <TrendingUp {...iconProps} />;
+  if (iconName === "lightbulb") return <Lightbulb {...iconProps} />;
+  if (iconName === "layers") return <Layers {...iconProps} />;
+  if (iconName === "key") return <Key {...iconProps} />;
+  if (iconName === "bot") return <Bot {...iconProps} />;
+  if (iconName === "settings") return <Settings {...iconProps} />;
+  if (iconName === "file-text") return <FileText {...iconProps} />;
+  if (iconName === "users") return <Users {...iconProps} />;
+  if (iconName === "building") return <Building {...iconProps} />;
+  if (iconName === "handshake") return <Handshake {...iconProps} />;
+  if (iconName === "smartphone") return <Smartphone {...iconProps} />;
+  if (iconName === "compass") return <Compass {...iconProps} />;
+  if (iconName === "briefcase") return <Briefcase {...iconProps} />;
+  if (iconName === "lock") return <Lock {...iconProps} />;
+  if (iconName === "target") return <Target {...iconProps} />;
+  if (iconName === "phone") return <Phone {...iconProps} />;
+  if (iconName === "search") return <Search {...iconProps} />;
+  if (iconName === "bell") return <Bell {...iconProps} />;
   
   return <CheckCircle2 {...iconProps} />;
 }
@@ -429,8 +429,8 @@ export default function ServicePageTemplate({ service, lang }: Props) {
             className="text-lg font-light text-white/40 mb-12 max-w-lg mx-auto"
           >
             {isVi
-              ? "Đặt lịch Discovery Call miễn phí — phản hồi trong 24 giờ."
-              : "Book a free Discovery Call — we respond within 24 hours."}
+              ? "Đặt lịch tư vấn giải pháp miễn phí, phản hồi trong 24 giờ."
+              : "Book a free strategy call, we respond within 24 hours."}
           </motion.p>
           <motion.div
             {...fadeUp}

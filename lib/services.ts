@@ -55,7 +55,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "⚡",
+        icon: "zap",
         title: { en: "Senior Engineering", vi: "Đội ngũ Senior" },
         description: {
           en: "Our developers are vetted for technical excellence, architecture design patterns, and clear English communication.",
@@ -63,7 +63,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🔄",
+        icon: "refresh-cw",
         title: { en: "Agile Development", vi: "Quy trình Agile" },
         description: {
           en: "Weekly sprints, daily standups, and full transparency via Jira, Slack, and GitHub. You stay in control of the project lifecycle.",
@@ -71,7 +71,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🛡️",
+        icon: "shield",
         title: { en: "IP & Code Protection", vi: "Bảo mật IP" },
         description: {
           en: "Rigorous NDAs and contract structures that ensure all intellectual property remains 100% yours from day one.",
@@ -113,7 +113,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "🚀",
+        icon: "rocket",
         title: { en: "Next.js Core Performance", vi: "Hiệu suất Next.js" },
         description: {
           en: "Static Site Generation (SSG) and Server-Side Rendering (SSR) to guarantee perfect Core Web Vitals and SEO rankings.",
@@ -121,7 +121,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🎨",
+        icon: "palette",
         title: { en: "Tailored UI/UX Layouts", vi: "Thiết kế UI/UX May Đo" },
         description: {
           en: "Figma prototypes custom-coded to pixel-perfection. Smooth micro-animations and mobile-first layouts standard.",
@@ -129,7 +129,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "📂",
+        icon: "folder",
         title: { en: "Headless CMS Integration", vi: "Tích hợp Headless CMS" },
         description: {
           en: "Sanity or Contentful integrations allowing your marketing team to update content easily without touching code.",
@@ -171,7 +171,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "📊",
+        icon: "bar-chart",
         title: { en: "Bespoke Lead Pipelines", vi: "Phễu Lead Tùy Chỉnh" },
         description: {
           en: "Custom status stages, lead scoring matrices, and automatic assignment logic mapped to your organization chart.",
@@ -179,7 +179,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🔌",
+        icon: "plug",
         title: { en: "Third-Party Integrations", vi: "Tích hợp Bên Thứ Ba" },
         description: {
           en: "Direct connections to your website forms, Stripe payments, Slack notifications, and automated email sequences.",
@@ -187,7 +187,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "📈",
+        icon: "trending-up",
         title: { en: "Real-time Dashboards", vi: "Báo cáo Thời Gian Thực" },
         description: {
           en: "Clean visualization of conversion rates, sales revenue, representative activity, and bottleneck alerts.",
@@ -229,7 +229,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "💡",
+        icon: "lightbulb",
         title: { en: "Scope Optimization", vi: "Tối ưu Phạm Vi Tính Năng" },
         description: {
           en: "We help you trim product scope to the essential value proposition to launch fast and save capital.",
@@ -237,7 +237,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🧱",
+        icon: "layers",
         title: { en: "Scalable Tech Stack", vi: "Công nghệ Dễ Mở Rộng" },
         description: {
           en: "Built using clean React/Next.js/PostgreSQL architecture so you can scale features as users grow without rewrite.",
@@ -245,7 +245,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🔑",
+        icon: "key",
         title: { en: "User Authentication & Stripe", vi: "Đăng nhập & Thanh toán" },
         description: {
           en: "Secure login, profile settings, database management, and Stripe billing pre-integrated to collect revenue from Day 1.",
@@ -287,7 +287,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "🤖",
+        icon: "bot",
         title: { en: "Custom AI Agents", vi: "Trợ Lý AI Riêng Biệt" },
         description: {
           en: "AI agents trained on your custom knowledge base to support customer inquiries, internal compliance, or drafting reports.",
@@ -295,7 +295,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "⚙️",
+        icon: "settings",
         title: { en: "Workflow Automation", vi: "Tự động hóa quy trình" },
         description: {
           en: "Connecting software tools via Make, Zapier, or custom Node.js cron jobs to sync data and trigger actions automatically.",
@@ -303,7 +303,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "📝",
+        icon: "file-text",
         title: { en: "Data Extraction & Parsing", vi: "Trích xuất & Xử lý Dữ liệu" },
         description: {
           en: "Transforming invoices, PDFs, and unstructured logs into clean JSON data structured directly into your database.",
@@ -345,7 +345,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "🤖",
+        icon: "bot",
         title: { en: "Custom AI Agents", vi: "Trợ Lý AI Riêng Biệt" },
         description: {
           en: "AI agents trained on your custom knowledge base to support customer inquiries, internal compliance, or drafting reports.",
@@ -353,7 +353,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "⚙️",
+        icon: "settings",
         title: { en: "Workflow Automation", vi: "Tự động hóa quy trình" },
         description: {
           en: "Connecting software tools via Make, Zapier, or custom Node.js cron jobs to sync data and trigger actions automatically.",
@@ -361,7 +361,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "📝",
+        icon: "file-text",
         title: { en: "Data Extraction & Parsing", vi: "Trích xuất & Xử lý Dữ liệu" },
         description: {
           en: "Transforming invoices, PDFs, and unstructured logs into clean JSON data structured directly into your database.",
@@ -403,7 +403,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "👥",
+        icon: "users",
         title: { en: "Custom Recruitment Vetting", vi: "Tuyển Chọn Theo Yêu Cầu" },
         description: {
           en: "We interview and hire candidates specifically matching your required technology stack and company culture.",
@@ -411,7 +411,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🏢",
+        icon: "building",
         title: { en: "Managed Infrastructure", vi: "Hạ Tầng Sẵn Sàng" },
         description: {
           en: "We provide high-speed internet, workstations, meeting spaces, and HR payroll management so you focus only on the code.",
@@ -419,7 +419,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🤝",
+        icon: "handshake",
         title: { en: "Direct Daily Integration", vi: "Làm Việc Trực Tiếp Hàng Ngày" },
         description: {
           en: "The team operates on your working hours, uses your Slack channels, and reports directly to your CTO/PM.",
@@ -463,7 +463,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "⚡",
+        icon: "zap",
         title: { en: "Bespoke Design Vibe", vi: "Giao diện độc quyền" },
         description: {
           en: "No templates. Custom-drawn interfaces by professional UI designers tailored to your exact brand book and target audience.",
@@ -471,7 +471,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "📈",
+        icon: "trending-up",
         title: { en: "SEO & Google Optimization", vi: "Tối ưu chuẩn SEO" },
         description: {
           en: "Full technical SEO implementation: structured data schema, perfect Core Web Vitals, and keyword-friendly architecture.",
@@ -479,7 +479,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "📱",
+        icon: "smartphone",
         title: { en: "Perfect Mobile Experience", vi: "Tương thích di động" },
         description: {
           en: "Over 80% of traffic in Vietnam is mobile. We code fluid, responsive layouts optimized for touch interaction and slow networks.",
@@ -521,7 +521,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "🧭",
+        icon: "compass",
         title: { en: "Brand Positioning Strategy", vi: "Chiến Lược Định Vị" },
         description: {
           en: "Analyzing competitor landscape, customer personas, and defining core brand values before designing visuals.",
@@ -529,7 +529,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🎨",
+        icon: "palette",
         title: { en: "Visual Identity System", vi: "Nhận Diện Hình Ảnh" },
         description: {
           en: "Logo suite, brand color palette, typography grid, typography rules, and usage constraints.",
@@ -537,7 +537,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "💼",
+        icon: "briefcase",
         title: { en: "Corporate Marketing Assets", vi: "Ấn Phẩm Văn Phòng & Marketing" },
         description: {
           en: "Business cards, letterheads, presentation slides, brand patterns, and social media template grids.",
@@ -579,7 +579,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "🧭",
+        icon: "compass",
         title: { en: "Brand Positioning Strategy", vi: "Chiến Lược Định Vị" },
         description: {
           en: "Analyzing competitor landscape, customer personas, and defining core brand values before designing visuals.",
@@ -587,7 +587,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🎨",
+        icon: "palette",
         title: { en: "Visual Identity System", vi: "Nhận Diện Hình Ảnh" },
         description: {
           en: "Logo suite, brand color palette, typography grid, typography rules, and usage constraints.",
@@ -595,7 +595,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "💼",
+        icon: "briefcase",
         title: { en: "Corporate Marketing Assets", vi: "Ấn Phẩm Văn Phòng & Marketing" },
         description: {
           en: "Business cards, letterheads, presentation slides, brand patterns, and social media template grids.",
@@ -637,7 +637,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "⚙️",
+        icon: "settings",
         title: { en: "Workflow Digitization", vi: "Số Hóa Quy Trình Thực Tế" },
         description: {
           en: "We map your offline paperwork, spreadsheets, and manual approvals into a single, cloud-based platform.",
@@ -645,7 +645,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🔐",
+        icon: "lock",
         title: { en: "Role-Based Permissions", vi: "Phân Quyền Chi Tiết" },
         description: {
           en: "Strict access control ensuring managers, staff, accounting, and partners only see authorized data fields.",
@@ -653,7 +653,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "📊",
+        icon: "bar-chart",
         title: { en: "Internal Dashboard Reporting", vi: "Báo Cáo Tự Động" },
         description: {
           en: "Automated calculations of inventory velocity, employee hours, operational cost, and revenue charts.",
@@ -695,7 +695,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "🎯",
+        icon: "target",
         title: { en: "Automated Lead Funnels", vi: "Phễu Lead Tự Động" },
         description: {
           en: "Capture contact requests instantly. Distribute leads to sales agents automatically based on rotation or performance.",
@@ -703,7 +703,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "📞",
+        icon: "phone",
         title: { en: "Customer Interaction History", vi: "Lịch Sử Tư Vấn Chi Tiết" },
         description: {
           en: "Save phone notes, chat summaries, purchase values, and email correspondence on a single timeline page.",
@@ -711,7 +711,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "📊",
+        icon: "bar-chart",
         title: { en: "Sales Rep Conversion Tracking", vi: "Đo Lường Hiệu Suất Sales" },
         description: {
           en: "Clear reporting on how many leads were assigned, contacted, qualified, and won by each representative.",
@@ -753,7 +753,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "🤖",
+        icon: "bot",
         title: { en: "Knowledge-Trained AI Support", vi: "Trợ Lý AI Chăm Sóc Khách Hàng" },
         description: {
           en: "Trained on your company pricing, policies, and FAQs to reply accurately without human intervention.",
@@ -761,7 +761,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🔌",
+        icon: "plug",
         title: { en: "API Workflow Integration", vi: "Liên Kết Quy Trình Tự Động" },
         description: {
           en: "Syncing data automatically between CRM, sheets, ERP, and messaging channels using automation tools.",
@@ -769,7 +769,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🔍",
+        icon: "search",
         title: { en: "OCR Invoice & Contract Parsing", vi: "Trích Xuất Hóa Đơn & Hợp Đồng" },
         description: {
           en: "AI scans paper bills, input data, and uploads records to your internal accounting software automatically.",
@@ -811,7 +811,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "⚡",
+        icon: "zap",
         title: { en: "Under 1.5s Load Speed", vi: "Tải trang dưới 1.5 giây" },
         description: {
           en: "Speed prevents bounce. We hand-code our pages with light components, compressed WebP images, and clean styling.",
@@ -819,7 +819,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🎯",
+        icon: "target",
         title: { en: "AIDA Copywriting Flow", vi: "Copywriting Theo Phễu AIDA" },
         description: {
           en: "Content structured systematically to capture Attention, build Interest, generate Desire, and drive Action.",
@@ -827,7 +827,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🔌",
+        icon: "plug",
         title: { en: "Ad Pixels & Analytics Setup", vi: "Cài Đặt Pixel Quảng Cáo" },
         description: {
           en: "Pre-integrated Facebook Pixel, TikTok Pixel, Google Tag Manager, and UTM campaign tracking codes.",
@@ -869,7 +869,7 @@ export const SERVICES: ServiceItem[] = [
     },
     features: [
       {
-        icon: "🔌",
+        icon: "plug",
         title: { en: "Multi-channel API Connectors", vi: "Kết Nối API Đa Nguồn" },
         description: {
           en: "Direct integration using official Webhook APIs from Zalo, Meta Graph, TikTok Developer Portal.",
@@ -877,7 +877,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "🔔",
+        icon: "bell",
         title: { en: "Instant Telegram/Slack Alerts", vi: "Cảnh Báo Lead Mới Tức Thì" },
         description: {
           en: "Trigger instant notifications to your sales group chat on Telegram or Slack with customer phone and product choice.",
@@ -885,7 +885,7 @@ export const SERVICES: ServiceItem[] = [
         }
       },
       {
-        icon: "📈",
+        icon: "trending-up",
         title: { en: "Central Customer History", vi: "Giao Diện Quản Lý Tập Trung" },
         description: {
           en: "View message history, source tracking (which ad campaign brought them in), and pipeline tracking in one portal.",

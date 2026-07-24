@@ -5,20 +5,20 @@
       "title": "The Problem: High Costs and the Over-Engineering Trap",
       "paragraphs": [
         "The biggest mistake early-stage startups make is treating their first release like a final product. Attempting to build a feature-heavy application with local Australian or US developers can quickly burn through $100,000+ before a single user has tested the platform. This drains vital seed capital and delays time-to-market, increasing the risk that a competitor will launch first.",
-        "Conversely, hiring unverified freelancers or low-end offshore agencies often results in 'spaghetti code'. While it may look functional on the surface, the underlying architecture is fragile, unscalable, and unsecure. When the startup finally achieves product-market fit, they are forced to scrap the code and rebuild from scratch—a fatal delay for a growing company."
+        "Conversely, hiring unverified freelancers or low-end offshore agencies often results in unscalable code. While it may look functional on the surface, the underlying architecture is fragile and insecure. When the startup finally achieves product-market fit, they are forced to scrap the code and rebuild from scratch, causing delays for a growing company."
       ]
     },
     {
       "title": "The Solution: Strategic, Lean MVP Development",
       "paragraphs": [
-        "CBEC Solutions provides the ultimate middle ground: high-quality software engineering at a startup-friendly offshore cost. Our MVP development strategy is ruthlessly focused on your core value proposition. We work closely with founders to trim product scope, identifying the critical features necessary to solve your users' primary pain points and demonstrate traction to investors.",
-        "We build fast, but we do not build cheap. By leveraging our talented development hub in Ho Chi Minh City, we can reduce your initial engineering costs by up to 60%. This massive saving allows founders to reallocate precious runway capital toward user acquisition, marketing, and sales—the actual drivers of early-stage success."
+        "CBEC Solutions provides a practical solution: quality software engineering at a startup-friendly offshore cost. Our MVP development strategy is focused on your core value proposition. We work closely with founders to trim product scope, identifying the critical features necessary to solve your users' primary pain points and demonstrate traction to investors.",
+        "We build fast while maintaining technical standards. By leveraging our development hub in Ho Chi Minh City, we can reduce your initial engineering costs by up to 60%. This saving allows founders to reallocate precious runway capital toward user acquisition, marketing, and sales, the actual drivers of early-stage success."
       ]
     },
     {
       "title": "Built to Scale: A Foundation You Can Trust",
       "paragraphs": [
-        "An MVP is not a disposable prototype; it is the foundation of your future enterprise. We architect our MVPs using enterprise-grade, highly scalable tech stacks—specifically React, Next.js, Node.js, and PostgreSQL. This ensures that when you hit 10,000 or 100,000 users, your application scales elegantly without requiring a catastrophic rewrite.",
+        "An MVP is not a disposable prototype, it is the foundation of your future product. We architect our MVPs using scalable tech stacks, specifically React, Next.js, Node.js, and PostgreSQL. This ensures that when you hit 10,000 or 100,000 users, your application scales smoothly without requiring a rewrite.",
         "Security is baked in from day one. We implement robust user authentication (JWT, OAuth), secure payment gateway integrations (Stripe, PayPal), and follow strict data protection protocols. Your investors will see a clean, professional codebase during technical due diligence, vastly increasing your chances of securing the next round of funding."
       ]
     },

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { headers } from "next/headers";
 import { Be_Vietnam_Pro } from "next/font/google";
+import Script from "next/script";
 import Providers from "@/components/Providers";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import CustomCursor from "@/components/animations/CustomCursor";
-import AsciiLoader from "@/components/animations/AsciiLoader";
 import "@/app/globals.css";
 
 /* ── Supported locales ───────────────────────────────────────────────────── */
@@ -49,15 +50,15 @@ const SITE_URL = "https://www.cbecsolutions.com";
 const META_CONFIG: Record<Locale, { title: string; description: string; htmlLang: string }> = {
   global: {
     htmlLang: "en",
-    title: "CBEC Solutions | Software Outsourcing & Web Development in Vietnam",
+    title: "CBEC Solutions | Creative Tech & Web Development Agency",
     description:
-      "CBEC Solutions helps startups and SMEs build brands, websites, custom software, CRM systems, and AI automation with an Australia-connected, Vietnam-based delivery team.",
+      "CBEC Solutions is a Vietnam-based tech agency building custom software, high-performance websites, CRM systems, and AI automation for global scale.",
   },
   vi: {
     htmlLang: "vi",
-    title: "CBEC Solutions | Thiết Kế Website, Branding & Tự Động Hóa AI Cho Doanh Nghiệp",
+    title: "CBEC Solutions | Agency Thiết Kế Web & Phần Mềm Uy Tín",
     description:
-      "CBEC Solutions giúp doanh nghiệp Việt xây dựng thương hiệu, website, phần mềm quản lý, CRM và hệ thống AI automation để tăng lead, tiết kiệm thời gian và vận hành hiệu quả hơn.",
+      "CBEC Solutions cung cấp giải pháp thiết kế website chuyên nghiệp, phần mềm CRM và tích hợp AI Automation giúp doanh nghiệp tối ưu chi phí & tăng trưởng.",
   },
 };
 
@@ -85,6 +86,9 @@ export async function generateMetadata({
     },
     authors: [{ name: "CBEC Solutions", url: SITE_URL }],
     creator: "CBEC Solutions",
+    icons: {
+      apple: "/favicon.svg",
+    },
     openGraph: {
       type: "website",
       locale: locale === "vi" ? "vi_VN" : "en_US",
@@ -98,7 +102,7 @@ export async function generateMetadata({
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: "CBEC Solutions — Creative Agency",
+          alt: "CBEC Solutions Creative Agency",
         },
       ],
     },
@@ -141,6 +145,7 @@ export default async function LangLayout({
 
   const htmlLang = META_CONFIG[lang].htmlLang;
   const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-Z8K38PT8G7";
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   return (
     <html lang={htmlLang} className={beVietnamPro.variable}>
@@ -148,12 +153,15 @@ export default async function LangLayout({
         {/* Google Analytics 4 */}
         {gaId && (
           <>
-            <script
-              async
+            <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+              nonce={nonce}
             />
-            <script
+            <Script
               id="google-analytics"
+              strategy="afterInteractive"
+              nonce={nonce}
               dangerouslySetInnerHTML={{
                 __html: `
                   window.dataLayer = window.dataLayer || [];
@@ -174,7 +182,6 @@ export default async function LangLayout({
         <a href="#main-content" className="skip-link">
           {lang === "vi" ? "Chuyển đến nội dung chính" : "Skip to main content"}
         </a>
-        <AsciiLoader />
         <CustomCursor />
         <SchemaMarkup lang={lang} />
         <Providers lang={lang}>{children}</Providers>

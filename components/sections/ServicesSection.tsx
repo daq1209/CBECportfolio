@@ -35,7 +35,7 @@ const TOP_OFFSETS = [
   "top-[8vh] md:top-[32vh]",
 ];
 
-const TOTAL_CARDS = 4;
+
 
 export default function ServicesSection({ lang }: { lang: string }) {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -58,7 +58,7 @@ export default function ServicesSection({ lang }: { lang: string }) {
               {t.label}
             </span>
           </motion.div>
-          <motion.h2
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -67,7 +67,7 @@ export default function ServicesSection({ lang }: { lang: string }) {
             style={{ fontFamily: 'var(--font-display)' }}
           >
             {t.heading}
-          </motion.h2>
+          </motion.div>
         </div>
 
         <div className="relative w-full flex flex-col gap-10 md:gap-0 pb-[10vh]">
@@ -174,12 +174,12 @@ function ServiceCard({ item, index, colors, topOffset, href }: ServiceCardProps)
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-end relative z-10 w-full h-full">
           <div className="lg:col-span-7 flex flex-col justify-end h-full">
-            <h3
+            <div
               className="text-[8vw] md:text-[5vw] lg:text-[4vw] font-bold leading-[1.05] tracking-tighter uppercase mb-6 md:mb-12"
               style={{ fontFamily: "var(--font-display)" }}
             >
               {item.title}
-            </h3>
+            </div>
           </div>
           <div className="lg:col-span-5 flex flex-col justify-end h-full pb-2 md:pb-6">
             <div className="max-lg:opacity-100 max-lg:translate-y-0 lg:opacity-0 lg:translate-y-8 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]">
