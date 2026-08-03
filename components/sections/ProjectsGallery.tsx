@@ -66,9 +66,7 @@ export default function ProjectsGallery({ lang }: { lang: string }) {
             return (
               <Link
                 key={project.slug}
-                href={project.externalLink || `/${lang}/work/${project.slug}`}
-                target={project.externalLink ? "_blank" : undefined}
-                rel={project.externalLink ? "noopener noreferrer" : undefined}
+                href={`/${lang}/work/${project.slug}`}
                 className="relative w-full block group"
               >
                 <motion.div
@@ -175,9 +173,7 @@ export default function ProjectsGallery({ lang }: { lang: string }) {
                 return (
                   <Link
                     key={project.slug}
-                    href={project.externalLink || `/${lang}/work/${project.slug}`}
-                    target={project.externalLink ? "_blank" : undefined}
-                    rel={project.externalLink ? "noopener noreferrer" : undefined}
+                    href={`/${lang}/work/${project.slug}`}
                     className="relative flex-shrink-0 w-[36vw] lg:w-[28vw] xl:w-[26vw] block group cursor-none cursor-hover-target transition-transform duration-700 hover:-translate-y-2"
                   >
                     <motion.div
