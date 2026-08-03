@@ -87,6 +87,7 @@ export async function generateMetadata({
     authors: [{ name: "CBEC Solutions", url: SITE_URL }],
     creator: "CBEC Solutions",
     icons: {
+      icon: "/icon.svg",
       apple: "/favicon.svg",
     },
     openGraph: {
