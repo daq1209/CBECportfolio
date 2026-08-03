@@ -11,17 +11,17 @@ const COPY_EN = {
   headline1: "The eCommerce",
   headline2: "Launch Checklist.",
   description:
-    "53 battle-tested steps our operators use to take a product from zero to first sale on Amazon and DTC in under 90 days. Used internally. Now available for free.",
+    "53 tested steps our operators use to take a product from zero to first sale on Amazon and DTC in under 90 days. Used internally, now available for free.",
   bullets: [
-    "Market & competition analysis framework",
-    "Supplier sourcing & vetting scorecard",
-    "Listing optimization & A9 algorithm primer",
-    "First 30-day launch spend playbook",
+    "Market and competition analysis framework",
+    "Supplier sourcing and vetting scorecard",
+    "Listing optimization and A9 algorithm primer",
+    "First 30 day launch spend playbook",
   ],
   placeholder: "your@email.com",
   cta: "Get the Checklist →",
   sending: "Sending...",
-  success: "Check your inbox — it's on the way.",
+  success: "Check your inbox, it is on the way.",
   error: "Something went wrong. Email us at hello@cbecsolutions.com",
   privacy: "No spam. Unsubscribe anytime.",
 };
@@ -31,19 +31,19 @@ const COPY_VI = {
   headline1: "Checklist Ra Mắt",
   headline2: "eCommerce.",
   description:
-    "53 bước đã được kiểm chứng mà team vận hành của chúng tôi dùng để đưa sản phẩm từ 0 đến đơn đầu tiên trên Amazon và DTC trong vòng 90 ngày.",
+    "53 bước kiểm chứng giúp đưa sản phẩm từ zero đến đơn hàng đầu tiên trên Amazon và thương mại điện tử trong 90 ngày.",
   bullets: [
-    "Framework phân tích thị trường & đối thủ",
-    "Scorecard tìm & đánh giá nhà cung cấp",
-    "Tối ưu listing & tóm tắt thuật toán A9",
-    "Playbook chi ngân sách 30 ngày đầu",
+    "Bộ khung phân tích thị trường và đối thủ",
+    "Bảng đánh giá chọn lọc nhà cung cấp",
+    "Tối ưu trang sản phẩm và thuật toán tìm kiếm",
+    "Kế hoạch phân bổ ngân sách 30 ngày đầu",
   ],
   placeholder: "email@cuaban.com",
   cta: "Nhận ngay →",
   sending: "Đang gửi...",
-  success: "Kiểm tra hộp thư — tài liệu đang trên đường đến.",
-  error: "Có lỗi. Email cho chúng tôi tại hello@cbecsolutions.com",
-  privacy: "Không spam. Hủy đăng ký bất kỳ lúc nào.",
+  success: "Kiểm tra hộp thư, tài liệu đang trên đường gửi đến bạn.",
+  error: "Có lỗi xảy ra. Vui lòng gửi email trực tiếp cho chúng tôi.",
+  privacy: "Không gửi spam. Hủy đăng ký bất kỳ lúc nào.",
 };
 
 type Status = "idle" | "sending" | "success" | "error";

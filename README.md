@@ -1,10 +1,10 @@
 # CBEC Solutions - Creative Agency Portfolio Landing Page
 
-Dự án Landing Page Portfolio chính thức của **CBEC Solutions** — một Creative Agency toàn cầu tập trung vào thị trường E-commerce và hệ sinh thái công nghệ tự động hóa. Website được xây dựng theo triết lý thương hiệu **"Build What Sells"** với thiết kế Dark Mode cao cấp, typography phong cách editorial sắc sảo và hiệu ứng chuyển động mượt mà.
+Dự án Landing Page Portfolio chính thức của **CBEC Solutions**, một Creative Agency toàn cầu tập trung vào thị trường E-commerce và hệ sinh thái công nghệ tự động hóa. Website được xây dựng theo triết lý thương hiệu **"Build What Sells"** với thiết kế Dark Mode cao cấp, typography phong cách editorial sắc sảo và hiệu ứng chuyển động mượt mà.
 
 ---
 
-## 🚀 Công Nghệ Sử Dụng (Tech Stack)
+## Công Nghệ Sử Dụng (Tech Stack)
 
 Dự án áp dụng các công nghệ hiện đại nhất để đảm bảo hiệu suất tải trang cao, chuẩn SEO và trải nghiệm UX/UI vượt trội:
 
@@ -28,7 +28,7 @@ Dự án áp dụng các công nghệ hiện đại nhất để đảm bảo hi
 
 ---
 
-## 📂 Cấu Trúc Thư Mục (Project Structure)
+## Cấu Trúc Thư Mục (Project Structure)
 
 ```bash
 cbec-landing-page/
@@ -53,7 +53,6 @@ cbec-landing-page/
 ├── context/                  # Quản lý State toàn cục
 │   └── LanguageContext.tsx   # Lưu trữ và cập nhật trạng thái ngôn ngữ (EN/VI)
 ├── docs/                     # Tài liệu thiết kế & thương hiệu
-│   └── ThongTinBrand.md      # Định vị thương hiệu & quy chuẩn logo CBEC
 ├── lib/                      # Các thư viện bổ trợ và dữ liệu tĩnh
 │   └── translations.ts       # Bản dịch song ngữ Anh - Việt cho toàn bộ site
 ├── public/                   # Thư mục chứa tài nguyên tĩnh (Hình ảnh, SVG)
@@ -64,7 +63,7 @@ cbec-landing-page/
 
 ---
 
-## 🌟 Tính Năng Nổi Bật (Core Features)
+## Tính Năng Nổi Bật (Core Features)
 
 1. **Định Vị Song Ngữ (Localization)**: 
    Hỗ trợ hoàn chỉnh hai ngôn ngữ **English (EN)** và **Tiếng Việt (VI)** thông qua React Context. Hệ thống tự động chuyển đổi phông chữ tương ứng để hiển thị đẹp nhất.
@@ -77,7 +76,7 @@ cbec-landing-page/
 
 ---
 
-## 🛠️ Hướng Dẫn Cài Đặt & Chạy Dự Án
+## Hướng Dẫn Cài Đặt & Chạy Dự Án
 
 ### Yêu Cầu Hệ Thống
 - Đã cài đặt **Node.js** (Khuyên dùng v18 hoặc v20+)
@@ -114,7 +113,7 @@ cbec-landing-page/
 
 ---
 
-## 🔒 Quản Lý Bảo Mật & File Nhạy Cảm
+## Quản Lý Bảo Mật & File Nhạy Cảm
 
 Dự án đã được cấu hình `.gitignore` chuẩn hóa nhằm ngăn chặn việc vô tình đẩy các thông tin nhạy cảm lên Git. Các tệp tin sau luôn được tự động loại bỏ khỏi lịch sử commit:
 - Khóa bí mật, file chứng chỉ kết nối (`*.pem`, API keys).

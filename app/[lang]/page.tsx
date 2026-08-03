@@ -23,9 +23,7 @@ const ProcessSection = dynamic(
 const FAQSection = dynamic(
   () => import("@/components/sections/FAQSection"),
 );
-const LeadMagnetSection = dynamic(
-  () => import("@/components/sections/LeadMagnetSection"),
-);
+
 const PrinciplesSection = dynamic(
   () => import("@/components/sections/PrinciplesSection"),
 );

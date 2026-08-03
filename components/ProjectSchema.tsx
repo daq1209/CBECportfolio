@@ -14,16 +14,28 @@ export default function ProjectSchema({ project, lang, nonce }: Props) {
   const isVi = lang === "vi";
   const SITE_URL = "https://www.cbecsolutions.com";
 
-  // Article schema for case study
-  const articleSchema = {
+  // Article & CreativeWork schema for case study
+  const creativeWorkSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "CreativeWork",
+    name: project.title,
     headline: project.title,
     description: isVi ? project.outcome.vi : project.outcome.en,
     image: `${SITE_URL}${project.image}`,
     author: {
       "@type": "Organization",
       name: "CBEC Solutions",
+      url: SITE_URL,
+    },
+    creator: {
+      "@type": "Organization",
+      name: "CBEC Solutions",
+      url: SITE_URL,
+    },
+    provider: {
+      "@type": "Organization",
+      name: "CBEC Solutions",
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
@@ -34,6 +46,7 @@ export default function ProjectSchema({ project, lang, nonce }: Props) {
       },
     },
     datePublished: `${project.year}-01-01`,
+    keywords: [project.industry, project.title, "CBEC Solutions Case Study"].filter(Boolean).join(", "),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}/${lang}/work/${project.slug}`,
@@ -72,7 +85,7 @@ export default function ProjectSchema({ project, lang, nonce }: Props) {
         type="application/ld+json"
         nonce={nonce}
         suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: escapeJsonLd(articleSchema) }}
+        dangerouslySetInnerHTML={{ __html: escapeJsonLd(creativeWorkSchema) }}
       />
       <script
         type="application/ld+json"

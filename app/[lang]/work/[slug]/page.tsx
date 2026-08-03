@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `${SITE_URL}/${locale}/work/${slug}`,
       images: [
         {
-          url: project.image.startsWith('http') ? project.image : `${SITE_URL}${project.image}`,
+          url: project.image.startsWith("http") ? project.image : `${SITE_URL}${project.image}`,
           width: 1200,
           height: 630,
           alt: title,
@@ -78,233 +78,381 @@ export default async function CaseStudyPage({ params }: Props) {
   const isVi = lang === "vi";
   const nonce = (await headers()).get("x-nonce") || undefined;
 
+  // Related projects
+  const relatedProjects = project.relatedSlugs
+    ? PROJECTS.filter((p) => project.relatedSlugs?.includes(p.slug))
+    : [];
+
   return (
     <>
       <ProjectSchema project={project} lang={lang} nonce={nonce} />
       <main className="bg-[#0a0a0a] text-white min-h-screen pb-32">
-      {/* Navigation Header */}
-      <nav className="w-full max-w-[1400px] mx-auto px-6 md:px-16 py-8 flex justify-between items-center border-b border-white/[0.05]">
-        <Link
-          href={`/${lang}`}
-          className="text-xs uppercase tracking-[0.2em] font-mono text-white/50 hover:text-white transition-colors duration-300 flex items-center gap-2"
-        >
-          <span>←</span> {isVi ? "Về trang chủ" : "Back to Home"}
-        </Link>
-        <span className="text-xs uppercase tracking-[0.2em] font-mono text-white/30">
-          Case Study — 0{PROJECTS.indexOf(project) + 1}
-        </span>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-16 pt-16 md:pt-24 pb-12">
-        <span className="text-xs uppercase tracking-[0.2em] font-mono text-[#66FF80]">
-          {isVi ? "Dự án tiêu biểu" : "Featured Case Study"}
-        </span>
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-4 mb-12">
-          <h1
-            className="text-[12vw] md:text-[6vw] font-bold uppercase leading-[1.05] tracking-tighter text-white m-0"
-            style={{ fontFamily: "var(--font-display)" }}
+        {/* Navigation Header */}
+        <nav className="w-full max-w-[1400px] mx-auto px-6 md:px-16 py-8 flex justify-between items-center border-b border-white/[0.05]">
+          <Link
+            href={`/${lang}`}
+            className="text-xs uppercase tracking-[0.2em] font-mono text-white/50 hover:text-white transition-colors duration-300 flex items-center gap-2"
           >
-            {project.title}
-          </h1>
-          {project.externalLink && (
-            <a 
-              href={project.externalLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center gap-3 px-6 py-3 bg-[#66FF80] text-[#0a0a0a] rounded-full text-sm font-semibold tracking-tight hover:bg-white transition-colors duration-300 w-fit"
+            <span>←</span> {isVi ? "Về trang chủ" : "Back to Home"}
+          </Link>
+          <span className="text-xs uppercase tracking-[0.2em] font-mono text-white/30">
+            Case Study 0{PROJECTS.indexOf(project) + 1}
+          </span>
+        </nav>
+
+        {/* Hero Section */}
+        <section className="max-w-[1400px] mx-auto px-6 md:px-16 pt-16 md:pt-24 pb-12">
+          <span className="text-xs uppercase tracking-[0.2em] font-mono text-[#66FF80]">
+            {isVi ? "Dự án tiêu biểu" : "Featured Case Study"}
+          </span>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mt-4 mb-12">
+            <h1
+              className="text-[12vw] md:text-[6vw] font-bold uppercase leading-[1.05] tracking-tighter text-white m-0"
+              style={{ fontFamily: "var(--font-display)" }}
             >
-              {isVi ? "Truy cập Website" : "Visit Website"}
-              <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">↗</span>
-            </a>
-          )}
-        </div>
-
-        {/* Project Metadata Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 border-y border-white/[0.08] text-sm font-light">
-          <div>
-            <span className="block text-[10px] font-mono text-white/35 uppercase tracking-[0.25em] mb-2">
-              {isVi ? "Khách hàng" : "Client"}
-            </span>
-            <span className="text-white/80">{project.client}</span>
-          </div>
-          <div>
-            <span className="block text-[10px] font-mono text-white/35 uppercase tracking-[0.25em] mb-2">
-              {isVi ? "Năm thực hiện" : "Year"}
-            </span>
-            <span className="text-white/80">{project.year}</span>
-          </div>
-          <div>
-            <span className="block text-[10px] font-mono text-white/35 uppercase tracking-[0.25em] mb-2">
-              {isVi ? "Vai trò của CBEC" : "Role"}
-            </span>
-            <span className="text-white/80">{isVi ? project.role.vi : project.role.en}</span>
-          </div>
-          <div>
-            <span className="block text-[10px] font-mono text-white/35 uppercase tracking-[0.25em] mb-2">
-              {isVi ? "Kết quả chính" : "Core Outcome"}
-            </span>
-            <span className="text-[#66FF80] font-medium">
-              {isVi ? project.outcome.vi : project.outcome.en}
-            </span>
-          </div>
-        </div>
-      </section>
-
-      {/* Hero Showcase Image */}
-      <section className="w-full max-w-[1400px] mx-auto px-6 md:px-16 mb-24">
-        <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-white/[0.03] border border-white/[0.08]">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-        </div>
-      </section>
-
-      {/* Main Content Grid */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-        {/* Left Column: Overview & Stats */}
-        <div className="lg:col-span-5 flex flex-col gap-12">
-          <div>
-            <h2 className="text-xs uppercase tracking-[0.2em] font-mono text-white/35 mb-4">
-              {isVi ? "Tổng quan dự án" : "Overview"}
-            </h2>
-            <p className="text-lg md:text-xl font-light text-white/70 leading-relaxed">
-              {isVi ? project.overview.vi : project.overview.en}
-            </p>
-          </div>
-
-          {/* Stats Blocks */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 mt-4">
-            {project.stats.map((stat, idx) => (
-              <div
-                key={idx}
-                className="bg-white/[0.02] border border-white/[0.05] p-6 rounded-sm relative overflow-hidden"
+              {project.title}
+            </h1>
+            {project.externalLink && (
+              <a
+                href={project.externalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 px-6 py-3 bg-[#66FF80] text-[#0a0a0a] rounded-full text-sm font-semibold tracking-tight hover:bg-white transition-colors duration-300 w-fit"
               >
-                <div className="text-4xl md:text-5xl font-bold text-[#66FF80] mb-2 font-mono">
-                  {stat.value}
-                </div>
-                <div className="text-xs uppercase tracking-[0.1em] text-white/50 leading-snug">
-                  {isVi ? stat.label.vi : stat.label.en}
-                </div>
+                {isVi ? "Truy cập Website" : "Visit Website"}
+                <span className="group-hover:translate-x-1 transition-transform duration-200 inline-block">
+                  ↗
+                </span>
+              </a>
+            )}
+          </div>
+
+          {/* Expanded Project Metadata Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 py-8 border-y border-white/[0.08] text-sm font-light">
+            <div>
+              <span className="block text-[10px] font-mono text-white/35 uppercase tracking-[0.25em] mb-2">
+                {isVi ? "Khách hàng" : "Client"}
+              </span>
+              <span className="text-white/80">{project.client}</span>
+            </div>
+            <div>
+              <span className="block text-[10px] font-mono text-white/35 uppercase tracking-[0.25em] mb-2">
+                {isVi ? "Năm thực hiện" : "Year"}
+              </span>
+              <span className="text-white/80">{project.year}</span>
+            </div>
+            {project.industry && (
+              <div>
+                <span className="block text-[10px] font-mono text-white/35 uppercase tracking-[0.25em] mb-2">
+                  {isVi ? "Lĩnh vực" : "Industry"}
+                </span>
+                <span className="text-white/80">{project.industry}</span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Right Column: Case Details */}
-        <div className="lg:col-span-7 flex flex-col gap-16">
-          {/* 1. Challenges */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
-              <h3 className="text-sm uppercase tracking-[0.2em] font-mono text-white/80">
-                {isVi ? "Thử thách & Khó khăn" : "The Challenges"}
-              </h3>
-            </div>
-            <ul className="flex flex-col gap-6 pl-4 border-l border-white/[0.08]">
-              {project.challenges.map((c, i) => (
-                <li key={i} className="text-base text-white/60 font-light leading-relaxed">
-                  {isVi ? c.vi : c.en}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* 2. Solutions */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#66FF80]" />
-              <h3 className="text-sm uppercase tracking-[0.2em] font-mono text-white/80">
-                {isVi ? "Giải pháp của chúng tôi" : "Our Solution"}
-              </h3>
-            </div>
-            <ul className="flex flex-col gap-6 pl-4 border-l border-white/[0.08]">
-              {project.solutions.map((s, i) => (
-                <li key={i} className="text-base text-white/60 font-light leading-relaxed">
-                  {isVi ? s.vi : s.en}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* 3. Results */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-              <h3 className="text-sm uppercase tracking-[0.2em] font-mono text-white/80">
-                {isVi ? "Kết quả thực tế" : "The Results"}
-              </h3>
-            </div>
-            <ul className="flex flex-col gap-6 pl-4 border-l border-white/[0.08]">
-              {project.results.map((r, i) => (
-                <li key={i} className="text-base text-white/60 font-light leading-relaxed">
-                  {isVi ? r.vi : r.en}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Images Section - Only show if galleryImages exist */}
-      {project.galleryImages && project.galleryImages.length > 0 && (
-        <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-32">
-          <h3 className="text-xs uppercase tracking-[0.2em] font-mono text-white/35 mb-8">
-            {isVi ? "Hình ảnh dự án" : "Project Gallery"}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {project.galleryImages.map((imgSrc, idx) => (
-              <div
-                key={idx}
-                className="relative w-full aspect-[16/10] overflow-hidden bg-white/[0.02] border border-white/[0.05] rounded-sm group cursor-pointer"
-              >
-                <Image
-                  src={imgSrc}
-                  alt={`${project.title} - Gallery image ${idx + 1}`}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white/80 text-xs font-mono uppercase tracking-widest">
-                    {isVi ? "Xem chi tiết" : "View Full Size"}
-                  </span>
-                </div>
+            )}
+            {project.timeline && (
+              <div>
+                <span className="block text-[10px] font-mono text-white/35 uppercase tracking-[0.25em] mb-2">
+                  {isVi ? "Thời gian" : "Timeline"}
+                </span>
+                <span className="text-white/80">{project.timeline}</span>
               </div>
-            ))}
+            )}
+            <div>
+              <span className="block text-[10px] font-mono text-white/35 uppercase tracking-[0.25em] mb-2">
+                {isVi ? "Vai trò của CBEC" : "Role"}
+              </span>
+              <span className="text-white/80">{isVi ? project.role.vi : project.role.en}</span>
+            </div>
+            <div>
+              <span className="block text-[10px] font-mono text-white/35 uppercase tracking-[0.25em] mb-2">
+                {isVi ? "Kết quả chính" : "Core Outcome"}
+              </span>
+              <span className="text-[#66FF80] font-medium">
+                {isVi ? project.outcome.vi : project.outcome.en}
+              </span>
+            </div>
           </div>
         </section>
-      )}
 
-      {/* CTA Section */}
-      <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-32">
-        <div className="bg-gradient-to-r from-white/[0.02] to-white/[0.01] border border-white/[0.05] p-8 md:p-16 text-center rounded-sm">
-          <h2
-            className="text-3xl md:text-5xl font-bold uppercase tracking-tight mb-6"
-            style={{ fontFamily: "var(--font-display)" }}
-          >
-            {isVi ? "Bạn cũng muốn đạt hiệu quả đột phá?" : "Ready to elevate your project?"}
-          </h2>
-          <p className="text-white/60 max-w-xl mx-auto mb-10 text-sm md:text-base font-light leading-relaxed">
-            {isVi
-              ? "Hãy thảo luận cùng đội ngũ kỹ sư và chuyên gia của chúng tôi để tìm kiếm giải pháp công nghệ tối ưu nhất cho doanh nghiệp bạn."
-              : "Let's co-engineer a solution tailored strictly to your business objectives, lead acquisition flows, or operational efficiency."}
-          </p>
-          <Link
-            href={`/${lang}#contact`}
-            className="inline-block bg-white text-black text-xs font-mono uppercase tracking-[0.2em] px-8 py-4 hover:bg-[#66FF80] transition-colors duration-300"
-          >
-            {isVi ? "Liên hệ ngay hôm nay" : "Start your project"}
-          </Link>
-        </div>
-      </section>
-    </main>
+        {/* Hero Showcase Image */}
+        <section className="w-full max-w-[1400px] mx-auto px-6 md:px-16 mb-24">
+          <div className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-white/[0.03] border border-white/[0.08] rounded-sm">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+          </div>
+        </section>
+
+        {/* Main Content Grid */}
+        <section className="max-w-[1400px] mx-auto px-6 md:px-16 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+          {/* Left Column: Overview & Stats */}
+          <div className="lg:col-span-5 flex flex-col gap-12">
+            <div>
+              <h2 className="text-xs uppercase tracking-[0.2em] font-mono text-white/35 mb-4">
+                {isVi ? "Tổng quan dự án" : "Overview"}
+              </h2>
+              <p className="text-lg md:text-xl font-light text-white/70 leading-relaxed">
+                {isVi ? project.overview.vi : project.overview.en}
+              </p>
+            </div>
+
+            {/* Stats Blocks */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6 mt-4">
+              {project.stats.map((stat, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white/[0.02] border border-white/[0.05] p-6 rounded-sm relative overflow-hidden"
+                >
+                  <div className="text-4xl md:text-5xl font-bold text-[#66FF80] mb-2 font-mono">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs uppercase tracking-[0.1em] text-white/50 leading-snug">
+                    {isVi ? stat.label.vi : stat.label.en}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Case Details */}
+          <div className="lg:col-span-7 flex flex-col gap-16">
+            {/* 1. Challenges */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                <h3 className="text-sm uppercase tracking-[0.2em] font-mono text-white/80">
+                  {isVi ? "Thử thách & Khó khăn" : "The Challenges"}
+                </h3>
+              </div>
+              <ul className="flex flex-col gap-6 pl-4 border-l border-white/[0.08]">
+                {project.challenges.map((c, i) => (
+                  <li key={i} className="text-base text-white/60 font-light leading-relaxed">
+                    {isVi ? c.vi : c.en}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 2. Solutions */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#66FF80]" />
+                <h3 className="text-sm uppercase tracking-[0.2em] font-mono text-white/80">
+                  {isVi ? "Giải pháp của chúng tôi" : "Our Solution"}
+                </h3>
+              </div>
+              <ul className="flex flex-col gap-6 pl-4 border-l border-white/[0.08]">
+                {project.solutions.map((s, i) => (
+                  <li key={i} className="text-base text-white/60 font-light leading-relaxed">
+                    {isVi ? s.vi : s.en}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 3. Results */}
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+                <h3 className="text-sm uppercase tracking-[0.2em] font-mono text-white/80">
+                  {isVi ? "Kết quả thực tế" : "The Results"}
+                </h3>
+              </div>
+              <ul className="flex flex-col gap-6 pl-4 border-l border-white/[0.08]">
+                {project.results.map((r, i) => (
+                  <li key={i} className="text-base text-white/60 font-light leading-relaxed">
+                    {isVi ? r.vi : r.en}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Brand Assets & Deliverables Section */}
+        {project.brandAssets && (
+          <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-24">
+            <div className="bg-white/[0.02] border border-white/[0.05] p-8 md:p-12 rounded-sm">
+              <h3 className="text-xs uppercase tracking-[0.2em] font-mono text-[#66FF80] mb-8">
+                {isVi ? "Tài sản thương hiệu & Sản phẩm bàn giao" : "Brand Assets & Deliverables"}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {/* Brand Colors */}
+                <div>
+                  <span className="block text-[10px] font-mono text-white/40 uppercase tracking-[0.2em] mb-4">
+                    {isVi ? "Bảng màu chủ đạo" : "Color Palette"}
+                  </span>
+                  <div className="flex flex-wrap gap-3">
+                    {project.brandAssets.colors.map((color, idx) => (
+                      <div
+                        key={idx}
+                        className="flex items-center gap-2 bg-black/40 border border-white/10 px-3 py-1.5 rounded-md"
+                      >
+                        <span
+                          className="w-4 h-4 rounded-full border border-white/20"
+                          style={{ backgroundColor: color }}
+                        />
+                        <span className="text-xs font-mono text-white/80">{color}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Typography */}
+                <div>
+                  <span className="block text-[10px] font-mono text-white/40 uppercase tracking-[0.2em] mb-4">
+                    {isVi ? "Phông chữ" : "Typography"}
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {project.brandAssets.fonts.map((font, idx) => (
+                      <span
+                        key={idx}
+                        className="px-3 py-1.5 bg-white/[0.05] text-white/80 border border-white/10 rounded-md text-xs font-mono"
+                      >
+                        {font}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Deliverables */}
+                <div>
+                  <span className="block text-[10px] font-mono text-white/40 uppercase tracking-[0.2em] mb-4">
+                    {isVi ? "Sản phẩm hoàn thành" : "Deliverables"}
+                  </span>
+                  <ul className="flex flex-col gap-2">
+                    {project.brandAssets.deliverables.map((item, idx) => (
+                      <li key={idx} className="text-xs text-white/70 flex items-start gap-2">
+                        <span className="text-[#66FF80]">✓</span>
+                        <span>{isVi ? item.vi : item.en}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Client Testimonial Section */}
+        {project.testimonial && (
+          <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-24">
+            <div className="relative bg-gradient-to-br from-white/[0.04] to-white/[0.01] border border-white/[0.08] p-8 md:p-14 rounded-sm">
+              <span className="text-6xl text-[#66FF80]/20 font-serif absolute top-4 left-6 select-none">
+                “
+              </span>
+              <p className="text-lg md:text-2xl font-light italic text-white/90 leading-relaxed mb-8 relative z-10">
+                &ldquo;{isVi ? project.testimonial.quote.vi : project.testimonial.quote.en}&rdquo;
+              </p>
+              <div className="flex flex-col">
+                <span className="text-sm font-semibold text-white tracking-wide">
+                  {project.testimonial.author}
+                </span>
+                <span className="text-xs font-mono text-white/40 uppercase tracking-widest mt-1">
+                  {project.testimonial.title}
+                </span>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Gallery Images Section */}
+        {project.galleryImages && project.galleryImages.length > 0 && (
+          <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-32">
+            <h3 className="text-xs uppercase tracking-[0.2em] font-mono text-white/35 mb-8">
+              {isVi ? "Thư viện hình ảnh" : "Project Gallery"}
+            </h3>
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+              {project.galleryImages.map((imgSrc, idx) => (
+                <div
+                  key={idx}
+                  className="relative w-full overflow-hidden bg-white/[0.02] border border-white/[0.05] rounded-sm group flex flex-col break-inside-avoid"
+                >
+                  <Image
+                    src={imgSrc}
+                    alt={`${project.title} - Gallery image ${idx + 1}`}
+                    width={0}
+                    height={0}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+                    className="transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="text-white/80 text-xs font-mono uppercase tracking-widest">
+                      {project.title} — 0{idx + 1}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Related Projects Navigation */}
+        {relatedProjects.length > 0 && (
+          <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-32 border-t border-white/[0.08] pt-16">
+            <h3 className="text-xs uppercase tracking-[0.2em] font-mono text-white/35 mb-8">
+              {isVi ? "Dự án liên quan khác" : "Related Case Studies"}
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {relatedProjects.map((relProj) => (
+                <Link
+                  key={relProj.slug}
+                  href={`/${lang}/work/${relProj.slug}`}
+                  className="group block bg-white/[0.02] border border-white/[0.05] hover:border-[#66FF80]/50 p-6 rounded-sm transition-all duration-300"
+                >
+                  <div className="relative w-full aspect-[16/9] mb-4 overflow-hidden rounded-sm bg-white/[0.03]">
+                    <Image
+                      src={relProj.image}
+                      alt={relProj.title}
+                      fill
+                      className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <span className="text-[10px] font-mono uppercase text-[#66FF80] tracking-widest block mb-2">
+                    {relProj.client}
+                  </span>
+                  <h4 className="text-xl font-bold uppercase tracking-tight text-white group-hover:text-[#66FF80] transition-colors">
+                    {relProj.title}
+                  </h4>
+                  <p className="text-xs text-white/60 line-clamp-2 mt-2 font-light">
+                    {isVi ? relProj.outcome.vi : relProj.outcome.en}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* CTA Section */}
+        <section className="max-w-[1400px] mx-auto px-6 md:px-16 mt-32">
+          <div className="bg-gradient-to-r from-white/[0.02] to-white/[0.01] border border-white/[0.05] p-8 md:p-16 text-center rounded-sm">
+            <h2
+              className="text-3xl md:text-5xl font-bold uppercase tracking-tight mb-6"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              {isVi ? "Bạn cũng muốn đạt hiệu quả đột phá?" : "Ready to elevate your project?"}
+            </h2>
+            <p className="text-white/60 max-w-xl mx-auto mb-10 text-sm md:text-base font-light leading-relaxed">
+              {isVi
+                ? "Hãy thảo luận cùng đội ngũ kỹ sư và chuyên gia của chúng tôi để tìm kiếm giải pháp công nghệ tối ưu nhất cho doanh nghiệp bạn."
+                : "Let's co-engineer a solution tailored strictly to your business objectives, lead acquisition flows, or operational efficiency."}
+            </p>
+            <Link
+              href={`/${lang}#contact`}
+              className="inline-block bg-white text-black text-xs font-mono uppercase tracking-[0.2em] px-8 py-4 hover:bg-[#66FF80] transition-colors duration-300"
+            >
+              {isVi ? "Liên hệ ngay hôm nay" : "Start your project"}
+            </Link>
+          </div>
+        </section>
+      </main>
     </>
   );
 }

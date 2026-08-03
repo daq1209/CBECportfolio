@@ -10,6 +10,17 @@ interface NavbarProps {
   lang: string;
 }
 
+/** Switch between /global ↔ /vi while keeping the rest of the path intact */
+function buildLocalePath(pathname: string, targetLocale: "global" | "vi"): string {
+  if (pathname.startsWith("/global")) {
+    return pathname.replace(/^\/global/, `/${targetLocale}`);
+  }
+  if (pathname.startsWith("/vi")) {
+    return pathname.replace(/^\/vi/, `/${targetLocale}`);
+  }
+  return `/${targetLocale}`;
+}
+
 export default function Navbar({ lang }: NavbarProps) {
   const router = useRouter();
   const pathname = usePathname();
@@ -21,11 +32,11 @@ export default function Navbar({ lang }: NavbarProps) {
   const language: Language = lang === "vi" ? "vi" : "en";
   const localePath = lang === "vi" ? "/vi" : "/global";
   const links = translations[language].nav;
+  const currentLocale = lang === "vi" ? "vi" : "global";
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const prev = scrollY.getPrevious() ?? 0;
     setAtTop(latest < 60);
-    // Only hide navbar on scroll down if menu is closed
     if (!menuOpen) {
       setHidden(latest > prev && latest > 120);
     }
@@ -34,7 +45,7 @@ export default function Navbar({ lang }: NavbarProps) {
   const isHome = pathname === "/global" || pathname === "/vi" || pathname === "/";
 
   const handleAnchor = (href: string) => {
-    setMenuOpen(false); // Close menu on click
+    setMenuOpen(false);
     if (isHome) {
       const el = document.querySelector(href);
       if (el) {
@@ -43,6 +54,13 @@ export default function Navbar({ lang }: NavbarProps) {
     } else {
       router.push(`${localePath}${href}`);
     }
+  };
+
+  /** Switch locale and persist choice in cookie (1 year) */
+  const switchLocale = (targetLocale: "global" | "vi") => {
+    setMenuOpen(false);
+    document.cookie = `cbec-language=${targetLocale}; path=/; max-age=${60 * 60 * 24 * 365}; samesite=lax`;
+    router.push(buildLocalePath(pathname, targetLocale));
   };
 
   return (
@@ -71,26 +89,68 @@ export default function Navbar({ lang }: NavbarProps) {
           }}
           className="text-[11px] font-semibold tracking-widest text-[#66FF80] hover:opacity-80 transition-opacity relative z-[501]"
           style={{ fontFamily: "var(--font-display)" }}
-          aria-label="CBEC Solutions — back to top"
+          aria-label="CBEC Solutions back to top"
         >
           CBEC SOLUTIONS.
         </a>
 
-        {/* Desktop nav links */}
-        <ul className="hidden md:flex items-center gap-8" role="list">
-          {links.map((link) => (
-            <li key={link.href}>
-              <button
-                onClick={() => handleAnchor(link.href)}
-                className="text-[11px] font-mono tracking-[0.18em] uppercase text-white/40 hover:text-white transition-colors duration-200 cursor-pointer bg-transparent border-none p-0 min-h-[44px]"
-                style={{ fontFamily: "var(--font-display)" }}
-                aria-label={`Navigate to ${link.label} section`}
-              >
-                {link.label}
-              </button>
-            </li>
-          ))}
-        </ul>
+        {/* Desktop nav links + language switcher */}
+        <div className="hidden md:flex items-center gap-6">
+          <ul className="flex items-center gap-6" role="list">
+            {links.map((link) => {
+              const isContact = link.href === "#contact";
+              return (
+                <li key={link.href}>
+                  <button
+                    onClick={() => handleAnchor(link.href)}
+                    className={
+                      isContact
+                        ? "text-[11px] font-semibold tracking-[0.15em] uppercase text-[#0a0a0a] bg-[#66FF80] hover:bg-white px-4 py-2 rounded-full transition-all duration-300 cursor-pointer border-none shadow-[0_0_15px_rgba(102,255,128,0.3)]"
+                        : "text-[11px] font-mono tracking-[0.18em] uppercase text-white/40 hover:text-white transition-colors duration-200 cursor-pointer bg-transparent border-none p-0 min-h-[44px]"
+                    }
+                    style={{ fontFamily: "var(--font-display)" }}
+                    aria-label={`Navigate to ${link.label} section`}
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+
+          {/* Language switcher — desktop */}
+          <div
+            className="flex items-center border border-white/[0.12] rounded-full overflow-hidden"
+            role="group"
+            aria-label="Language switcher"
+          >
+            <button
+              onClick={() => switchLocale("global")}
+              className={`text-[10px] font-mono tracking-[0.15em] px-3 py-1.5 transition-all duration-200 border-none cursor-pointer ${
+                currentLocale === "global"
+                  ? "bg-white/[0.12] text-white"
+                  : "text-white/30 hover:text-white/70 bg-transparent"
+              }`}
+              aria-label="Switch to English"
+              aria-pressed={currentLocale === "global"}
+            >
+              EN
+            </button>
+            <span className="w-px h-3 bg-white/[0.12]" aria-hidden />
+            <button
+              onClick={() => switchLocale("vi")}
+              className={`text-[10px] font-mono tracking-[0.15em] px-3 py-1.5 transition-all duration-200 border-none cursor-pointer ${
+                currentLocale === "vi"
+                  ? "bg-white/[0.12] text-white"
+                  : "text-white/30 hover:text-white/70 bg-transparent"
+              }`}
+              aria-label="Chuyển sang tiếng Việt"
+              aria-pressed={currentLocale === "vi"}
+            >
+              VI
+            </button>
+          </div>
+        </div>
 
         {/* Mobile Hamburger Button */}
         <button
@@ -123,19 +183,59 @@ export default function Navbar({ lang }: NavbarProps) {
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 z-[499] bg-[#0a0a0a] flex flex-col items-center justify-center md:hidden"
           >
-            <ul className="flex flex-col items-center gap-8">
-              {links.map((link) => (
-                <li key={link.href}>
-                  <button
-                    onClick={() => handleAnchor(link.href)}
-                    className="text-2xl font-bold tracking-widest uppercase text-white hover:text-[#66FF80] transition-colors p-4 min-w-[200px]"
-                    style={{ fontFamily: "var(--font-display)" }}
-                  >
-                    {link.label}
-                  </button>
-                </li>
-              ))}
+            <ul className="flex flex-col items-center gap-6">
+              {links.map((link) => {
+                const isContact = link.href === "#contact";
+                return (
+                  <li key={link.href}>
+                    <button
+                      onClick={() => handleAnchor(link.href)}
+                      className={
+                        isContact
+                          ? "text-xl font-bold tracking-widest uppercase bg-[#66FF80] text-[#0a0a0a] rounded-full px-8 py-3 hover:bg-white transition-all shadow-[0_0_20px_rgba(102,255,128,0.3)]"
+                          : "text-2xl font-bold tracking-widest uppercase text-white hover:text-[#66FF80] transition-colors p-4 min-w-[200px]"
+                      }
+                      style={{ fontFamily: "var(--font-display)" }}
+                    >
+                      {link.label}
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
+
+            {/* Language switcher — mobile */}
+            <div
+              className="flex items-center mt-10 border border-white/[0.15] rounded-full overflow-hidden"
+              role="group"
+              aria-label="Language switcher"
+            >
+              <button
+                onClick={() => switchLocale("global")}
+                className={`text-sm font-mono tracking-[0.2em] px-6 py-2.5 transition-all duration-200 border-none cursor-pointer ${
+                  currentLocale === "global"
+                    ? "bg-white/[0.12] text-white"
+                    : "text-white/30 hover:text-white/70 bg-transparent"
+                }`}
+                aria-label="Switch to English"
+                aria-pressed={currentLocale === "global"}
+              >
+                EN
+              </button>
+              <span className="w-px h-4 bg-white/[0.15]" aria-hidden />
+              <button
+                onClick={() => switchLocale("vi")}
+                className={`text-sm font-mono tracking-[0.2em] px-6 py-2.5 transition-all duration-200 border-none cursor-pointer ${
+                  currentLocale === "vi"
+                    ? "bg-white/[0.12] text-white"
+                    : "text-white/30 hover:text-white/70 bg-transparent"
+                }`}
+                aria-label="Chuyển sang tiếng Việt"
+                aria-pressed={currentLocale === "vi"}
+              >
+                VI
+              </button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

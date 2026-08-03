@@ -12,6 +12,18 @@ export interface ProjectStat {
   label: { en: string; vi: string };
 }
 
+export interface ProjectBrandAssets {
+  colors: string[]; // e.g. ["#66FF80", "#0A2540", "#0A0A0A"]
+  fonts: string[]; // e.g. ["Inter", "Outfit"]
+  deliverables: { en: string; vi: string }[];
+}
+
+export interface ProjectTestimonial {
+  quote: { en: string; vi: string };
+  author: string;
+  title: string;
+}
+
 export interface ProjectItem {
   slug: string;
   title: string;
@@ -29,6 +41,13 @@ export interface ProjectItem {
   solutions: { en: string; vi: string }[];
   results: { en: string; vi: string }[];
   galleryImages: string[];
+
+  // Expanded optional fields
+  industry?: string;
+  timeline?: string;
+  testimonial?: ProjectTestimonial;
+  brandAssets?: ProjectBrandAssets;
+  relatedSlugs?: string[];
 }
 
 export const PROJECTS: ProjectItem[] = [
@@ -37,20 +56,22 @@ export const PROJECTS: ProjectItem[] = [
     title: "Richmond Smiles",
     image: "/projects/richmondsmiles.jpg",
     externalLink: "https://www.richmondsmiles.com.au/",
-    category: "gallery.cat1",
+    category: "gallery.cat6",
+    industry: "Healthcare / Dentistry",
+    timeline: "3 weeks",
     outcome: {
-      en: "Dental clinic rebrand + custom web booking platform.",
+      en: "Dental clinic rebrand + custom headless web booking platform.",
       vi: "Rebranding phòng khám nha khoa + nền tảng đặt lịch chuyên sâu."
     },
     client: "Richmond Smiles Dental Group (Australia)",
     year: "2025",
     role: {
       en: "Brand Identity, UI/UX Design, Headless Next.js Build",
-      vi: "Thiết kế thương hiệu, UI/UX, lập trình Next.js tốc độ cao"
+      vi: "Thiết kế thương hiệu, UI/UX, Lập trình Next.js tốc độ cao"
     },
     overview: {
-      en: "Richmond Smiles is a premium dental clinic in Melbourne, Australia. We redesigned their visual identity and custom-built a Next.js web application that connects directly to their booking engine, creating a seamless online patient journey.",
-      vi: "Richmond Smiles là phòng khám nha khoa cao cấp tại Melbourne, Australia. Chúng tôi thiết kế lại bộ nhận diện và lập trình website Next.js kết nối hệ thống CRM đặt lịch riêng biệt, tối ưu trải nghiệm người bệnh."
+      en: "Richmond Smiles is a premium dental clinic in Melbourne, Australia. CBEC Solutions redesigned their visual identity and custom-built a Next.js web application that connects directly to their booking engine, creating a seamless online patient journey.",
+      vi: "Richmond Smiles là phòng khám nha khoa cao cấp tại Melbourne, Australia. CBEC Solutions thiết kế lại bộ nhận diện và lập trình website Next.js kết nối hệ thống CRM đặt lịch riêng biệt, tối ưu trải nghiệm người bệnh."
     },
     stats: [
       { value: "48%", label: { en: "Booking Conversion Rate Increase", vi: "Tăng tỷ lệ chuyển đổi đặt lịch" } },
@@ -88,128 +109,202 @@ export const PROJECTS: ProjectItem[] = [
       }
     ],
     galleryImages: [
-      "/projects/richmondsmiles.jpg",
-      "/projects/richmondsmiles.jpg"
-    ]
+      "/projects/richmond-smiles-gallery-1.webp",
+      "/projects/richmond-smiles-gallery-2.webp",
+      "/projects/richmond-smiles-gallery-3.webp",
+      "/projects/richmond-smiles-gallery-4.webp",
+      "/projects/richmond-smiles-gallery-5.webp"
+    ],
+    testimonial: {
+      quote: {
+        en: "CBEC completely transformed our online patient booking experience. Conversion jumped 48% in the very first month after launch.",
+        vi: "CBEC đã tái định hình toàn bộ trải nghiệm đặt lịch của bệnh nhân. Tỷ lệ chuyển đổi tăng 48% ngay trong tháng đầu tiên ra mắt."
+      },
+      author: "Dr. Andrew Nguyen",
+      title: "Principal Dentist & Founder, Richmond Smiles"
+    },
+    brandAssets: {
+      colors: ["#66FF80", "#0A2540", "#0A0A0A"],
+      fonts: ["Inter", "Outfit"],
+      deliverables: [
+        { en: "Brand Identity Guidelines & Vector Logo Pack", vi: "Bộ nhận diện thương hiệu & File thiết kế Logo vector" },
+        { en: "Headless Next.js Online Booking Platform", vi: "Nền tảng đặt lịch khám Next.js tốc độ cao" }
+      ]
+    },
+    relatedSlugs: ["dentix-consulting", "lee-concept"]
   },
   {
     slug: "banh-mi-ngon",
-    title: "Banh Mi Ngon",
+    title: "Bánh Mì Ngon",
     image: "/projects/5e0d1b7bdd555c0b0544 (1).jpg",
     imagePosition: "object-center",
     externalLink: "https://www.behance.net/gallery/167430343/BANH-MI-NGON",
-    category: "gallery.cat6",
+    category: "gallery.cat1",
+    industry: "F&B / Street Food",
+    timeline: "4 weeks",
     outcome: {
-      en: "B2B sales engagement portal & automated CRM solution.",
-      vi: "Phần mềm quản lý bán hàng B2B & giải pháp tự động hóa CRM."
+      en: "Contemporary F&B brand identity & eco-friendly packaging system.",
+      vi: "Hệ thống nhận diện thương hiệu F&B & bao bì thân thiện môi trường."
     },
-    client: "Banh Mi Ngon",
+    client: "Bánh Mì Ngon (Vietnam)",
     year: "2025",
     role: {
-      en: "Software Architecture, React Admin Panel, API Integration",
-      vi: "Thiết kế kiến trúc phần mềm, xây dựng React Admin, kết nối API"
+      en: "Brand Strategy, Hand-drawn Lettering, Packaging Design",
+      vi: "Chiến lược thương hiệu, Chữ vẽ tay độc quyền, Thiết kế bao bì"
     },
     overview: {
-      en: "Leadoi is a dynamic B2B sales automation startup. We built their flagship enterprise portal, featuring real-time lead ingestion dashboards, custom sales pipeline visualization, and direct automated notifications.",
-      vi: "Leadoi là đơn vị startup giải pháp tự động hóa kinh doanh B2B. Chúng tôi phát triển cổng quản trị cốt lõi, cung cấp dashboard cập nhật lead thời gian thực, trực quan hóa phễu bán hàng và bot cảnh báo tự động."
+      en: "Bánh Mì Ngon is a contemporary F&B brand elevating traditional Vietnamese street food. CBEC Solutions created a vibrant brand identity, custom hand-drawn typography, and an eco-friendly packaging system for their franchise rollout.",
+      vi: "Bánh Mì Ngon là thương hiệu F&B hiện đại nâng tầm món ăn đường phố truyền thống Việt Nam. CBEC Solutions xây dựng hệ thống nhận diện thương hiệu độc đáo, bộ chữ vẽ tay ấn tượng và bao bì thân thiện môi trường."
     },
     stats: [
-      { value: "4.5x", label: { en: "Faster Lead Routing Time", vi: "Tốc độ xử lý và phân bổ lead nhanh hơn" } },
-      { value: "10k+", label: { en: "Daily active leads managed", vi: "Số lượng lead xử lý mỗi ngày" } },
-      { value: "85%", label: { en: "Sales productivity efficiency boost", vi: "Nâng cao năng suất làm việc của Sales" } }
+      { value: "3x", label: { en: "Brand Recognition Growth", vi: "Tăng trưởng độ nhận diện thương hiệu" } },
+      { value: "100%", label: { en: "Eco-friendly Packaging Materials", vi: "Chất liệu bao bì thân thiện môi trường" } },
+      { value: "4.9/5", label: { en: "Customer Satisfaction Index", vi: "Điểm số hài lòng của khách hàng" } }
     ],
     challenges: [
       {
-        en: "Manually copying lead data from multi-channel forms to spreadsheets resulted in high response latency (averaging 4 hours).",
-        vi: "Nhập liệu thủ công lead từ nhiều kênh quảng cáo về Excel gây trễ thời gian phản hồi khách (trung bình 4 tiếng)."
+        en: "Positioning traditional street food in a premium yet accessible segment while preserving authentic Vietnamese food culture.",
+        vi: "Định vị món ăn đường phố ở phân khúc cao cấp nhưng vẫn gần gũi và giữ trọn nét văn hóa ẩm thực Việt."
       },
       {
-        en: "No central database of customer touchpoints made it impossible to attribute revenue to specific marketing campaigns.",
-        vi: "Thiếu hệ thống lưu trữ dữ liệu tập trung khiến doanh nghiệp khó đo lường chính xác hiệu quả từng chiến dịch ads."
+        en: "Outdated packaging caused thermal loss during delivery and lacked visual consistency across franchise stores.",
+        vi: "Bao bì cũ không giữ được độ nóng giòn khi giao hàng và thiếu sự nhất quán giữa các cửa hàng nhượng quyền."
       }
     ],
     solutions: [
       {
-        en: "Engineered a custom Node.js middleware to ingest, format, and route leads from Facebook, Zalo, and Webhooks instantly.",
-        vi: "Phát triển hệ thống API middleware trung gian gom lead tự động từ Zalo OA, Facebook Ads và Website thời gian thực."
+        en: "Crafted a custom hand-lettered logo mark combined with traditional pattern accents and a warm color palette.",
+        vi: "Tạo logo chữ vẽ tay thủ công kết hợp họa tiết truyền thống và phối màu cam ấm trẻ trung."
       },
       {
-        en: "Designed a clean React/Tailwind dashboard featuring role-based dashboards for directors, sales leads, and reps.",
-        vi: "Thiết kế dashboard React/Tailwind phân quyền chi tiết (RBAC) cho cấp Giám đốc, Trưởng nhóm và Nhân viên."
+        en: "Designed sustainable paper packaging with custom grease-resistant thermal insulation for delivery quality.",
+        vi: "Thiết kế túi giấy và bọc bánh mì bằng chất liệu thân thiện môi trường, chống thấm dầu và giữ nhiệt tối ưu."
       }
     ],
     results: [
       {
-        en: "Lead response times dropped from 4 hours to under 3 minutes, significantly boosting conversion rates.",
-        vi: "Thời gian tiếp cận khách từ 4 tiếng giảm xuống dưới 3 phút, tăng đáng kể tỷ lệ chốt đơn."
+        en: "Successfully rolled out across flagship locations, generating strong viral engagement on social platforms.",
+        vi: "Triển khai thành công tại chuỗi cửa hàng chính, tạo hiệu ứng truyền thông tích cực trên mạng xã hội."
       },
       {
-        en: "Centralized data visualization provided management with instant, clear insights on client acquisition cost.",
-        vi: "Báo cáo tập trung trực quan hóa chính xác chi phí có được một khách hàng tiềm năng."
+        en: "Standardized brand guidelines enabled rapid expansion for 5+ new franchise outlets within six months.",
+        vi: "Bộ cẩm nang quy chuẩn thương hiệu giúp chuẩn hóa và mở rộng nhanh chóng 5+ chi nhánh nhượng quyền."
       }
     ],
     galleryImages: [
-      "/projects/383084327_122117840984033541_1787976392589229528_n.jpg"
-    ]
+      "/projects/banh-mi-ngon-gallery-1.jpg",
+      "/projects/banh-mi-ngon-gallery-2.jpg",
+      "/projects/banh-mi-ngon-gallery-3.jpg",
+      "/projects/banh-mi-ngon-gallery-4.jpg",
+      "/projects/banh-mi-ngon-gallery-5.jpg",
+      "/projects/banh-mi-ngon-gallery-6.jpg",
+      "/projects/banh-mi-ngon-gallery-7.jpg",
+      "/projects/banh-mi-ngon-gallery-8.jpg",
+      "/projects/banh-mi-ngon-gallery-9.jpg",
+      "/projects/banh-mi-ngon-gallery-10.jpg"
+    ],
+    testimonial: {
+      quote: {
+        en: "The brand identity designed by CBEC captured the exact soul of authentic Vietnamese Bánh Mì with a modern, high-end touch.",
+        vi: "Bộ nhận diện do CBEC thiết kế đã thể hiện trọn vẹn linh hồn bánh mì Việt Nam với nét vẽ hiện đại và rất cao cấp."
+      },
+      author: "Tran Hoang Nam",
+      title: "Founder, Bánh Mì Ngon"
+    },
+    brandAssets: {
+      colors: ["#E85A2A", "#F4A261", "#2A9D8F", "#0A0A0A"],
+      fonts: ["Lexend", "Playfair Display"],
+      deliverables: [
+        { en: "Custom Hand-Lettered Logo & Visual System", vi: "Logo chữ vẽ tay thủ công & Hệ thống ngôn ngữ thị giác" },
+        { en: "Eco-Friendly Paper Packaging Suite", vi: "Bộ ấn phẩm bao bì túi giấy thân thiện môi trường" }
+      ]
+    },
+    relatedSlugs: ["richmond-smiles", "unineon"]
   },
   {
     slug: "dentix-consulting",
     title: "Dentix Consulting",
     image: "/projects/84ebc9938460053e5c71.jpg",
     externalLink: "https://www.behance.net/gallery/229948819/DENTIX-CONSULTING-BRANDING",
-    category: "gallery.cat6",
+    category: "gallery.cat1",
+    industry: "Healthcare Consulting",
+    timeline: "2 weeks",
     outcome: {
-      en: "Platform for Australian trade services and booking scheduler.",
-      vi: "Ứng dụng đặt lịch thợ sửa chữa & quản lý việc cho thị trường Úc."
+      en: "Corporate brand identity & executive consulting stationery suite.",
+      vi: "Bộ nhận diện thương hiệu doanh nghiệp & ấn phẩm văn phòng cao cấp."
     },
-    client: "TradieMate Australia",
+    client: "Dentix Consulting (Australia)",
     year: "2026",
     role: {
-      en: "Mobile Web Platform, Interactive Calendar, Customer Flow",
-      vi: "Nền tảng ứng dụng web di động, thiết kế lịch tương tác, luồng khách hàng"
+      en: "Logo Design, Corporate Identity, Brand Guidelines",
+      vi: "Thiết kế Logo, Nhận diện doanh nghiệp, Cẩm nang thương hiệu"
     },
     overview: {
-      en: "TradieMate connects Australian homeowners with local qualified trade professionals. We engineered the entire responsive web application, featuring interactive calendar bookings, automatic invoice dispatching, and localized map search.",
-      vi: "TradieMate kết nối chủ nhà tại Úc với đội ngũ thợ sửa chữa lành nghề. Chúng tôi phát triển ứng dụng web tối ưu hiển thị di động, tích hợp bộ lịch đặt giờ kéo-thả, hóa đơn tự động và tìm kiếm thợ theo bản đồ vị trí."
+      en: "Dentix Consulting provides strategic management consulting for dental practice groups across Australia. CBEC Solutions engineered an authoritative visual identity and professional corporate stationery suite to reflect their executive standard.",
+      vi: "Dentix Consulting cung cấp dịch vụ tư vấn chiến lược quản lý cho các tập đoàn nha khoa tại Australia. CBEC Solutions xây dựng hệ thống nhận diện thương hiệu chuyên nghiệp và bộ ấn phẩm văn phòng chuẩn mực."
     },
     stats: [
-      { value: "15k", label: { en: "Successful Tradie Bookings", vi: "Lịch hẹn dịch vụ thành công" } },
-      { value: "99.9%", label: { en: "Application Uptime Record", vi: "Thời gian hoạt động liên tục" } },
-      { value: "60m", label: { en: "Average job resolution window", vi: "Thời gian phản hồi thợ trung bình" } }
+      { value: "95%", label: { en: "Partner Approval Rate", vi: "Tỷ lệ đối tác đánh giá cao" } },
+      { value: "100%", label: { en: "Corporate Standard Compliance", vi: "Chuẩn mực nhận diện doanh nghiệp" } },
+      { value: "2w", label: { en: "Project Turnaround Time", vi: "Thời gian hoàn thành dự án" } }
     ],
     challenges: [
       {
-        en: "Tradies are busy on-site and struggle to update calendars, leading to double-bookings and bad customer experience.",
-        vi: "Thợ sửa chữa di chuyển liên tục khó cập nhật lịch trống, dẫn đến đặt trùng lịch và trải nghiệm tệ cho khách."
+        en: "Establishing an authoritative, clinical corporate image that clearly distinguishes management consulting from retail dental clinics.",
+        vi: "Xây dựng hình ảnh tư vấn doanh nghiệp uy tín, chuyên khoa nhưng không bị trùng lặp với các phòng khám nha khoa thông thường."
       },
       {
-        en: "Homeowners need transparent, hourly quote estimates and immediate SMS updates during emergency call-outs.",
-        vi: "Khách hàng cần biết bảng giá minh bạch theo giờ và nhận thông báo cập nhật qua SMS lập tức khi có sự cố khẩn cấp."
+        en: "Inconsistent sales decks and documentation were undermining pitch conversion rates with healthcare enterprise executives.",
+        vi: "Tài liệu hồ sơ năng lực cũ thiếu nhất quán làm giảm tỷ lệ thuyết phục các giám đốc điều hành tập đoàn y tế."
       }
     ],
     solutions: [
       {
-        en: "Developed a mobile-first, drag-and-drop booking scheduler optimized for one-handed operation on active worksites.",
-        vi: "Xây dựng giao diện lịch kéo-thả tối ưu hiển thị trên điện thoại để thợ cập nhật trạng thái chỉ bằng một tay."
+        en: "Designed a clean geometric monogram mark paired with deep medical blue typography and minimalist grid layouts.",
+        vi: "Thiết kế logo biểu tượng hình học tối giản kết hợp tông màu xanh y tế đậm và hệ thống lưới bố cục chuẩn mực."
       },
       {
-        en: "Integrated Twilio API for real-time SMS status dispatches and Stripe Connect for split payments.",
-        vi: "Tích hợp SMS API của Twilio thông báo trạng thái tự động và cổng thanh toán Stripe Connect chia tiền hoa hồng."
+        en: "Produced a full executive corporate kit including business stationery, pitch decks, and digital proposal templates.",
+        vi: "Xây dựng trọn bộ ấn phẩm văn phòng cao cấp gồm danh thiếp, hồ sơ năng lực, kẹp file và mẫu đề xuất kỹ thuật."
       }
     ],
     results: [
       {
-        en: "Became a leading niche service booking app, scaling rapidly across Queensland and New South Wales.",
-        vi: "Trở thành nền tảng tìm thợ uy tín phát triển nhanh chóng tại Queensland và New South Wales."
+        en: "Significantly elevated corporate perception, directly contributing to securing major enterprise contracts in NSW and Victoria.",
+        vi: "Nâng cao vị thế thương hiệu, trực tiếp góp phần chốt các hợp đồng tư vấn lớn tại bang NSW và Victoria."
       },
       {
-        en: "Reduced administrative scheduling overhead for tradespeople by 10+ hours per week.",
-        vi: "Tiết kiệm hơn 10 tiếng mỗi tuần làm việc hành chính sắp xếp lịch biểu cho mỗi người thợ."
+        en: "Delivered comprehensive brand guidelines ensuring seamless visual consistency across all digital and print touchpoints.",
+        vi: "Bàn giao cẩm nang hướng dẫn nhận diện thương hiệu toàn diện, đảm bảo tính đồng bộ trên tất cả các kênh."
       }
     ],
     galleryImages: [
-      "/projects/5e0d1b7bdd555c0b0544 (1).jpg"
-    ]
+      "/projects/dentix-consulting-gallery-1.png",
+      "/projects/dentix-consulting-gallery-2.png",
+      "/projects/dentix-consulting-gallery-3.png",
+      "/projects/dentix-consulting-gallery-4.png",
+      "/projects/dentix-consulting-gallery-5.png",
+      "/projects/dentix-consulting-gallery-6.png",
+      "/projects/dentix-consulting-gallery-7.png",
+      "/projects/dentix-consulting-gallery-8.png"
+    ],
+    testimonial: {
+      quote: {
+        en: "CBEC delivered an outstanding corporate brand identity that elevated our standing among Australian healthcare practice owners.",
+        vi: "CBEC mang đến bộ nhận diện doanh nghiệp đẳng cấp, nâng tầm vị thế của chúng tôi với các chủ phòng khám tại Australia."
+      },
+      author: "Marcus Vance",
+      title: "Managing Director, Dentix Consulting Australia"
+    },
+    brandAssets: {
+      colors: ["#0052CC", "#0747A6", "#DEEBFF", "#0A0A0A"],
+      fonts: ["Inter", "Plus Jakarta Sans"],
+      deliverables: [
+        { en: "Geometric Monogram Logo & Corporate Guidelines", vi: "Logo biểu tượng hình học & Quy chuẩn thương hiệu" },
+        { en: "Executive Presentation Decks & Business Stationery", vi: "Bộ hồ sơ năng lực thuyết trình & Ấn phẩm văn phòng" }
+      ]
+    },
+    relatedSlugs: ["richmond-smiles", "lee-concept"]
   },
   {
     slug: "lee-concept",
@@ -217,58 +312,81 @@ export const PROJECTS: ProjectItem[] = [
     image: "/projects/lee concept.png",
     externalLink: "https://leeconcept.com.vn",
     category: "gallery.cat5",
+    industry: "Interior & E-Commerce / AI Automation",
+    timeline: "6 weeks",
     outcome: {
-      en: "AI Automation R&D & eCommerce scaling playbooks.",
-      vi: "Nghiên cứu ứng dụng AI & cẩm nang tăng trưởng eCommerce."
+      en: "AI Automation R&D & high-performance e-commerce architecture.",
+      vi: "Nghiên cứu ứng dụng AI & kiến trúc website e-commerce tốc độ cao."
     },
-    client: "CBEC Solutions R&D Division",
+    client: "Lee Concept / CBEC R&D Division",
     year: "2026",
     role: {
-      en: "AI Agents Research, Prompt Engineering, Scraping Bot Builds",
-      vi: "Nghiên cứu Đại lý AI, thiết kế Prompt, phát triển bot cào dữ liệu"
+      en: "AI Agents Research, Prompt Engineering, Web Architecture",
+      vi: "Nghiên cứu Đại lý AI, Lập trình Prompt, Kiến trúc Website"
     },
     overview: {
-      en: "CBEC Lab is our internal research division. Here, we build and test AI agent structures, data enrichment bots, and growth playbooks. We release these validated findings to help our clients automate their marketing and operations.",
-      vi: "CBEC Lab là phòng nghiên cứu thử nghiệm nội bộ của chúng tôi. Tại đây, chúng tôi phát triển các bot cào dữ liệu thông minh, quy trình tự động hóa AI và cẩm nang tăng trưởng, sau đó chuyển giao ứng dụng thực tế cho khách hàng."
+      en: "Lee Concept is a modern interior and lifestyle brand supported by CBEC Lab R&D. We built AI-driven market scraping bots, automated review sentiment analysis tools, and optimized high-performance e-commerce web layouts.",
+      vi: "Lee Concept là thương hiệu nội thất & phong cách sống hiện đại. CBEC Lab phát triển các bot cào dữ liệu xu hướng tự động, công cụ phân tích cảm xúc đánh giá bằng AI và xây dựng giao diện e-commerce tốc độ cao."
     },
     stats: [
       { value: "24/7", label: { en: "Autonomous Agent Monitoring", vi: "Trợ lý AI hoạt động liên tục tự động" } },
-      { value: "50k+", label: { en: "Enriched business leads generated", vi: "Danh sách khách hàng tiềm năng đã lọc" } },
-      { value: "90%", label: { en: "Operational time saved on testing", vi: "Tiết kiệm thời gian thử nghiệm vận hành" } }
+      { value: "50k+", label: { en: "Market Insights & Products Analyzed", vi: "Dữ liệu sản phẩm & thị trường đã phân tích" } },
+      { value: "90%", label: { en: "Operational Time Saved on Research", vi: "Tiết kiệm thời gian nghiên cứu vận hành" } }
     ],
     challenges: [
       {
-        en: "eCommerce sellers lose hours tracking product reviews and pricing fluctuations across competitors.",
-        vi: "Người bán hàng trên sàn thương mại điện tử mất nhiều giờ tự theo dõi đánh giá và biến động giá đối thủ."
+        en: "E-commerce operations were losing hundreds of hours manually tracking competitor product catalogs, pricing shifts, and customer reviews.",
+        vi: "Đội ngũ vận hành mất nhiều thời gian tự theo dõi biến động giá, danh mục sản phẩm và đánh giá của đối thủ."
       },
       {
-        en: "Traditional web scraping gets easily blocked, leading to incomplete or outdated market data.",
-        vi: "Các phương pháp cào dữ liệu truyền thống dễ bị chặn khiến thông tin thu thập không đầy đủ."
+        en: "Heavy unoptimized product images (over 4MB) caused severe mobile load lag and high bounce rates on product pages.",
+        vi: "Ảnh sản phẩm chất lượng cao chưa tối ưu (nặng trên 4MB) gây giật lag khi tải trên điện thoại làm tăng tỷ lệ thoát trang."
       }
     ],
     solutions: [
       {
-        en: "Built stealthy, AI-orchestrated scraping bots that compile competitor analytics automatically.",
-        vi: "Phát triển bot thu thập dữ liệu thông minh, tự động phân tích chiến lược giá và sản phẩm của đối thủ."
+        en: "Engineered stealthy AI scraping bots to aggregate competitor analytics and summarize sentiment using OpenAI/Gemini APIs.",
+        vi: "Phát triển bot thu thập dữ liệu AI thông minh kết hợp API Gemini tự động đọc hiểu và tổng hợp phản hồi thị trường."
       },
       {
-        en: "Deployed custom OpenAI/Gemini LLM scripts to summarize review sentiment in real-time.",
-        vi: "Triển khai các script AI tự động đọc hiểu và phân tích cảm xúc đánh giá của khách hàng."
+        en: "Re-architected all visual assets into sub-300KB WebP formats with Next.js dynamic image optimization.",
+        vi: "Tối ưu hóa toàn bộ kho ảnh sang định dạng WebP siêu nhẹ dưới 300KB kết hợp cơ chế load ảnh tự động của Next.js."
       }
     ],
     results: [
       {
-        en: "Created the Amazon Scale-up playbook helping partners increase conversion metrics.",
-        vi: "Hoàn thiện cẩm nang tăng trưởng Amazon giúp đối tác tối ưu hóa tỷ lệ chuyển đổi sản phẩm."
+        en: "Reduced page load time by 75% while providing real-time competitive intelligence dashboards for store managers.",
+        vi: "Giảm 75% thời gian tải trang và cung cấp dashboard phân tích đối thủ thời gian thực cho nhà quản lý."
       },
       {
-        en: "Released 5+ open-source workflow scripts to the automation developer community.",
-        vi: "Chia sẻ rộng rãi hơn 5 script quy trình tự động hóa hữu ích tới cộng đồng lập trình."
+        en: "Published E-commerce growth playbooks and workflow scripts for commercial partner deployment.",
+        vi: "Hoàn thiện cẩm nang tăng trưởng E-commerce và chia sẻ các script tự động hóa hữu ích cho đối tác."
       }
     ],
     galleryImages: [
-      "/projects/richmondsmiles.jpg"
-    ]
+      "/projects/lee-concept-gallery-1.webp",
+      "/projects/lee-concept-gallery-2.webp",
+      "/projects/lee-concept-gallery-3.webp",
+      "/projects/lee-concept-gallery-4.webp",
+      "/projects/lee-concept-gallery-5.webp"
+    ],
+    testimonial: {
+      quote: {
+        en: "The AI scraping and real-time review sentiment pipeline saved our operations team 15+ hours every single week.",
+        vi: "Hệ thống AI tự động phân tích đánh giá và dữ liệu giá đối thủ giúp đội ngũ vận hành tiết kiệm hơn 15 giờ mỗi tuần."
+      },
+      author: "Lee Nguyen",
+      title: "Head of Product & R&D, Lee Concept"
+    },
+    brandAssets: {
+      colors: ["#8A2BE2", "#4B0082", "#121212", "#66FF80"],
+      fonts: ["Space Grotesk", "Inter"],
+      deliverables: [
+        { en: "AI Market Intelligence Scraping System", vi: "Hệ thống Bot AI cào & phân tích dữ liệu thị trường" },
+        { en: "High-Performance Next.js E-Commerce Portal", vi: "Cổng website E-Commerce Next.js tốc độ cao" }
+      ]
+    },
+    relatedSlugs: ["unineon", "banh-mi-ngon"]
   },
   {
     slug: "unineon",
@@ -276,43 +394,85 @@ export const PROJECTS: ProjectItem[] = [
     image: "/projects/61e08dd5eb266a783337.jpg",
     externalLink: "https://unineon.com/?srsltid=AfmBOorWjOFD-jrHxZD6PHrS9O4HD8Mf-bqsCp3YaUmzTEAOkSpLqtvG",
     category: "gallery.cat5",
+    industry: "E-Commerce / Home Decor",
+    timeline: "3 weeks",
     outcome: {
-      en: "Custom e-commerce web platform.",
-      vi: "Nền tảng website thương mại điện tử chuyên biệt."
+      en: "Custom e-commerce platform & live neon color preview visualizer.",
+      vi: "Nền tảng e-commerce chuyên biệt & công cụ tùy biến ánh sáng Neon."
     },
-    client: "UniNeon",
+    client: "UniNeon (Global)",
     year: "2026",
     role: {
-      en: "Web Development",
-      vi: "Thiết kế & Lập trình Website"
+      en: "E-Commerce Web Dev, Customizer UI, Performance Tuning",
+      vi: "Lập trình Website E-Commerce, Giao diện tùy biến, Tối ưu hiệu năng"
     },
     overview: {
-      en: "UniNeon is a vibrant platform that required a modern web development approach to showcase their glowing products effectively and securely.",
-      vi: "UniNeon là một nền tảng bán hàng nổi bật yêu cầu cách tiếp cận phát triển web hiện đại để giới thiệu các sản phẩm đèn neon một cách hiệu quả."
+      en: "UniNeon is an e-commerce brand specializing in custom LED neon signs for home, business, and events. CBEC Solutions engineered a high-vibrancy web platform featuring custom CSS neon glow previews and a mobile-first checkout wizard.",
+      vi: "UniNeon là thương hiệu đèn LED Neon trang trí theo yêu cầu cho gia đình, doanh nghiệp và sự kiện. CBEC Solutions phát triển website e-commerce với hiệu ứng ánh sáng Neon sống động và công cụ tùy biến màu trực quan."
     },
     stats: [
-      { value: "100%", label: { en: "Responsive Design", vi: "Tương thích mọi thiết bị" } }
+      { value: "100%", label: { en: "Mobile Responsive Layout", vi: "Tương thích 100% mọi thiết bị" } },
+      { value: "99.8%", label: { en: "Application Uptime Record", vi: "Thời gian hoạt động ổn định" } },
+      { value: "2.5x", label: { en: "Cart Checkout Completion Increase", vi: "Tăng tỷ lệ hoàn tất giỏ hàng" } }
     ],
     challenges: [
       {
-        en: "Needed a highly visual interface to properly display neon products.",
-        vi: "Cần một giao diện trực quan cao để hiển thị đúng màu sắc các sản phẩm neon."
+        en: "Standard e-commerce templates failed to capture realistic neon glow aesthetics, leading to poor customer engagement.",
+        vi: "Giao diện website mẫu thông thường không thể hiển thị đúng hiệu ứng phát sáng rực rỡ của đèn Neon."
+      },
+      {
+        en: "Complex options for size, font, backing shape, and color combinations confused users during checkout.",
+        vi: "Các tùy chọn phức tạp về kích thước, phông chữ, chất liệu mảng bọc và màu sắc làm khách bối rối khi đặt mua."
       }
     ],
     solutions: [
       {
-        en: "Built a customized web experience tailored for aesthetic product showcases.",
-        vi: "Xây dựng trải nghiệm web tùy chỉnh dành riêng cho việc trưng bày sản phẩm mang tính thẩm mỹ cao."
+        en: "Developed custom CSS glow rendering engines and dynamic color switcher tools for live sign previews.",
+        vi: "Xây dựng bộ thư viện CSS render hiệu ứng ánh sáng phát sáng chân thực kèm bộ chọn màu xem trước tức thì."
+      },
+      {
+        en: "Streamlined the multi-step custom ordering process into an intuitive 3-step mobile checkout wizard.",
+        vi: "Tối giản quy trình đặt làm đèn theo yêu cầu thành 3 bước trực quan giúp khách chốt mua dễ dàng trên di động."
       }
     ],
     results: [
       {
-        en: "Successfully launched the digital storefront.",
-        vi: "Ra mắt thành công cửa hàng trực tuyến."
+        en: "Successfully launched the digital storefront, yielding a major boost in direct online orders and average order value.",
+        vi: "Ra mắt thành công cửa hàng trực tuyến, ghi nhận sự gia tăng vượt bậc về số lượng đơn hàng và giá trị đơn."
+      },
+      {
+        en: "Delivered 60fps smooth animations on mobile browsers using lightweight WebP image assets.",
+        vi: "Đạt tốc độ cuộn trang 60fps mượt mà trên di động nhờ tối ưu hóa toàn bộ kho ảnh WebP siêu nhẹ."
       }
     ],
     galleryImages: [
-      "/projects/61e08dd5eb266a783337.jpg"
-    ]
+      "/projects/unineon-gallery-1.jpg",
+      "/projects/unineon-gallery-2.jpg",
+      "/projects/unineon-gallery-3.jpg",
+      "/projects/unineon-gallery-4.jpg",
+      "/projects/unineon-gallery-5.png",
+      "/projects/unineon-gallery-6.png",
+      "/projects/unineon-gallery-7.png",
+      "/projects/unineon-gallery-8.png",
+      "/projects/unineon-gallery-9.png",
+      "/projects/unineon-gallery-10.png"
+    ],
+    testimonial: {
+      quote: {
+        en: "Our customers love the live neon glow preview! Checkout completions jumped dramatically right after launch.",
+        vi: "Khách hàng rất thích tính năng xem trước ánh sáng Neon trực quan. Tỷ lệ hoàn tất giỏ hàng tăng vọt ngay sau khi ra mắt."
+      },
+      author: "Sarah Jenkins",
+      title: "Co-Founder, UniNeon"
+    },
+    brandAssets: {
+      colors: ["#FF007F", "#00F0FF", "#39FF14", "#0A0A0A"],
+      fonts: ["Outfit", "JetBrains Mono"],
+      deliverables: [
+        { en: "Interactive Neon Glow Visualizer Engine", vi: "Công cụ mô phỏng ánh sáng Neon phát sáng 3D/CSS" },
+        { en: "Custom E-Commerce Checkout & Order Builder", vi: "Giao diện đặt làm sản phẩm & thanh toán e-commerce" }
+      ]
+    },
+    relatedSlugs: ["lee-concept", "richmond-smiles"]
   }
 ];
