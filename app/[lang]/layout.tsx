@@ -4,7 +4,7 @@ import { Be_Vietnam_Pro } from "next/font/google";
 import Providers from "@/components/Providers";
 import SchemaMarkup from "@/components/SchemaMarkup";
 import CustomCursor from "@/components/animations/CustomCursor";
-import AsciiLoader from "@/components/animations/AsciiLoader";
+// import AsciiLoader from "@/components/animations/AsciiLoader";
 import "@/app/globals.css";
 
 /* ── Supported locales ───────────────────────────────────────────────────── */
@@ -174,7 +174,7 @@ export default async function LangLayout({
         <a href="#main-content" className="skip-link">
           {lang === "vi" ? "Chuyển đến nội dung chính" : "Skip to main content"}
         </a>
-        <AsciiLoader />
+        {/* <AsciiLoader /> */}
         <CustomCursor />
         <SchemaMarkup lang={lang} />
         <Providers lang={lang}>{children}</Providers>
